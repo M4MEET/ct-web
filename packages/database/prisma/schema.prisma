@@ -1,0 +1,221 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum RoleName {
+  OWNER
+  ADMIN
+  EDITOR
+  AUTHOR
+}
+
+enum Locale {
+  en
+  de
+}
+
+enum PublishStatus {
+  draft
+  inReview
+  scheduled
+  published
+}
+
+enum BlockType {
+  hero
+  featureGrid
+  testimonial
+  logoCloud
+  metrics
+  richText
+  faq
+  priceTable
+  comparison
+  contactForm
+  media
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  image     String?
+  role      RoleName @default(AUTHOR)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  pages     Page[]   @relation("PageUpdatedBy")
+}
+
+model MediaAsset {
+  id        String   @id @default(cuid())
+  kind      String   // image|video|file
+  url       String
+  alt       String?
+  meta      Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  blogPosts BlogPost[]
+  testimonials Testimonial[]
+}
+
+model Page {
+  id          String        @id @default(cuid())
+  slug        String
+  locale      Locale
+  title       String
+  seo         Json?
+  status      PublishStatus @default(draft)
+  scheduledAt DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  updatedById String?
+  updatedBy   User?         @relation("PageUpdatedBy", fields: [updatedById], references: [id])
+
+  blocks      Block[]
+
+  @@unique([slug, locale])
+}
+
+model BlogPost {
+  id          String        @id @default(cuid())
+  slug        String
+  locale      Locale
+  title       String
+  excerpt     String?
+  coverId     String?
+  cover       MediaAsset?   @relation(fields: [coverId], references: [id])
+  seo         Json?
+  status      PublishStatus @default(draft)
+  scheduledAt DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  authorId    String?
+  author      Author?       @relation(fields: [authorId], references: [id])
+
+  blocks      Block[]
+
+  @@unique([slug, locale])
+}
+
+model Service {
+  id          String        @id @default(cuid())
+  slug        String
+  locale      Locale
+  name        String
+  summary     String?
+  seo         Json?
+  status      PublishStatus @default(draft)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  blocks      Block[]
+
+  @@unique([slug, locale])
+}
+
+model CaseStudy {
+  id          String        @id @default(cuid())
+  slug        String
+  locale      Locale
+  title       String
+  client      String?
+  sector      String?
+  seo         Json?
+  status      PublishStatus @default(draft)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  blocks      Block[]
+
+  @@unique([slug, locale])
+}
+
+model Author {
+  id     String  @id @default(cuid())
+  name   String
+  role   String?
+  bio    String?
+  avatar String?
+  xUrl   String?
+  liUrl  String?
+  
+  blogPosts BlogPost[]
+}
+
+model Testimonial {
+  id      String @id @default(cuid())
+  quote   String
+  author  String
+  role    String?
+  company String?
+  logoId  String?
+  logo    MediaAsset? @relation(fields: [logoId], references: [id])
+}
+
+model Form {
+  id         String   @id @default(cuid())
+  key        String   @unique
+  name       String
+  fields     Json
+  validation Json?
+  routing    Json?
+  autoresp   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Menu {
+  id     String @id @default(cuid())
+  key    String @unique
+  items  Json
+}
+
+model SiteSetting {
+  id        String  @id @default(cuid())
+  key       String  @unique
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model Block {
+  id        String    @id @default(cuid())
+  type      BlockType
+  data      Json
+  order     Int
+
+  pageId     String?
+  page       Page?     @relation(fields: [pageId], references: [id])
+
+  postId     String?
+  post       BlogPost? @relation(fields: [postId], references: [id])
+
+  serviceId  String?
+  service    Service?  @relation(fields: [serviceId], references: [id])
+
+  caseId     String?
+  case       CaseStudy? @relation(fields: [caseId], references: [id])
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([pageId])
+  @@index([postId])
+  @@index([serviceId])
+  @@index([caseId])
+}
+
+model Version {
+  id        String   @id @default(cuid())
+  entity    String   // e.g., 'Page', 'BlogPost'
+  entityId  String
+  snapshot  Json
+  createdAt DateTime  @default(now())
+  createdBy String?
+}

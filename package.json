@@ -1,0 +1,34 @@
+{
+  "name": "codex-terminal",
+  "version": "0.0.1",
+  "private": true,
+  "description": "CodeX Terminal Website - Custom CMS + Public Site",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "web:dev": "pnpm --filter @codex/web dev",
+    "admin:dev": "pnpm --filter @codex/admin dev",
+    "db:migrate": "pnpm --filter @codex/database migrate",
+    "db:seed": "pnpm --filter @codex/database seed",
+    "db:studio": "pnpm --filter @codex/database studio"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3",
+    "turbo": "^2.0.9"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

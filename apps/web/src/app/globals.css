@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: rgb(0, 0, 0);
+  --background: rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: rgb(255, 255, 255);
+    --background: rgb(0, 0, 0);
+  }
+}
+
+html {
+  height: 100%;
+  background: #faf9f5; /* CodeX Terminal's body background */
+}
+
+body {
+  min-height: 100vh;
+  color: var(--foreground);
+  background: #faf9f5; /* CodeX Terminal's body background */
+}
+
+/* Ensure all sections have proper backgrounds */
+main {
+  min-height: 100vh;
+}

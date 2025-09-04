@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@codex/ui": ["./packages/ui/src"],
+      "@codex/ui/*": ["./packages/ui/src/*"],
+      "@codex/content": ["./packages/content/src"],
+      "@codex/content/*": ["./packages/content/src/*"],
+      "@codex/config": ["./packages/config/src"],
+      "@codex/config/*": ["./packages/config/src/*"],
+      "@codex/utils": ["./packages/utils/src"],
+      "@codex/utils/*": ["./packages/utils/src/*"],
+      "@codex/database": ["./packages/database/src"],
+      "@codex/database/*": ["./packages/database/src/*"]
+    }
+  },
+  "include": [],
+  "exclude": ["node_modules"]
+}

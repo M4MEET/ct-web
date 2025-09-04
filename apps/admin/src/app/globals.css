@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: rgb(0, 0, 0);
+  --background: rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: rgb(255, 255, 255);
+    --background: rgb(0, 0, 0);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* Preview styling */
+.preview-content {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.preview-content h1, 
+.preview-content h2, 
+.preview-content h3, 
+.preview-content h4, 
+.preview-content h5, 
+.preview-content h6 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.preview-content p {
+  margin: 0;
+}
+
+.preview-content .prose {
+  max-width: none;
+}
+
+.preview-content .prose p {
+  margin-bottom: 1rem;
+}
+
+.preview-content .prose h1, 
+.preview-content .prose h2, 
+.preview-content .prose h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.preview-content .prose h1:first-child,
+.preview-content .prose h2:first-child,
+.preview-content .prose h3:first-child {
+  margin-top: 0;
+}
