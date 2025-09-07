@@ -57,5 +57,7 @@ temp/
 # AI-related files
 CLAUDE.md
 GEMINI.md
+AGENTS.md
 *.ai.md
 *_ai.md
+*agent*.md
