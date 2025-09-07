@@ -269,7 +269,7 @@ export async function POST(request: NextRequest) {
       }
     });
 
-    // Send email notifications
+    // Send email notifications with complete metadata
     try {
       await sendFormSubmissionNotification({
         id: submission.id,
@@ -287,6 +287,13 @@ export async function POST(request: NextRequest) {
           size: att.size,
           mimeType: att.mimeType,
         })),
+        // Additional metadata
+        submittedAt: new Date(),
+        ipAddress: clientIP,
+        userAgent: request.headers.get('user-agent') || undefined,
+        referrer: request.headers.get('referer') || undefined,
+        sessionId: request.headers.get('x-session-id') || metadata?.sessionId || undefined,
+        locale: metadata?.locale || 'en',
       });
     } catch (emailError) {
       // Don't fail the submission if email fails

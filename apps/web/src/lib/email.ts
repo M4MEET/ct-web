@@ -1,7 +1,45 @@
 import { Resend } from 'resend';
+import { prisma } from '@codex/database';
 
 // Initialize Resend with API key from environment
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+
+// Get settings from database
+async function getEmailSettings() {
+  try {
+    const settings = await prisma.siteSetting.findMany({
+      where: {
+        key: {
+          in: ['notificationEmail', 'senderEmail', 'enableEmailNotifications', 'enableAutoReply', 'autoReplySubject', 'autoReplyMessage']
+        }
+      }
+    });
+    
+    const settingsMap = settings.reduce((acc, setting) => {
+      acc[setting.key] = setting.value;
+      return acc;
+    }, {} as Record<string, any>);
+    
+    return {
+      notificationEmail: settingsMap.notificationEmail?.value || 'info@codexterminal.com',
+      senderEmail: settingsMap.senderEmail?.value || 'noreply@codexterminal.com',
+      enableEmailNotifications: settingsMap.enableEmailNotifications?.value !== false,
+      enableAutoReply: settingsMap.enableAutoReply?.value !== false,
+      autoReplySubject: settingsMap.autoReplySubject?.value || 'Thank you for contacting CodeX Terminal',
+      autoReplyMessage: settingsMap.autoReplyMessage?.value || 'We have received your message and will get back to you within 24 hours.'
+    };
+  } catch (error) {
+    console.error('Failed to fetch email settings:', error);
+    return {
+      notificationEmail: 'info@codexterminal.com',
+      senderEmail: 'noreply@codexterminal.com',
+      enableEmailNotifications: true,
+      enableAutoReply: true,
+      autoReplySubject: 'Thank you for contacting CodeX Terminal',
+      autoReplyMessage: 'We have received your message and will get back to you within 24 hours.'
+    };
+  }
+}
 
 interface FormSubmissionData {
   id: string;
@@ -19,6 +57,13 @@ interface FormSubmissionData {
     size: number;
     mimeType: string;
   }>;
+  // Additional metadata
+  submittedAt?: Date;
+  ipAddress?: string;
+  userAgent?: string;
+  referrer?: string;
+  sessionId?: string;
+  locale?: string;
 }
 
 export async function sendFormSubmissionNotification(data: FormSubmissionData): Promise<boolean> {
@@ -27,26 +72,33 @@ export async function sendFormSubmissionNotification(data: FormSubmissionData): 
     return false;
   }
 
-  const notificationEmail = process.env.FORM_NOTIFICATION_EMAIL || 'admin@codexterminal.com';
-  const fromEmail = process.env.FROM_EMAIL || 'notifications@codexterminal.com';
+  const settings = await getEmailSettings();
+  
+  // Check if email notifications are enabled
+  if (!settings.enableEmailNotifications) {
+    console.log('Email notifications are disabled in settings');
+    return false;
+  }
 
   try {
-    // Generate admin notification email
+    // Generate admin notification email with all metadata
     const adminEmailHtml = generateAdminNotificationEmail(data);
     
-    // Send notification to admin
+    // Send notification to admin (info@codexterminal.com or configured email)
     const result = await resend.emails.send({
-      from: fromEmail,
-      to: [notificationEmail],
+      from: settings.senderEmail,
+      to: [settings.notificationEmail],
       subject: `New ${data.formType} form submission from ${data.name}`,
       html: adminEmailHtml,
       replyTo: data.email,
     });
 
-    console.log('Admin notification sent:', result);
+    console.log(`Admin notification sent to ${settings.notificationEmail}:`, result);
 
-    // Send confirmation email to customer
-    await sendCustomerConfirmationEmail(data);
+    // Send confirmation email to customer if enabled
+    if (settings.enableAutoReply) {
+      await sendCustomerConfirmationEmail(data, settings);
+    }
 
     return true;
   } catch (error) {
@@ -55,18 +107,16 @@ export async function sendFormSubmissionNotification(data: FormSubmissionData): 
   }
 }
 
-async function sendCustomerConfirmationEmail(data: FormSubmissionData): Promise<void> {
+async function sendCustomerConfirmationEmail(data: FormSubmissionData, settings: any): Promise<void> {
   if (!resend) return;
-
-  const fromEmail = process.env.FROM_EMAIL || 'notifications@codexterminal.com';
   
   try {
     const confirmationHtml = generateCustomerConfirmationEmail(data);
     
     await resend.emails.send({
-      from: fromEmail,
+      from: settings.senderEmail,
       to: [data.email],
-      subject: 'Thank you for contacting CodeX Terminal',
+      subject: settings.autoReplySubject,
       html: confirmationHtml,
     });
 
