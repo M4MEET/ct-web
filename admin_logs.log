@@ -1,0 +1,15 @@
+
+> @codex/admin@0.1.0 dev /Users/demon/ct-web/apps/admin
+> next dev --port 3001 --turbopack "--port" "3001"
+
+ ⨯ Failed to start server
+Error: listen EADDRINUSE: address already in use :::3001
+    at <unknown> (Error: listen EADDRINUSE: address already in use :::3001)
+    at new Promise (<anonymous>) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+[?25h

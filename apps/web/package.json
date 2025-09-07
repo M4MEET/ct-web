@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3000 --turbopack",
+    "dev": "next dev --port 3002 --turbopack",
     "build": "next build",
     "start": "next start --port 3000",
     "lint": "next lint",
@@ -13,12 +13,21 @@
   "dependencies": {
     "@codex/content": "workspace:*",
     "@codex/ui": "workspace:*",
+    "@hookform/resolvers": "^3.6.0",
+    "@prisma/client": "^6.15.0",
+    "@types/uuid": "^10.0.0",
     "dompurify": "^3.2.6",
     "isomorphic-dompurify": "^2.26.0",
+    "multer": "^2.0.2",
     "next": "15.5.2",
     "next-intl": "^4.3.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.8",
+    "react-hook-form": "^7.51.5",
+    "resend": "^6.0.2",
+    "uuid": "^10.0.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/dompurify": "^3.2.0",

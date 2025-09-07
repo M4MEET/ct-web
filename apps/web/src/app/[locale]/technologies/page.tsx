@@ -7,7 +7,7 @@ interface TechnologiesPageProps {
 
 async function getTechnologies(locale: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
     const response = await fetch(
       `${baseUrl}/api/case-studies?locale=${locale}&category=technology&status=published`,
       { cache: 'no-store' }

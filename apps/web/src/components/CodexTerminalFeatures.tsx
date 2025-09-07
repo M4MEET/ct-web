@@ -1,40 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
-
-const features = [
-  {
-    title: 'Shopware Excellence',
-    description: 'Custom plugins, themes, and enterprise migrations built by certified Shopware experts.',
-    icon: '🛍️',
-    href: '/services/shopware',
-    command: './deploy-shopware.sh',
-    status: 'ACTIVE',
-    glowColor: 'blue-400'
-  },
-  {
-    title: 'Digital Marketing',
-    description: 'Data-driven SEO, PPC campaigns, and marketing automation that delivers measurable ROI.',
-    icon: '📈',
-    href: '/services/marketing',
-    command: './optimize-campaigns.sh',
-    status: 'RUNNING',
-    glowColor: 'green-400'
-  },
-  {
-    title: 'Cloud Infrastructure',
-    description: 'Scalable AWS, Azure, and GCP solutions with DevOps automation and 24/7 monitoring.',
-    icon: '☁️',
-    href: '/services/cloud',
-    command: './scale-infrastructure.sh',
-    status: 'READY',
-    glowColor: 'purple-400'
-  }
-];
+import { useLocale, useTranslations } from 'next-intl';
 
 export function CodexTerminalFeatures() {
   const locale = useLocale();
+  const t = useTranslations('features');
+  
+  const features = [
+    {
+      title: t('services.shopware.title'),
+      description: t('services.shopware.description'),
+      icon: '🛍️',
+      href: '/services/shopware',
+      command: './deploy-shopware.sh',
+      status: 'ACTIVE',
+      glowColor: 'blue-400'
+    },
+    {
+      title: t('services.marketing.title'),
+      description: t('services.marketing.description'),
+      icon: '📈',
+      href: '/services/marketing',
+      command: './optimize-campaigns.sh',
+      status: 'RUNNING',
+      glowColor: 'green-400'
+    },
+    {
+      title: t('services.cloud.title'),
+      description: t('services.cloud.description'),
+      icon: '☁️',
+      href: '/services/cloud',
+      command: './scale-infrastructure.sh',
+      status: 'READY',
+      glowColor: 'purple-400'
+    }
+  ];
   
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-codex-terminal-body relative">
@@ -49,13 +50,13 @@ export function CodexTerminalFeatures() {
         {/* Clean header */}
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
-            Everything you need to
+            {t('title')}
             <span className="block bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
-              scale your business
+              {t('highlight')}
             </span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-            We combine technical expertise with strategic thinking to deliver solutions that don't just work—they excel.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -81,7 +82,7 @@ export function CodexTerminalFeatures() {
                   </p>
                   
                   <div className="flex items-center justify-center sm:justify-start text-primary-600 font-medium group-hover:text-primary-700 transition-colors mt-auto pt-3 sm:pt-4">
-                    <span className="text-sm sm:text-base">Learn more</span>
+                    <span className="text-sm sm:text-base">{t('learnMore')}</span>
                     <svg
                       className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200"
                       fill="none"
@@ -101,7 +102,7 @@ export function CodexTerminalFeatures() {
         {/* Clean Process section */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-200 shadow-xl p-6 sm:p-8 lg:p-12">
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
-            Our proven process
+            {t('process.title')}
           </h3>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
@@ -111,9 +112,9 @@ export function CodexTerminalFeatures() {
                   1
                 </div>
                 <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
-                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Discovery</h4>
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">{t('process.steps.discovery.title')}</h4>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Understanding business goals and technical requirements
+                    {t('process.steps.discovery.description')}
                   </p>
                 </div>
               </div>
@@ -127,9 +128,9 @@ export function CodexTerminalFeatures() {
                   2
                 </div>
                 <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
-                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Strategy</h4>
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">{t('process.steps.strategy.title')}</h4>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Designing comprehensive solution architecture
+                    {t('process.steps.strategy.description')}
                   </p>
                 </div>
               </div>
@@ -143,9 +144,9 @@ export function CodexTerminalFeatures() {
                   3
                 </div>
                 <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
-                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Execute</h4>
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">{t('process.steps.execute.title')}</h4>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Building and implementing with precision
+                    {t('process.steps.execute.description')}
                   </p>
                 </div>
               </div>
@@ -159,9 +160,9 @@ export function CodexTerminalFeatures() {
                   4
                 </div>
                 <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
-                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Scale</h4>
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">{t('process.steps.scale.title')}</h4>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Optimizing and supporting growing success
+                    {t('process.steps.scale.description')}
                   </p>
                 </div>
               </div>

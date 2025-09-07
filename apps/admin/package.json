@@ -24,6 +24,7 @@
     "@types/nodemailer": "^7.0.1",
     "@types/qrcode": "^1.5.5",
     "bcryptjs": "^3.0.2",
+    "date-fns": "^4.1.0",
     "isomorphic-dompurify": "^2.26.0",
     "jsdom": "^26.1.0",
     "lucide-react": "^0.542.0",

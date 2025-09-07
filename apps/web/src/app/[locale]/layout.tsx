@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { SessionTracker } from '@/components/SessionTracker';
 import '../globals.css';
 
 const inter = Inter({ 
@@ -39,10 +40,15 @@ export default async function LocaleLayout({
   const normalizedLocale = locale === 'de' ? 'de' : locale === 'fr' ? 'fr' : 'en';
   
   return (
-    <NextIntlClientProvider messages={messages}>
-      <Navigation />
-      {children}
-      <Footer locale={normalizedLocale} />
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <SessionTracker />
+      <div>
+        <Navigation />
+        <main className="pt-16 sm:pt-20">
+          {children}
+        </main>
+        <Footer locale={normalizedLocale} />
+      </div>
     </NextIntlClientProvider>
   );
 }

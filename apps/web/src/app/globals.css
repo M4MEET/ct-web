@@ -3,20 +3,69 @@
 @tailwind utilities;
 
 :root {
-  --foreground: rgb(0, 0, 0);
+  /* Light theme (default) */
+  --foreground: rgb(17, 24, 39);
   --background: rgb(255, 255, 255);
+  --background-secondary: rgb(249, 250, 251);
+  --border: rgb(229, 231, 235);
+  --text-primary: rgb(17, 24, 39);
+  --text-secondary: rgb(107, 114, 128);
+  --text-muted: rgb(156, 163, 175);
+  
+  /* Brand colors */
+  --primary-50: rgb(239, 246, 255);
+  --primary-100: rgb(219, 234, 254);
+  --primary-200: rgb(191, 219, 254);
+  --primary-300: rgb(147, 197, 253);
+  --primary-400: rgb(96, 165, 250);
+  --primary-500: rgb(59, 130, 246);
+  --primary-600: rgb(37, 99, 235);
+  --primary-700: rgb(29, 78, 216);
+  --primary-800: rgb(30, 64, 175);
+  --primary-900: rgb(30, 58, 138);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: rgb(255, 255, 255);
-    --background: rgb(0, 0, 0);
-  }
+[data-theme="dark"] {
+  /* Dark theme */
+  --foreground: rgb(243, 244, 246);
+  --background: rgb(17, 24, 39);
+  --background-secondary: rgb(31, 41, 55);
+  --border: rgb(55, 65, 81);
+  --text-primary: rgb(243, 244, 246);
+  --text-secondary: rgb(209, 213, 219);
+  --text-muted: rgb(156, 163, 175);
+  
+  /* Brand colors (adjusted for dark mode) */
+  --primary-50: rgb(30, 58, 138);
+  --primary-100: rgb(30, 64, 175);
+  --primary-200: rgb(29, 78, 216);
+  --primary-300: rgb(37, 99, 235);
+  --primary-400: rgb(59, 130, 246);
+  --primary-500: rgb(96, 165, 250);
+  --primary-600: rgb(147, 197, 253);
+  --primary-700: rgb(191, 219, 254);
+  --primary-800: rgb(219, 234, 254);
+  --primary-900: rgb(239, 246, 255);
+}
+
+/* Apply theme transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 html {
   height: 100%;
   background: #f0eee6; /* CodeX Terminal's component background */
+}
+
+html.dark {
+  background: rgb(17, 24, 39); /* Dark mode background */
 }
 
 body {
@@ -25,10 +74,21 @@ body {
   background: #f0eee6; /* CodeX Terminal's component background */
 }
 
+body.dark,
+.dark body {
+  background: rgb(17, 24, 39); /* Dark mode background */
+  color: rgb(243, 244, 246); /* Dark mode text */
+}
+
 /* Ensure all sections have proper backgrounds */
 main {
   min-height: 100vh;
   background: #f0eee6 !important; /* CodeX Terminal's component background */
+  padding-top: 80px; /* Space for fixed header */
+}
+
+.dark main {
+  background: rgb(17, 24, 39) !important; /* Dark mode background */
 }
 
 /* Force CodeX Terminal background on all sections - but allow transparency for orbs */
@@ -42,20 +102,458 @@ section {
   backdrop-filter: blur(12px);
 }
 
+.dark .bg-white {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Dark mode support for white/95 backgrounds */
+.dark .bg-white\/95 {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Dark mode for white cards and containers */
+.dark [class*="bg-white"] {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Dark mode for main page backgrounds */
+.dark main.bg-white {
+  background: rgb(17, 24, 39) !important;
+}
+
+/* Dark mode for gray backgrounds */
+.dark .bg-gray-50 {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+.dark .min-h-screen.bg-gray-50 {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+/* Dark mode for blue accent backgrounds */
+.dark .bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Dark mode for form inputs and selects */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: rgb(31, 41, 55) !important;
+  border-color: rgb(55, 65, 81) !important;
+  color: rgb(243, 244, 246) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgb(156, 163, 175) !important;
+}
+
+/* Dark mode for labels */
+.dark .text-gray-700 {
+  color: rgb(209, 213, 219) !important;
+}
+
+/* Dark mode for blue text */
+.dark .text-blue-800 {
+  color: rgb(147, 197, 253) !important;
+}
+
+.dark .text-blue-900 {
+  color: rgb(219, 234, 254) !important;
+}
+
+/* Dark mode adjustments for background gradient orbs only (not buttons) */
+.dark .blur-3xl.bg-gradient-to-br {
+  opacity: 0.15 !important;
+}
+
+.dark .blur-3xl.bg-gradient-to-tr {
+  opacity: 0.15 !important;
+}
+
+/* Keep button gradients visible but slightly dimmed */
+.dark .bg-gradient-to-r:not(.blur-3xl) {
+  opacity: 0.9 !important;
+}
+
+/* Specific dark mode overrides for hero gradients - use same dark bg color */
+.dark [class*="from-primary-100"],
+.dark [class*="from-primary-200"],
+.dark [class*="from-primary-300"] {
+  --tw-gradient-from: rgb(17, 24, 39) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(17, 24, 39, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.dark [class*="to-primary-100"],
+.dark [class*="to-primary-200"], 
+.dark [class*="to-primary-300"] {
+  --tw-gradient-to: rgb(17, 24, 39) var(--tw-gradient-to-position) !important;
+}
+
+/* Ensure via- gradients also use same dark bg color */
+.dark [class*="via-primary-100"],
+.dark [class*="via-primary-200"],
+.dark [class*="via-primary-300"] {
+  --tw-gradient-via: rgb(17, 24, 39) var(--tw-gradient-via-position) !important;
+}
+
+/* Make floating orbs more subtle in dark mode */
+.dark .blur-3xl[class*="bg-gradient-to"] {
+  opacity: 0.2 !important;
+}
+
 /* Allow CodeX Terminal specific backgrounds */
 .bg-codex-terminal-body {
   background-color: #f0eee6 !important;
+}
+
+.dark .bg-codex-terminal-body {
+  background-color: rgb(17, 24, 39) !important;
 }
 
 .bg-codex-terminal-component {
   background-color: #f0eee6 !important;
 }
 
-/* Fix nested RichText content */
+.dark .bg-codex-terminal-component {
+  background-color: rgb(17, 24, 39) !important;
+}
+
+/* Dark mode border and text color adjustments */
+.dark .border-gray-200 {
+  border-color: rgb(55, 65, 81) !important;
+}
+
+.dark .border-gray-200\/50 {
+  border-color: rgba(55, 65, 81, 0.5) !important;
+}
+
+.dark .border-gray-200\/60 {
+  border-color: rgba(55, 65, 81, 0.6) !important;
+}
+
+.dark .border-gray-300 {
+  border-color: rgb(55, 65, 81) !important;
+}
+
+.dark .text-gray-600 {
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .text-gray-700 {
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .text-gray-800 {
+  color: rgb(243, 244, 246) !important;
+}
+
+.dark .text-gray-900 {
+  color: rgb(249, 250, 251) !important;
+}
+
+/* Fix nested RichText content and prose dark mode */
 .prose section {
   background: transparent !important;
   padding: 1rem 0 !important;
   margin: 0 !important;
+}
+
+/* Rich Block Editor Component Styling */
+.prose {
+  /* Better spacing and container styling */
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgb(229, 231, 235);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  margin: 1.5rem 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.prose:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .prose {
+  border: 1px solid rgb(55, 65, 81);
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dark .prose:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18);
+}
+
+/* Rich content sections within prose */
+.prose > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.prose .py-16 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.prose .px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.prose .max-w-full {
+  max-width: 100% !important;
+}
+
+/* Grid layouts within prose */
+.prose .grid {
+  gap: 1.5rem !important;
+}
+
+.prose .gap-8 {
+  gap: 1.5rem !important;
+}
+
+.prose .gap-12 {
+  gap: 2rem !important;
+}
+
+/* Card styling improvements */
+.prose .bg-white {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgb(229, 231, 235) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.dark .prose .bg-white {
+  background: rgba(31, 41, 55, 0.95) !important;
+  border: 1px solid rgb(55, 65, 81) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.prose .p-8 {
+  padding: 1.5rem !important;
+}
+
+.prose .rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+/* Typography spacing improvements */
+.prose .mb-12 {
+  margin-bottom: 2rem !important;
+}
+
+.prose .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.prose .mt-8 {
+  margin-top: 1.5rem !important;
+}
+
+.prose .mt-6 {
+  margin-top: 1rem !important;
+}
+
+/* Icon container improvements */
+.prose .w-12.h-12 {
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 1rem !important;
+}
+
+/* List improvements */
+.prose ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.prose li {
+  display: flex !important;
+  align-items: flex-start !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.prose .space-y-2 > li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Responsive improvements for prose blocks */
+@media (max-width: 768px) {
+  .prose {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+  
+  .prose .py-16 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  .prose .p-8 {
+    padding: 1rem !important;
+  }
+  
+  .prose .gap-8 {
+    gap: 1rem !important;
+  }
+  
+  .prose .mb-12 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Enhanced prose block container */
+.prose-block-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.prose-block-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+}
+
+.dark .prose-block-container::before {
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+}
+
+/* Additional dark mode prose styling */
+.dark .prose {
+  color: rgb(209, 213, 219);
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
+  color: rgb(243, 244, 246) !important;
+}
+
+.dark .prose p {
+  color: rgb(156, 163, 175) !important;
+}
+
+.dark .prose strong {
+  color: rgb(243, 244, 246) !important;
+}
+
+.dark .prose em {
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .prose a {
+  color: rgb(96, 165, 250) !important;
+}
+
+.dark .prose a:hover {
+  color: rgb(147, 197, 253) !important;
+}
+
+.dark .prose ul,
+.dark .prose ol,
+.dark .prose li {
+  color: rgb(156, 163, 175) !important;
+}
+
+.dark .prose blockquote {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border-color: rgb(59, 130, 246) !important;
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .prose code {
+  background: rgb(31, 41, 55) !important;
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .prose pre {
+  background: rgb(17, 24, 39) !important;
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .prose hr {
+  border-color: rgb(55, 65, 81) !important;
+}
+
+/* Fix prose backgrounds in dark mode */
+.dark .prose .bg-primary-50 {
+  background: rgba(59, 130, 246, 0.1) !important;
+}
+
+.dark .prose .bg-white {
+  background: rgba(31, 41, 55, 0.95) !important;
+}
+
+.dark .prose .text-gray-900 {
+  color: rgb(243, 244, 246) !important;
+}
+
+.dark .prose .text-gray-800 {
+  color: rgb(209, 213, 219) !important;
+}
+
+.dark .prose .text-gray-700 {
+  color: rgb(156, 163, 175) !important;
+}
+
+.dark .prose .text-gray-600 {
+  color: rgb(107, 114, 128) !important;
+}
+
+/* Dark mode for prose card shadows */
+.dark .prose .shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .prose .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark mode for icon containers and primary elements in prose */
+.dark .prose .bg-primary-600 {
+  background: rgb(59, 130, 246) !important;
+}
+
+.dark .prose .text-primary-600 {
+  color: rgb(96, 165, 250) !important;
+}
+
+/* Ensure check marks and icons remain visible */
+.dark .prose .text-primary-600 {
+  color: rgb(96, 165, 250) !important;
+}
+
+/* Dark mode hover effects for prose cards */
+.dark .prose .hover\:shadow-md:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4) !important;
 }
 
 .prose .bg-gradient-to-r:not(a):not(button) {

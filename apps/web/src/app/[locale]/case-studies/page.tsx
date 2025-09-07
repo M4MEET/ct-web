@@ -8,7 +8,7 @@ interface CaseStudiesPageProps {
 
 async function getCaseStudies(locale: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
     const response = await fetch(
       `${baseUrl}/api/case-studies?locale=${locale}&category=caseStudy&status=published`,
       { cache: 'no-store' }
@@ -27,7 +27,6 @@ async function getCaseStudies(locale: string) {
 
 export async function generateMetadata({ params }: CaseStudiesPageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations('Navigation');
   
   return {
     title: `Case Studies | CodeX Terminal`,

@@ -2,29 +2,30 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
-
-const rotatingText = [
-  'ecommerce platforms',
-  'Shopware solutions',
-  'marketing automation',
-  'cloud infrastructure'
-];
-
-const terminalSequence = [
-  { type: 'init', text: 'codex-terminal init', delay: 1000 },
-  { type: 'command', text: './deploy-solutions.sh', delay: 1500 },
-  { type: 'ascii', delay: 2000 },
-  { type: 'step', text: 'Initializing CodeX Terminal Enterprise Suite...', delay: 2500 },
-  { type: 'step', text: 'Loading software development modules', progress: true, delay: 3000 },
-  { type: 'step', text: 'Spinning up cloud infrastructure', progress: true, delay: 3500 },
-  { type: 'step', text: 'Optimizing marketing automation pipelines', progress: true, delay: 4000 },
-  { type: 'step', text: 'System ready for enterprise deployment', final: true, delay: 4500 },
-  { type: 'content', delay: 5000 }
-];
+import { useLocale, useTranslations } from 'next-intl';
 
 export function CodexTerminalHero() {
   const locale = useLocale();
+  const t = useTranslations('hero.terminalCommands');
+
+  const rotatingText = [
+    t('ecommercePlatforms'),
+    'Shopware solutions',
+    'marketing automation',
+    'cloud infrastructure'
+  ];
+
+  const terminalSequence = [
+    { type: 'init', text: 'codex-terminal init', delay: 1000 },
+    { type: 'command', text: './deploy-solutions.sh', delay: 1500 },
+    { type: 'ascii', delay: 2000 },
+    { type: 'step', text: 'Initializing CodeX Terminal Enterprise Suite...', delay: 2500 },
+    { type: 'step', text: 'Loading software development modules', progress: true, delay: 3000 },
+    { type: 'step', text: 'Spinning up cloud infrastructure', progress: true, delay: 3500 },
+    { type: 'step', text: 'Optimizing marketing automation pipelines', progress: true, delay: 4000 },
+    { type: 'step', text: 'System ready for enterprise deployment', final: true, delay: 4500 },
+    { type: 'content', delay: 5000 }
+  ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showPrompt, setShowPrompt] = useState(false);
@@ -270,7 +271,7 @@ export function CodexTerminalHero() {
                   <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
                     <div className="flex items-center justify-center mb-0.5 sm:mb-1">
                       <span className="text-green-400 mr-1 sm:mr-2 text-base sm:text-lg md:text-xl">❯</span>
-                      <span className="text-white">We craft</span>
+                      <span className="text-white">{t('weCraft')}</span>
                     </div>
                     <div className="relative px-2">
                       <span
@@ -285,7 +286,7 @@ export function CodexTerminalHero() {
                     </div>
                     <div className="flex items-center justify-center mt-0.5 sm:mt-1">
                       <span className="text-green-400 mr-1 sm:mr-2 text-base sm:text-lg md:text-xl">❯</span>
-                      <span className="text-white">that dominate</span>
+                      <span className="text-white">{t('thatDominate')}</span>
                     </div>
                   </div>
 
@@ -293,8 +294,7 @@ export function CodexTerminalHero() {
                     <div className="flex items-start justify-center text-left">
                       <span className="text-blue-400 mr-2 font-bold flex-shrink-0">//</span>
                       <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Enterprise-grade Shopware solutions, marketing automation,
-                        and cloud infrastructure that scales.
+                        {t('description')}
                       </p>
                     </div>
                   </div>
@@ -307,8 +307,8 @@ export function CodexTerminalHero() {
                     className="group relative overflow-hidden bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm rounded-lg font-mono font-bold transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105 border border-primary-400/20 w-full sm:w-auto"
                   >
                     <span className="relative z-10 flex items-center justify-center">
-                      <span className="hidden sm:inline">sudo ./launch-project.sh</span>
-                      <span className="sm:hidden">Launch Project</span>
+                      <span className="hidden sm:inline">{t('launchProject')}</span>
+                      <span className="sm:hidden">{t('launchProjectMobile')}</span>
                       <span className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300">⚡</span>
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -319,8 +319,8 @@ export function CodexTerminalHero() {
                     className="group relative px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm border-2 border-primary-400/50 bg-transparent text-primary-400 rounded-lg font-mono font-bold transition-all duration-300 hover:bg-primary-400/10 hover:border-primary-400 hover:shadow-lg hover:shadow-primary-400/20 hover:scale-105 w-full sm:w-auto"
                   >
                     <span className="flex items-center justify-center">
-                      <span className="hidden sm:inline">cat ./services.json</span>
-                      <span className="sm:hidden">View Services</span>
+                      <span className="hidden sm:inline">{t('viewServices')}</span>
+                      <span className="sm:hidden">{t('viewServicesMobile')}</span>
                       <span className="ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-400/5 to-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>

@@ -5,7 +5,7 @@ async function getPublishedServices(locale: string) {
   try {
     const baseUrl = process.env.VERCEL_URL 
       ? `https://${process.env.VERCEL_URL}` 
-      : 'http://localhost:3000'; // Web app's own API
+      : 'http://localhost:3002'; // Web app's own API
     
     const response = await fetch(`${baseUrl}/api/services?locale=${locale}`, {
       cache: 'no-store'

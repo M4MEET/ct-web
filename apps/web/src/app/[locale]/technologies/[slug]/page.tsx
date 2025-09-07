@@ -9,7 +9,7 @@ interface TechnologyPageProps {
 
 async function getTechnology(locale: string, slug: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
     const response = await fetch(
       `${baseUrl}/api/case-studies?locale=${locale}&category=technology&slug=${slug}`,
       { cache: 'no-store' }
@@ -201,7 +201,7 @@ export default async function TechnologyPage({ params }: TechnologyPageProps) {
 // Related technologies component
 async function RelatedTechnologies({ locale, currentSlug }: { locale: string; currentSlug: string }) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
     const response = await fetch(
       `${baseUrl}/api/case-studies?locale=${locale}&category=technology&status=published`,
       { cache: 'no-store' }

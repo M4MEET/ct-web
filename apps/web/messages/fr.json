@@ -9,7 +9,53 @@
     "shopware": "Développement Shopware",
     "marketing": "Marketing Digital",
     "cloud": "Infrastructure Cloud",
-    "allServices": "Tous les Services"
+    "allServices": "Tous les Services",
+    "dropdowns": {
+      "services": {
+        "shopware": {
+          "title": "Développement Shopware",
+          "description": "Plugins personnalisés, thèmes et solutions entreprise"
+        },
+        "marketing": {
+          "title": "Marketing Digital",
+          "description": "SEO, campagnes PPC et automatisation marketing"
+        },
+        "cloudInfra": {
+          "title": "Infrastructure Cloud",
+          "description": "Solutions AWS, Azure et GCP avec DevOps"
+        },
+        "webDev": {
+          "title": "Développement Web",
+          "description": "Applications web personnalisées et plateformes e-commerce"
+        },
+        "viewAll": {
+          "title": "Voir Tous les Services",
+          "description": "Explorez notre portfolio complet de services"
+        }
+      },
+      "technologies": {
+        "nextjs": {
+          "title": "Next.js",
+          "description": "Framework React pour applications de production"
+        },
+        "typescript": {
+          "title": "TypeScript",
+          "description": "Développement JavaScript avec types sûrs"
+        },
+        "shopware6": {
+          "title": "Shopware 6",
+          "description": "Plateforme e-commerce moderne"
+        },
+        "aws": {
+          "title": "AWS Cloud",
+          "description": "Infrastructure cloud évolutive"
+        },
+        "viewAll": {
+          "title": "Voir Toutes les Technologies",
+          "description": "Découvrez notre stack technologique complet"
+        }
+      }
+    }
   },
   "common": {
     "contactUs": "Nous contacter",
@@ -62,22 +108,365 @@
   },
   "footer": {
     "company": "CodeX Terminal",
-    "description": "Services de développement logiciel professionnel",
-    "services": "Services",
-    "support": "Support",
-    "legal": "Légal",
-    "followUs": "Suivez-nous",
-    "allRightsReserved": "Tous droits réservés"
+    "description": "Nous construisons des plateformes e-commerce exceptionnelles, des campagnes de marketing digital et une infrastructure cloud qui évoluent avec votre entreprise.",
+    "sections": {
+      "company": "Entreprise",
+      "services": "Services",
+      "caseStudies": "Études de Cas",
+      "legal": "Légal"
+    },
+    "navigation": {
+      "main": {
+        "services": "Services",
+        "about": "À propos",
+        "contact": "Contact",
+        "pricing": "Tarifs"
+      },
+      "services": {
+        "shopware": "Développement Shopware",
+        "marketing": "Marketing Digital",
+        "cloud": "Infrastructure Cloud"
+      },
+      "legal": {
+        "privacy": "Politique de Confidentialité",
+        "terms": "Conditions d'Utilisation"
+      }
+    },
+    "caseStudies": {
+      "fallback": {
+        "ecommercePlatform": "Plateforme E-commerce",
+        "marketingAutomation": "Automatisation Marketing",
+        "cloudMigration": "Migration Cloud",
+        "crmIntegration": "Intégration CRM",
+        "mobileApp": "Application Mobile",
+        "dataAnalytics": "Analyse de Données"
+      }
+    },
+    "allRightsReserved": "Tous droits réservés",
+    "madeWithLove": "Fait avec ❤️ pour les entreprises en croissance"
   },
   "contact": {
     "title": "Prendre Contact",
     "subtitle": "Prêt à démarrer votre projet ? Discutons de vos exigences",
     "form": {
+      "title": "Envoyez-nous un message",
       "name": "Nom",
       "email": "Email",
+      "phone": "Téléphone",
+      "company": "Entreprise",
+      "service": "Service d'Intérêt",
       "subject": "Sujet",
       "message": "Message",
-      "send": "Envoyer le message"
+      "projectDetails": "Détails du Projet * (minimum 10 caractères)",
+      "attachments": "Pièces Jointes",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "selectService": "Sélectionner un service",
+      "phoneNumber": "+1 (555) 123-4567",
+      "companyName": "Nom de votre entreprise",
+      "projectDetailsPlaceholder": "Parlez-nous de vos exigences de projet, chronologie et questions spécifiques...",
+      "fileTypes": "JPG, PNG, GIF, PDF, DOC, DOCX (max 10Mo chacun)",
+      "selectedFiles": "Fichiers sélectionnés:",
+      "minLength": "Le message doit contenir au moins 10 caractères ({length}/10)"
+    },
+    "contactInfo": {
+      "emailUs": {
+        "title": "Nous contacter par email",
+        "description": "Prenez contact via email",
+        "email": "info@codexterminal.com"
+      },
+      "liveChat": {
+        "title": "Chat en Direct",
+        "description": "Chattez avec notre équipe",
+        "availability": "Disponible 9h - 18h CET"
+      },
+      "quickResponse": {
+        "title": "Réponse Rapide",
+        "description": "Délai de traitement rapide",
+        "timeframe": "Sous 24 heures"
+      }
+    },
+    "freeConsultation": {
+      "title": "Consultation Gratuite Disponible",
+      "description": "Obtenez des conseils d'experts sur votre projet avec une consultation gratuite de 30 minutes",
+      "duration": "30 Minutes"
+    }
+  },
+  "hero": {
+    "terminalCommands": {
+      "weCraft": "Nous créons",
+      "thatDominate": "qui dominent",
+      "ecommercePlatforms": "plateformes e-commerce",
+      "description": "Solutions Shopware de niveau entreprise, automatisation marketing et infrastructure cloud qui évolue.",
+      "launchProject": "sudo ./lancer-projet.sh",
+      "launchProjectMobile": "Lancer Projet",
+      "viewServices": "cat ./services.json",
+      "viewServicesMobile": "Voir Services"
+    },
+    "stats": {
+      "projectsDeployed": "projets déployés",
+      "projectsDeployedMobile": "projets",
+      "uptimeGuaranteed": "uptime garanti",
+      "uptimeMobile": "uptime",
+      "supportAvailable": "support disponible",
+      "supportMobile": "support",
+      "clientRating": "note client",
+      "ratingMobile": "note"
+    }
+  },
+  "sections": {
+    "everythingYouNeed": {
+      "title": "Tout ce dont vous avez besoin pour",
+      "highlight": "faire évoluer votre entreprise",
+      "subtitle": "Nous combinons expertise technique et réflexion stratégique pour livrer des solutions qui ne fonctionnent pas seulement—elles excellent."
+    }
+  },
+  "serviceDetails": {
+    "shopware": {
+      "specialist": "Spécialistes du Développement Shopware",
+      "expertServices": "Services Experts de Développement Shopware",
+      "description": "Du développement de plugins personnalisés aux migrations d'entreprise complexes, nous livrons des solutions Shopware expertes qui stimulent votre succès e-commerce.",
+      "startProject": "Démarrer Votre Projet Shopware",
+      "comprehensiveSolutions": "Solutions Shopware Complètes",
+      "solutionsSubtitle": "Tout ce dont vous avez besoin pour une implémentation Shopware réussie",
+      "features": {
+        "customPlugin": {
+          "title": "Développement de Plugins Personnalisés",
+          "description": "Plugins sur mesure qui étendent les fonctionnalités Shopware pour répondre à vos besoins commerciaux spécifiques."
+        },
+        "themeDevelpment": {
+          "title": "Développement de Thèmes",
+          "description": "Thèmes beaux et réactifs qui offrent une expérience utilisateur exceptionnelle et stimulent les conversions."
+        },
+        "storeMigration": {
+          "title": "Migration de Boutique",
+          "description": "Migration transparente depuis d'autres plateformes vers Shopware avec zéro perte de données et temps d'arrêt minimal."
+        },
+        "appStore": {
+          "title": "Développement App Store",
+          "description": "Développez et publiez des applications sur le Shopware App Store pour atteindre des milliers de marchands."
+        },
+        "performance": {
+          "title": "Optimisation des Performances",
+          "description": "Accélérez votre boutique Shopware pour une meilleure expérience utilisateur et des taux de conversion plus élevés."
+        },
+        "ongoingSupport": {
+          "title": "Support Continu",
+          "description": "Support technique 24/7, maintenance et amélioration continue pour votre boutique Shopware."
+        }
+      },
+      "whyChooseUs": {
+        "title": "Pourquoi nous choisir pour le développement Shopware ?",
+        "certifiedExpertise": {
+          "title": "Expertise Certifiée",
+          "description": "Notre équipe est composée de développeurs certifiés Shopware avec des années d'expérience dans la construction de boutiques e-commerce réussies.",
+          "points": [
+            "Partenaires Officiels Shopware",
+            "100+ Projets Réussis",
+            "Expert en Shopware 6"
+          ]
+        },
+        "provenProcess": {
+          "title": "Processus Éprouvé",
+          "description": "Nous suivons des méthodologies agiles pour livrer votre projet à temps et dans le budget.",
+          "points": [
+            "Analyse des Exigences",
+            "Développement Itératif",
+            "Tests Approfondis"
+          ]
+        }
+      }
+    },
+    "marketing": {
+      "excellence": "Excellence du Marketing Digital",
+      "growBusiness": "Développez Votre Entreprise avec le Marketing Digital",
+      "description": "Stratégies marketing basées sur les données qui génèrent du trafic, génèrent des leads et augmentent les conversions pour une croissance durable.",
+      "getConsultation": "Obtenir une Consultation Marketing",
+      "fullService": "Marketing Digital Complet",
+      "integratedSolutions": "Solutions marketing intégrées pour un impact maximal",
+      "features": {
+        "seo": {
+          "title": "Optimisation SEO",
+          "description": "Améliorez vos classements de recherche et générez du trafic organique avec des stratégies SEO éprouvées."
+        },
+        "ppc": {
+          "title": "Publicité PPC",
+          "description": "Maximisez le ROI avec des campagnes pay-per-click ciblées sur Google, Facebook et plus."
+        },
+        "content": {
+          "title": "Marketing de Contenu",
+          "description": "Engagez votre audience avec du contenu convaincant qui construit la confiance et incite à l'action."
+        },
+        "email": {
+          "title": "Marketing par Email",
+          "description": "Construisez des relations clients durables avec des campagnes email personnalisées."
+        },
+        "social": {
+          "title": "Marketing des Réseaux Sociaux",
+          "description": "Développez votre présence de marque et engagez les clients sur toutes les plateformes sociales."
+        },
+        "analytics": {
+          "title": "Analytics & Reporting",
+          "description": "Insights basés sur les données et reporting transparent pour suivre votre succès marketing."
+        }
+      }
+    },
+    "cloud": {
+      "experts": "Experts en Infrastructure Cloud",
+      "enterprise": "Solutions Cloud d'Entreprise",
+      "description": "Infrastructure cloud évolutive et sécurisée qui grandit avec votre entreprise. Implémentation experte sur AWS, GCP et Azure.",
+      "discussStrategy": "Discuter de la Stratégie Cloud",
+      "completeSolutions": "Solutions Cloud Complètes",
+      "transformationSubtitle": "Tout ce dont vous avez besoin pour une transformation cloud réussie",
+      "features": {
+        "migration": {
+          "title": "Migration Cloud",
+          "description": "Migration transparente de vos applications et données vers le cloud avec zéro temps d'arrêt."
+        },
+        "devops": {
+          "title": "Automatisation DevOps",
+          "description": "Rationalisez votre workflow de développement avec des pipelines CI/CD et l'infrastructure as code."
+        },
+        "kubernetes": {
+          "title": "Orchestration Kubernetes",
+          "description": "Déployez et gérez des applications conteneurisées à grande échelle avec Kubernetes."
+        },
+        "serverless": {
+          "title": "Architecture Serverless",
+          "description": "Construisez des applications évolutives et rentables avec les technologies serverless."
+        },
+        "security": {
+          "title": "Sécurité & Conformité",
+          "description": "Sécurité de niveau entreprise avec conformité RGPD, HIPAA et SOC 2."
+        },
+        "monitoring": {
+          "title": "Surveillance 24/7",
+          "description": "Surveillance et support 24h/24 pour assurer un temps de fonctionnement maximal."
+        }
+      }
+    }
+  },
+  "caseStudies": {
+    "digitalTransformation": {
+      "title": "Transformation Numérique Complète",
+      "client": "Manufacturing Corp",
+      "sector": "Manufacturing"
+    },
+    "ecommerceMigration": {
+      "title": "Succès de Migration de Plateforme E-commerce",
+      "client": "Fashion Retailer Inc.",
+      "sector": "E-commerce"
+    }
+  },
+  "features": {
+    "title": "Tout ce dont vous avez besoin pour",
+    "highlight": "faire évoluer votre entreprise",
+    "subtitle": "Nous combinons expertise technique et réflexion stratégique pour livrer des solutions qui ne fonctionnent pas seulement—elles excellent.",
+    "services": {
+      "shopware": {
+        "title": "Excellence Shopware",
+        "description": "Plugins personnalisés, thèmes et migrations d'entreprise construits par des experts Shopware certifiés."
+      },
+      "marketing": {
+        "title": "Marketing Digital",
+        "description": "SEO basé sur les données, campagnes PPC et automatisation marketing qui délivre un ROI mesurable."
+      },
+      "cloud": {
+        "title": "Infrastructure Cloud",
+        "description": "Solutions AWS, Azure et GCP évolutives avec automatisation DevOps et surveillance 24/7."
+      }
+    },
+    "learnMore": "En savoir plus",
+    "process": {
+      "title": "Notre processus éprouvé",
+      "steps": {
+        "discovery": {
+          "title": "Découverte",
+          "description": "Comprendre les objectifs commerciaux et les exigences techniques"
+        },
+        "strategy": {
+          "title": "Stratégie",
+          "description": "Concevoir une architecture de solution complète"
+        },
+        "execute": {
+          "title": "Exécution",
+          "description": "Construire et implémenter avec précision"
+        },
+        "scale": {
+          "title": "Évolution",
+          "description": "Optimiser et soutenir le succès croissant"
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Fait confiance par des",
+    "highlight": "entreprises en croissance dans le monde entier",
+    "items": [
+      {
+        "quote": "CodeX Terminal a complètement transformé notre boutique Shopware. Leurs plugins personnalisés ont augmenté notre taux de conversion de 40% et leur support continu est exceptionnel.",
+        "author": "Sarah Chen",
+        "role": "Directrice E-commerce",
+        "company": "TechGear Pro",
+        "avatar": "SC"
+      },
+      {
+        "quote": "L'infrastructure cloud qu'ils ont construite a évolué de manière transparente lors de notre pic de trafic du Black Friday. 10x de trafic, zéro temps d'arrêt. Absolument incroyable.",
+        "author": "Marcus Rodriguez",
+        "role": "CTO",
+        "company": "Fashion Forward",
+        "avatar": "MR"
+      },
+      {
+        "quote": "Leur stratégie de marketing digital a livré un ROI de 300% en seulement 6 mois. L'équipe combine expertise technique et véritable compréhension des affaires.",
+        "author": "Emily Johnson",
+        "role": "Directrice Marketing",
+        "company": "Wellness Brands",
+        "avatar": "EJ"
+      }
+    ],
+    "stats": {
+      "trafficIncrease": {
+        "value": "150%",
+        "label": "Augmentation moyenne du trafic"
+      },
+      "conversionBoost": {
+        "value": "40%",
+        "label": "Amélioration du taux de conversion"
+      },
+      "marketingROI": {
+        "value": "300%",
+        "label": "ROI marketing"
+      },
+      "uptime": {
+        "value": "99.9%",
+        "label": "Temps de fonctionnement de l'infrastructure"
+      }
+    },
+    "technologies": {
+      "title": "Propulsé par des technologies leader de l'industrie",
+      "brands": ["Shopware", "AWS", "Google Cloud", "Azure", "Kubernetes", "Docker"]
+    }
+  },
+  "cta": {
+    "title": "Prêt à transformer",
+    "highlight": "votre entreprise ?",
+    "subtitle": "Rejoignez des centaines d'entreprises qui font confiance à CodeX Terminal pour offrir des résultats exceptionnels. Discutons de votre prochain projet.",
+    "primaryButton": "Démarrez votre projet aujourd'hui",
+    "secondaryButton": "Explorez nos services",
+    "contactMethods": {
+      "liveChat": {
+        "title": "Chat en Direct",
+        "description": "Obtenez des réponses instantanées à vos questions"
+      },
+      "email": {
+        "title": "Nous contacter par email",
+        "address": "info@codexterminal.com"
+      },
+      "phone": {
+        "title": "Nous appeler",
+        "number": "+1 (555) 123-4567"
+      }
     }
   }
 }

@@ -9,7 +9,7 @@ interface CaseStudyPageProps {
 
 async function getCaseStudy(locale: string, slug: string) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
     const response = await fetch(
       `${baseUrl}/api/case-studies?locale=${locale}&category=caseStudy&slug=${slug}`,
       { cache: 'no-store' }
@@ -201,14 +201,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 // Related case studies component
 async function RelatedCaseStudies({ locale, currentSlug }: { locale: string; currentSlug: string }) {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002';
     const response = await fetch(
       `${baseUrl}/api/case-studies?locale=${locale}&category=caseStudy&status=published`,
       { cache: 'no-store' }
     );
     
     if (response.ok) {
-      const caseStudies = await response.json();
+      const result = await response.json();
+      const caseStudies = result.data || [];
       const relatedCaseStudies = caseStudies
         .filter((caseStudy: any) => caseStudy.slug !== currentSlug)
         .slice(0, 6);

@@ -27,7 +27,7 @@ interface BlockRendererProps {
 
 export function BlockRenderer({ blocks }: BlockRendererProps) {
   return (
-    <div className="bg-codex-terminal-component min-h-screen relative">
+    <div className="bg-codex-terminal-component min-h-screen relative pt-16 sm:pt-20">
       {/* Global floating gradient orbs background */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Top right orb - subtle gradient */}

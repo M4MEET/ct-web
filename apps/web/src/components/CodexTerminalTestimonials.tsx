@@ -1,33 +1,19 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
-const testimonials = [
-  {
-    quote: "CodeX Terminal transformed our Shopware store completely. Their custom plugins increased our conversion rate by 40% and their ongoing support is exceptional.",
-    author: "Sarah Chen",
-    role: "E-commerce Director",
-    company: "TechGear Pro",
-    avatar: "SC"
-  },
-  {
-    quote: "The cloud infrastructure they built scaled seamlessly during our Black Friday traffic spike. 10x traffic, zero downtime. Absolutely incredible.",
-    author: "Marcus Rodriguez",
-    role: "CTO",
-    company: "Fashion Forward",
-    avatar: "MR"
-  },
-  {
-    quote: "Their digital marketing strategy delivered a 300% ROI in just 6 months. The team combines technical expertise with genuine business understanding.",
-    author: "Emily Johnson",
-    role: "Marketing Director",
-    company: "Wellness Brands",
-    avatar: "EJ"
-  }
-];
+import { useTranslations } from 'next-intl';
 
 export function CodexTerminalTestimonials() {
+  const t = useTranslations('testimonials');
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  const testimonials = t.raw('items') as Array<{
+    quote: string;
+    author: string;
+    role: string;
+    company: string;
+    avatar: string;
+  }>;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,7 +21,7 @@ export function CodexTerminalTestimonials() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section className="py-24 bg-codex-terminal-component relative">
@@ -47,9 +33,9 @@ export function CodexTerminalTestimonials() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Trusted by growing
+            {t('title')}
             <span className="block bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
-              businesses worldwide
+              {t('highlight')}
             </span>
           </h2>
         </div>
@@ -107,37 +93,37 @@ export function CodexTerminalTestimonials() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="bg-white rounded-2xl border border-gray-200/50 p-6 hover:shadow-lg transition-shadow duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mb-2">
-              150%
+              {t('stats.trafficIncrease.value')}
             </div>
             <div className="text-sm text-gray-600 font-medium">
-              Average traffic increase
+              {t('stats.trafficIncrease.label')}
             </div>
           </div>
           
           <div className="bg-white rounded-2xl border border-gray-200/50 p-6 hover:shadow-lg transition-shadow duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mb-2">
-              40%
+              {t('stats.conversionBoost.value')}
             </div>
             <div className="text-sm text-gray-600 font-medium">
-              Conversion rate boost
+              {t('stats.conversionBoost.label')}
             </div>
           </div>
           
           <div className="bg-white rounded-2xl border border-gray-200/50 p-6 hover:shadow-lg transition-shadow duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mb-2">
-              300%
+              {t('stats.marketingROI.value')}
             </div>
             <div className="text-sm text-gray-600 font-medium">
-              Marketing ROI
+              {t('stats.marketingROI.label')}
             </div>
           </div>
           
           <div className="bg-white rounded-2xl border border-gray-200/50 p-6 hover:shadow-lg transition-shadow duration-300">
             <div className="text-3xl font-bold bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent mb-2">
-              99.9%
+              {t('stats.uptime.value')}
             </div>
             <div className="text-sm text-gray-600 font-medium">
-              Infrastructure uptime
+              {t('stats.uptime.label')}
             </div>
           </div>
         </div>
@@ -145,15 +131,12 @@ export function CodexTerminalTestimonials() {
         {/* Technology logos */}
         <div className="mt-20 text-center">
           <p className="text-gray-500 text-sm mb-8 uppercase tracking-wider font-medium">
-            Powered by industry-leading technologies
+            {t('technologies.title')}
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-2xl font-bold text-gray-400">Shopware</div>
-            <div className="text-2xl font-bold text-gray-400">AWS</div>
-            <div className="text-2xl font-bold text-gray-400">Google Cloud</div>
-            <div className="text-2xl font-bold text-gray-400">Azure</div>
-            <div className="text-2xl font-bold text-gray-400">Kubernetes</div>
-            <div className="text-2xl font-bold text-gray-400">Docker</div>
+            {(t.raw('technologies.brands') as string[]).map((brand, index) => (
+              <div key={index} className="text-2xl font-bold text-gray-400">{brand}</div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 // Data fetching functions for the frontend using public read-only endpoints
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3002';
 
 export async function getPageBySlug(slug: string, locale: string = 'en') {
   try {
