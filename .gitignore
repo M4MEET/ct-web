@@ -53,3 +53,9 @@ prisma/migrations/dev/
 # Temporary files
 tmp/
 temp/
+
+# AI-related files
+CLAUDE.md
+GEMINI.md
+*.ai.md
+*_ai.md
