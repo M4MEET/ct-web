@@ -141,9 +141,120 @@ ct-web/
 - **Styling:** Tailwind CSS + shadcn/ui
 - **Validation:** Zod schemas
 - **Authentication:** NextAuth.js
+- **Email:** Resend API with form notifications
 - **Analytics:** PostHog, Google Analytics 4
 - **Monitoring:** Sentry
 - **Hosting:** Vercel
+
+## 📧 Email Notifications
+
+The website includes a complete email notification system for form submissions. See [EMAIL_SETUP.md](./EMAIL_SETUP.md) for detailed setup instructions including:
+
+- Resend API configuration
+- Domain verification steps
+- Admin panel settings
+- Template customization
+- Production deployment guide
+
+## 🔐 Authentication System
+
+The admin panel uses **NextAuth.js v5** for secure authentication. NextAuth.js is completely **FREE** and provides enterprise-grade security.
+
+### **Why NextAuth.js?**
+- ✅ **100% Free** - No cost, no subscription, unlimited users
+- ✅ **Open Source** - MIT License, use commercially
+- ✅ **Self-Hosted** - Your data stays in your database
+- ✅ **No Vendor Lock-in** - Full control over your authentication
+- ✅ **Battle Tested** - Used by thousands of production apps
+
+### **Required Environment Variables**
+
+#### **NEXTAUTH_SECRET** (Required)
+Encrypts JWT tokens, CSRF tokens, and session data.
+
+```bash
+# Generate a secure secret (64+ characters)
+openssl rand -base64 64
+
+# Add to .env.local
+NEXTAUTH_SECRET=your-generated-secret-here
+```
+
+**⚠️ Security Warning**: Never use weak secrets in production!
+
+#### **NEXTAUTH_URL** (Required)
+Tells NextAuth where your admin app is hosted.
+
+```bash
+# Development
+NEXTAUTH_URL=http://localhost:3001
+
+# Production
+NEXTAUTH_URL=https://admin.codexterminal.com
+```
+
+#### **NEXTAUTH_URL_INTERNAL** (Optional)
+Only needed for Docker/container deployments where internal container communication differs from external access.
+
+```bash
+# Docker Development
+NEXTAUTH_URL=http://localhost:3001          # Browser access
+NEXTAUTH_URL_INTERNAL=http://admin:3001     # Container-to-container
+
+# Production with Load Balancer
+NEXTAUTH_URL=https://admin.codexterminal.com    # Public URL
+NEXTAUTH_URL_INTERNAL=http://admin-service:3001 # Internal service
+```
+
+**For local development, you DON'T need `NEXTAUTH_URL_INTERNAL`.**
+
+### **Authentication Features**
+- **Email/Password Login** - Secure credential-based authentication
+- **Role-Based Access Control** - OWNER, ADMIN, EDITOR, AUTHOR roles
+- **Domain Restriction** - Only @codexterminal.com emails allowed
+- **2FA Support** - Optional TOTP authentication
+- **Session Management** - Secure JWT-based sessions
+- **CSRF Protection** - Built-in security against attacks
+
+### **Cost Comparison**
+
+| Service | Monthly Cost | Notes |
+|---------|-------------|-------|
+| **NextAuth.js** | **$0** | ✅ Self-hosted, unlimited users |
+| Auth0 | $23/month | Hosted service, support included |
+| Clerk | $25/month | Modern UI, hosted service |
+| Supabase Auth | $0 → $25/month | Free tier, then paid |
+| Firebase Auth | $0 + usage | Pay per active user |
+
+### **Adding OAuth Providers (Optional)**
+
+NextAuth.js supports 50+ OAuth providers. To enable:
+
+```bash
+# GitHub OAuth (Free)
+OAUTH_GITHUB_ID=your-github-client-id
+OAUTH_GITHUB_SECRET=your-github-client-secret
+
+# Google OAuth (Free)
+OAUTH_GOOGLE_ID=your-google-client-id
+OAUTH_GOOGLE_SECRET=your-google-client-secret
+```
+
+### **Default Admin Account**
+
+The system seeds a default admin account:
+- **Email**: `admin@codexterminal.com`
+- **Role**: OWNER
+- **Access**: Full system administration
+
+### **Production Security Checklist**
+- [ ] Generate strong `NEXTAUTH_SECRET` (64+ characters)
+- [ ] Set correct `NEXTAUTH_URL` for your domain
+- [ ] Enable HTTPS in production
+- [ ] Configure proper CSP headers
+- [ ] Set up rate limiting
+- [ ] Review and update admin user accounts
+- [ ] Enable 2FA for sensitive accounts
 
 ## 📊 Performance Targets
 
