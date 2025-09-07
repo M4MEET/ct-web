@@ -1,0 +1,82 @@
+version: '3.8'
+
+# Development-specific overrides
+# Usage: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  postgres:
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: codex_terminal_dev
+      POSTGRES_USER: codex_dev
+      POSTGRES_PASSWORD: localdev123
+
+  redis:
+    command: redis-server
+    ports:
+      - "6379:6379"
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile.dev
+      args:
+        - NODE_ENV=development
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://codex_dev:localdev123@postgres:5432/codex_terminal_dev
+      - REDIS_URL=redis://redis:6379
+      - NEXTAUTH_SECRET=development_secret_change_in_production_min_32_chars
+      - NEXTAUTH_URL=http://localhost:3000
+    volumes:
+      - ./apps/web:/app/apps/web
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/web/node_modules
+      - /app/packages/ui/node_modules
+      - /app/packages/content/node_modules
+      - /app/packages/database/node_modules
+    command: sh -c "cd apps/web && pnpm dev"
+
+  admin:
+    build:
+      context: .
+      dockerfile: apps/admin/Dockerfile.dev
+      args:
+        - NODE_ENV=development
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://codex_dev:localdev123@postgres:5432/codex_terminal_dev
+      - REDIS_URL=redis://redis:6379
+      - NEXTAUTH_SECRET=development_secret_change_in_production_min_32_chars
+      - NEXTAUTH_URL=http://localhost:3001
+    volumes:
+      - ./apps/admin:/app/apps/admin
+      - ./packages:/app/packages
+      - /app/node_modules
+      - /app/apps/admin/node_modules
+      - /app/packages/ui/node_modules
+      - /app/packages/content/node_modules
+      - /app/packages/database/node_modules
+    command: sh -c "cd apps/admin && pnpm dev"
+
+  # Prisma Studio for database management in development
+  prisma-studio:
+    image: node:20-alpine
+    container_name: codex-prisma-studio
+    working_dir: /app
+    environment:
+      - DATABASE_URL=postgresql://codex_dev:localdev123@postgres:5432/codex_terminal_dev
+    ports:
+      - "5555:5555"
+    volumes:
+      - ./packages/database:/app
+      - /app/node_modules
+    command: sh -c "npm install -g pnpm@9.5.0 && pnpm install && pnpm prisma studio"
+    depends_on:
+      - postgres
+    networks:
+      - codex-network
+    profiles:
+      - dev-tools

@@ -1,2 +1,5 @@
-export * from './schemas/blocks';
-export * from './schemas/entities';
+// Constants
+export * from './constants';
+
+// Schemas
+export * from './schemas';

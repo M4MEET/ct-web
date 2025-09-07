@@ -17,6 +17,7 @@ enum RoleName {
 enum Locale {
   en
   de
+  fr
 }
 
 enum PublishStatus {
@@ -40,16 +41,74 @@ enum BlockType {
   media
 }
 
+enum CaseStudyCategory {
+  caseStudy
+  technology
+}
+
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  image     String?
-  role      RoleName @default(AUTHOR)
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String?
+  name        String?
+  image       String?
+  role        RoleName @default(AUTHOR)
+  isActive    Boolean  @default(true)
+  
+  // Email verification
+  emailVerified   Boolean?  @default(false)
+  verificationToken String?
+  
+  // 2FA fields
+  twoFactorEnabled Boolean @default(false)
+  twoFactorSecret  String?
+  backupCodes      String? // JSON string of backup codes array
+  
+  // Password reset
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   
   pages     Page[]   @relation("PageUpdatedBy")
+  sessions  Session[]
+  accounts  Account[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
 }
 
 model MediaAsset {
@@ -79,6 +138,8 @@ model Page {
   updatedBy   User?         @relation("PageUpdatedBy", fields: [updatedById], references: [id])
 
   blocks      Block[]
+  services    Service[]     // Pages can be referenced by multiple services
+  caseStudies CaseStudy[]   // Pages can be referenced by multiple case studies
 
   @@unique([slug, locale])
 }
@@ -110,27 +171,33 @@ model Service {
   locale      Locale
   name        String
   summary     String?
-  seo         Json?
+  icon        String?       // Optional icon for service
+  order       Int?          // Display order in frontend
+  pageId      String?       // Reference to the content page
+  page        Page?         @relation(fields: [pageId], references: [id])
   status      PublishStatus @default(draft)
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
-
-  blocks      Block[]
 
   @@unique([slug, locale])
 }
 
 model CaseStudy {
-  id          String        @id @default(cuid())
+  id          String           @id @default(cuid())
   slug        String
   locale      Locale
   title       String
   client      String?
   sector      String?
+  category    CaseStudyCategory @default(caseStudy)
+  icon        String?          // Optional icon for technology
+  order       Int?             // Display order in footer
+  pageId      String?          // Reference to the content page
+  page        Page?            @relation(fields: [pageId], references: [id])
   seo         Json?
-  status      PublishStatus @default(draft)
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+  status      PublishStatus    @default(draft)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
 
   blocks      Block[]
 
@@ -196,9 +263,6 @@ model Block {
   postId     String?
   post       BlogPost? @relation(fields: [postId], references: [id])
 
-  serviceId  String?
-  service    Service?  @relation(fields: [serviceId], references: [id])
-
   caseId     String?
   case       CaseStudy? @relation(fields: [caseId], references: [id])
 
@@ -207,7 +271,6 @@ model Block {
 
   @@index([pageId])
   @@index([postId])
-  @@index([serviceId])
   @@index([caseId])
 }
 

@@ -17,18 +17,22 @@
     "db:studio": "pnpm --filter @codex/database studio"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
     "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.3",
-    "turbo": "^2.0.9"
+    "turbo": "^2.0.9",
+    "typescript": "^5.5.3"
   },
   "packageManager": "pnpm@9.5.0",
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2"
   }
 }

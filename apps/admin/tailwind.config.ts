@@ -12,30 +12,34 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        // Claude AI Orange Color Palette
+        // CodeX Terminal Logo Color Palette based on #f08a5d
         primary: {
-          50: '#fef7ed',
-          100: '#fdedd3',
-          200: '#fbd7a5',
-          300: '#f8bb6d',
-          400: '#f59432',
-          500: '#f2760a',
-          600: '#e35d05',
-          700: '#bc4508',
-          800: '#96370e',
-          900: '#792e0f',
-          950: '#411505',
+          50: '#fef6f1',
+          100: '#fdeae0', 
+          200: '#fbd4c1',
+          300: '#f7b094',
+          400: '#f08a5d',
+          500: '#ed6c39',
+          600: '#de5528',
+          700: '#b8421e',
+          800: '#93371d',
+          900: '#762f1c',
+          950: '#40160d',
         },
-        claude: {
-          orange: '#f2760a',
-          'orange-light': '#f59432',
-          'orange-dark': '#e35d05',
+        codex: {
+          orange: '#f08a5d',
+          'orange-light': '#f7b094',
+          'orange-dark': '#de5528',
         },
-        // Anthropic's exact background colors
-        anthropic: {
+        // CodeX Terminal's exact background colors
+        'codex-terminal': {
           body: '#faf9f5',
           component: '#f0eee6',
         },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'SF Mono', 'Monaco', 'Inconsolata', 'monospace'],
       },
     },
   },

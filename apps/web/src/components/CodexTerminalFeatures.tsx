@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 const features = [
   {
@@ -8,80 +9,79 @@ const features = [
     description: 'Custom plugins, themes, and enterprise migrations built by certified Shopware experts.',
     icon: '🛍️',
     href: '/services/shopware',
-    gradient: 'from-blue-500/20 to-primary-500/20',
-    borderGradient: 'from-blue-500/30 to-primary-500/30'
+    command: './deploy-shopware.sh',
+    status: 'ACTIVE',
+    glowColor: 'blue-400'
   },
   {
     title: 'Digital Marketing',
     description: 'Data-driven SEO, PPC campaigns, and marketing automation that delivers measurable ROI.',
     icon: '📈',
     href: '/services/marketing',
-    gradient: 'from-green-500/20 to-primary-500/20',
-    borderGradient: 'from-green-500/30 to-primary-500/30'
+    command: './optimize-campaigns.sh',
+    status: 'RUNNING',
+    glowColor: 'green-400'
   },
   {
     title: 'Cloud Infrastructure',
     description: 'Scalable AWS, Azure, and GCP solutions with DevOps automation and 24/7 monitoring.',
     icon: '☁️',
     href: '/services/cloud',
-    gradient: 'from-purple-500/20 to-primary-500/20',
-    borderGradient: 'from-purple-500/30 to-primary-500/30'
+    command: './scale-infrastructure.sh',
+    status: 'READY',
+    glowColor: 'purple-400'
   }
 ];
 
 export function CodexTerminalFeatures() {
+  const locale = useLocale();
+  
   return (
-    <section className="py-24 bg-codex-terminal-body relative">
+    <section className="py-12 sm:py-16 lg:py-24 bg-codex-terminal-body relative">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-primary-200/70 to-primary-100/50 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-tr from-primary-300/60 to-primary-200/40 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-100/70 via-primary-200/50 to-primary-300/60"></div>
+        <div className="absolute -top-12 sm:-top-24 -right-12 sm:-right-24 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-br from-primary-300/70 to-primary-200/50 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-12 sm:-bottom-24 -left-12 sm:-left-24 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-tr from-primary-200/60 to-primary-100/40 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-gradient-radial from-primary-200/50 to-primary-100/30 rounded-full blur-2xl"></div>
       </div>
-      <div className="relative mx-auto max-w-6xl px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+      <div className="relative mx-auto max-w-6xl px-3 sm:px-6">
+        {/* Clean header */}
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
             Everything you need to
             <span className="block bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
               scale your business
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             We combine technical expertise with strategic thinking to deliver solutions that don't just work—they excel.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-16">
           {features.map((feature, index) => (
             <Link
               key={feature.title}
-              href={feature.href}
-              className="group relative"
+              href={`/${locale}${feature.href}`}
+              className="group relative h-full"
             >
-              <div className={`
-                relative p-8 rounded-3xl border border-gray-200/50 
-                bg-gradient-to-br ${feature.gradient} 
-                hover:shadow-xl hover:shadow-primary-500/5 
-                transition-all duration-300 hover:-translate-y-1
-                before:absolute before:inset-0 before:rounded-3xl 
-                before:bg-gradient-to-br before:${feature.borderGradient} 
-                before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300
-                before:-z-10 before:blur-sm
-              `}>
-                <div className="relative z-10">
-                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-200">
-                    {feature.icon}
+              {/* Clean card with fixed height */}
+              <div className="relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-primary-300 hover:-translate-y-1 p-4 sm:p-6 lg:p-8 h-full flex flex-col">
+                <div className="flex flex-col h-full space-y-4 sm:space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center">
+                    <span className="mb-2 sm:mb-0 sm:mr-4 text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-200 text-center sm:text-left">{feature.icon}</span>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors text-center sm:text-left">
+                      {feature.title}
+                    </h3>
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed mb-6 group-hover:text-gray-700 transition-colors">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow text-center sm:text-left">
                     {feature.description}
                   </p>
                   
-                  <div className="flex items-center text-primary-600 font-semibold group-hover:text-primary-700 transition-colors">
-                    Learn more
+                  <div className="flex items-center justify-center sm:justify-start text-primary-600 font-medium group-hover:text-primary-700 transition-colors mt-auto pt-3 sm:pt-4">
+                    <span className="text-sm sm:text-base">Learn more</span>
                     <svg
                       className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200"
                       fill="none"
@@ -98,50 +98,73 @@ export function CodexTerminalFeatures() {
           ))}
         </div>
 
-        {/* Process section */}
-        <div className="bg-codex-terminal-component rounded-3xl p-12 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8">
+        {/* Clean Process section */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl border border-gray-200 shadow-xl p-6 sm:p-8 lg:p-12">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
             Our proven process
           </h3>
           
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 shadow-lg">
-                1
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            <div className="relative group h-full">
+              <div className="bg-transparent p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl mx-auto mb-4 sm:mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  1
+                </div>
+                <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Discovery</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Understanding business goals and technical requirements
+                  </p>
+                </div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Discovery</h4>
-              <p className="text-sm text-gray-600">We understand your business goals and technical requirements</p>
               
-              {/* Connector line */}
-              <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-primary-100 transform -translate-y-1/2"></div>
+              <div className="hidden lg:block absolute top-6 sm:top-8 -right-3 sm:-right-4 text-primary-500 text-xl sm:text-2xl">→</div>
             </div>
             
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 shadow-lg">
-                2
+            <div className="relative group h-full">
+              <div className="bg-transparent p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl mx-auto mb-4 sm:mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  2
+                </div>
+                <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Strategy</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Designing comprehensive solution architecture
+                  </p>
+                </div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Strategy</h4>
-              <p className="text-sm text-gray-600">We design a comprehensive solution architecture</p>
               
-              <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-primary-100 transform -translate-y-1/2"></div>
+              <div className="hidden lg:block absolute top-6 sm:top-8 -right-3 sm:-right-4 text-primary-500 text-xl sm:text-2xl">→</div>
             </div>
             
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 shadow-lg">
-                3
+            <div className="relative group h-full">
+              <div className="bg-transparent p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl mx-auto mb-4 sm:mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  3
+                </div>
+                <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Execute</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Building and implementing with precision
+                  </p>
+                </div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Execute</h4>
-              <p className="text-sm text-gray-600">We build and implement your solution with precision</p>
               
-              <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary-300 to-primary-100 transform -translate-y-1/2"></div>
+              <div className="hidden lg:block absolute top-6 sm:top-8 -right-3 sm:-right-4 text-primary-500 text-xl sm:text-2xl">→</div>
             </div>
             
-            <div>
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 shadow-lg">
-                4
+            <div className="group h-full">
+              <div className="bg-transparent p-4 sm:p-6 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold text-lg sm:text-xl mx-auto mb-4 sm:mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  4
+                </div>
+                <div className="text-center space-y-2 sm:space-y-3 flex-grow flex flex-col justify-center">
+                  <h4 className="font-bold text-gray-800 text-base sm:text-lg">Scale</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    Optimizing and supporting growing success
+                  </p>
+                </div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Scale</h4>
-              <p className="text-sm text-gray-600">We optimize and support your growing success</p>
             </div>
           </div>
         </div>

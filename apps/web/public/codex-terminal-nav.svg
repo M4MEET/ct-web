@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="36" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .ascii-text {
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        font-size: 5px;
+        fill: #f2760a;
+      }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="280" height="36" fill="none"/>
+  
+  <!-- CodeX Terminal ASCII Art for Navigation -->
+  <text x="2" y="8" class="ascii-text">
+    ██████╗ ████████╗    ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗     
+  </text>
+  <text x="2" y="16" class="ascii-text">
+    ██╔════╝╚══██╔══╝    ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║     
+  </text>
+  <text x="2" y="24" class="ascii-text">
+    ██║        ██║          ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║     
+  </text>
+  <text x="2" y="32" class="ascii-text">
+    ╚██████╗   ██║          ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗
+  </text>
+</svg>

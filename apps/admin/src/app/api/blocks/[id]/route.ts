@@ -1,89 +1,143 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-import { AnyBlock } from '@codex/content';
+import { prisma } from '@codex/database';
+import { z } from 'zod';
+import { 
+  withErrorHandler, 
+  requireAuth, 
+  validateRequestBody, 
+  validatePathParam,
+  apiResponse,
+  apiError,
+  Permission,
+  sanitizeBlockData
+} from '@/lib/api-utils';
 
-const prisma = new PrismaClient();
+// Validation schemas
+const BlockIdSchema = z.string().min(1, 'Block ID is required');
 
-export async function GET(
+const UpdateBlockSchema = z.object({
+  type: z.enum([
+    'hero',
+    'featureGrid', 
+    'testimonial',
+    'logoCloud',
+    'metrics',
+    'richText',
+    'faq',
+    'priceTable',
+    'comparison',
+    'contactForm',
+    'media'
+  ]),
+  data: z.any(), // Block-specific data
+  order: z.number().int().min(0),
+});
+
+export const GET = withErrorHandler(async (
   request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const block = await prisma.block.findUnique({
-      where: {
-        id: params.id,
-      },
-    });
-
-    if (!block) {
-      return NextResponse.json(
-        { error: 'Block not found' },
-        { status: 404 }
-      );
-    }
-
-    return NextResponse.json(block);
-  } catch (error) {
-    console.error('Error fetching block:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch block' },
-      { status: 500 }
-    );
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Check authentication and permissions
+  const authResult = await requireAuth(request, Permission.CONTENT_READ);
+  if (!authResult.success) {
+    return authResult.error;
   }
-}
 
-export async function PUT(
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, BlockIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
+  const block = await prisma.block.findUnique({
+    where: { id: idResult.data },
+  });
+
+  if (!block) {
+    return apiError('Block not found', 404);
+  }
+
+  return NextResponse.json({ data: block });
+});
+
+export const PUT = withErrorHandler(async (
   request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  try {
-    const body = await request.json();
-    
-    // Validate the block data
-    // Skip validation for now
-    const blockData = body.data;
-
-    const block = await prisma.block.update({
-      where: {
-        id: params.id,
-      },
-      data: {
-        type: blockData.type,
-        data: blockData,
-        order: body.order,
-      },
-    });
-
-    return NextResponse.json(block);
-  } catch (error) {
-    console.error('Error updating block:', error);
-    return NextResponse.json(
-      { error: 'Failed to update block' },
-      { status: 500 }
-    );
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Check authentication and permissions
+  const authResult = await requireAuth(request, Permission.CONTENT_EDIT);
+  if (!authResult.success) {
+    return authResult.error;
   }
-}
 
-export async function DELETE(
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, BlockIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
+  // Validate request body
+  const bodyResult = await validateRequestBody(request, UpdateBlockSchema);
+  if (!bodyResult.success) {
+    return bodyResult.error;
+  }
+
+  const { data: blockData } = bodyResult;
+
+  // Check if block exists
+  const existingBlock = await prisma.block.findUnique({
+    where: { id: idResult.data },
+  });
+
+  if (!existingBlock) {
+    return apiError('Block not found', 404);
+  }
+
+  // Update the block
+  const updatedBlock = await prisma.block.update({
+    where: { id: idResult.data },
+    data: {
+      type: blockData.type,
+      data: sanitizeBlockData(blockData.data),
+      order: blockData.order,
+    },
+  });
+
+  return NextResponse.json({ data: updatedBlock });
+});
+
+export const DELETE = withErrorHandler(async (
   request: NextRequest,
-  { params }: { params: { id: string } }
-) {
-  try {
-    await prisma.block.delete({
-      where: {
-        id: params.id,
-      },
-    });
-
-    return NextResponse.json(
-      { message: 'Block deleted successfully' },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Error deleting block:', error);
-    return NextResponse.json(
-      { error: 'Failed to delete block' },
-      { status: 500 }
-    );
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Check authentication and permissions
+  const authResult = await requireAuth(request, Permission.CONTENT_DELETE);
+  if (!authResult.success) {
+    return authResult.error;
   }
-}
+
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, BlockIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
+  // Check if block exists
+  const existingBlock = await prisma.block.findUnique({
+    where: { id: idResult.data },
+  });
+
+  if (!existingBlock) {
+    return apiError('Block not found', 404);
+  }
+
+  // Delete the block
+  await prisma.block.delete({
+    where: { id: idResult.data },
+  });
+
+  return NextResponse.json({ data: { message: 'Block deleted successfully' } });
+});

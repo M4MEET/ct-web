@@ -1,0 +1,83 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact",
+    "technologies": "Technologies",
+    "caseStudies": "Études de Cas",
+    "shopware": "Développement Shopware",
+    "marketing": "Marketing Digital",
+    "cloud": "Infrastructure Cloud",
+    "allServices": "Tous les Services"
+  },
+  "common": {
+    "contactUs": "Nous contacter",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus",
+    "readMore": "Lire plus",
+    "viewAll": "Voir tout",
+    "email": "Email",
+    "phone": "Téléphone",
+    "address": "Adresse"
+  },
+  "hero": {
+    "title": "Services de Développement Logiciel Professionnels",
+    "subtitle": "Développement expert, marketing digital et solutions cloud pour la croissance de votre entreprise",
+    "cta": "Démarrer votre projet"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions complètes pour les entreprises modernes",
+    "shopware": {
+      "title": "Développement Shopware",
+      "description": "Développement de plugins personnalisés, personnalisation de thèmes et migrations de boutiques",
+      "features": [
+        "Développement de Plugins",
+        "Personnalisation de Thèmes",
+        "Migrations de Boutiques",
+        "Optimisation des Performances"
+      ]
+    },
+    "marketing": {
+      "title": "Marketing Digital",
+      "description": "SEO, PPC, marketing par email et optimisation de conversion",
+      "features": [
+        "Optimisation pour les Moteurs de Recherche",
+        "Publicité Pay-Per-Click",
+        "Marketing par Email",
+        "Analytics & Reporting"
+      ]
+    },
+    "cloud": {
+      "title": "Infrastructure Cloud",
+      "description": "Solutions AWS, Azure et GCP avec automatisation DevOps",
+      "features": [
+        "Architecture Cloud",
+        "Automatisation DevOps",
+        "Implémentation de Sécurité",
+        "Surveillance 24/7"
+      ]
+    }
+  },
+  "footer": {
+    "company": "CodeX Terminal",
+    "description": "Services de développement logiciel professionnel",
+    "services": "Services",
+    "support": "Support",
+    "legal": "Légal",
+    "followUs": "Suivez-nous",
+    "allRightsReserved": "Tous droits réservés"
+  },
+  "contact": {
+    "title": "Prendre Contact",
+    "subtitle": "Prêt à démarrer votre projet ? Discutons de vos exigences",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message"
+    }
+  }
+}

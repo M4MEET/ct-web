@@ -153,3 +153,103 @@ export async function getBlogPost(id: string) {
     },
   });
 }
+
+// Data access functions for services
+export async function getServices(locale: string = 'en') {
+  return await prisma.service.findMany({
+    where: {
+      locale: locale as any,
+    },
+    include: {
+      page: {
+        include: {
+          blocks: {
+            orderBy: {
+              order: 'asc',
+            },
+          },
+        },
+      },
+    },
+    orderBy: [
+      { order: 'asc' },
+      { updatedAt: 'desc' },
+    ],
+  });
+}
+
+export async function getService(id: string) {
+  return await prisma.service.findUnique({
+    where: { id },
+    include: {
+      page: {
+        include: {
+          blocks: {
+            orderBy: {
+              order: 'asc',
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+export async function createService(data: any) {
+  return await prisma.service.create({
+    data: {
+      slug: data.slug,
+      locale: data.locale,
+      name: data.name,
+      summary: data.summary || undefined,
+      icon: data.icon || undefined,
+      order: data.order || undefined,
+      pageId: data.pageId || undefined,
+      status: data.status,
+    },
+    include: {
+      page: {
+        include: {
+          blocks: {
+            orderBy: {
+              order: 'asc',
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+export async function updateService(id: string, data: any) {
+  return await prisma.service.update({
+    where: { id },
+    data: {
+      slug: data.slug,
+      locale: data.locale,
+      name: data.name,
+      summary: data.summary || undefined,
+      icon: data.icon || undefined,
+      order: data.order || undefined,
+      pageId: data.pageId || undefined,
+      status: data.status,
+    },
+    include: {
+      page: {
+        include: {
+          blocks: {
+            orderBy: {
+              order: 'asc',
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+export async function deleteService(id: string) {
+  return await prisma.service.delete({
+    where: { id },
+  });
+}

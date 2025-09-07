@@ -1,24 +1,166 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-import { Page as PageSchema } from '@codex/content';
+import { prisma } from '@codex/database';
+import { z } from 'zod';
+import { 
+  withErrorHandler, 
+  requireAuth, 
+  validateRequestBody, 
+  validatePathParam,
+  apiResponse,
+  apiError,
+  Permission,
+  sanitizeBlockData
+} from '@/lib/api-utils';
 
-const prisma = new PrismaClient();
+// Validation schemas
+const PageIdSchema = z.string().min(1, 'Page ID is required');
 
-export async function GET(
+const UpdatePageSchema = z.object({
+  slug: z.string().min(1, 'Slug is required'),
+  locale: z.enum(['en', 'de', 'fr']),
+  title: z.string().min(1, 'Title is required'),
+  seo: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+    noindex: z.boolean().optional(),
+    canonical: z.string().url().optional(),
+    ogImage: z.string().url().optional(),
+  }).optional(),
+  status: z.enum(['draft', 'inReview', 'scheduled', 'published']),
+  scheduledAt: z.string().datetime().optional(),
+  blocks: z.array(z.any()).optional().default([]),
+});
+
+export const GET = withErrorHandler(async (
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
-  try {
-    const { id } = await params;
-    const page = await prisma.page.findUnique({
-      where: {
-        id,
+) => {
+  // Require authentication with content read permission
+  const authResult = await requireAuth(request, Permission.CONTENT_READ);
+  if (!authResult.success) {
+    return authResult.error;
+  }
+
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, PageIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
+  const page = await prisma.page.findUnique({
+    where: { id: idResult.data },
+    include: {
+      blocks: {
+        orderBy: { order: 'asc' },
       },
+      updatedBy: {
+        select: {
+          name: true,
+          email: true,
+        },
+      },
+    },
+  });
+
+  if (!page) {
+    return apiError('Page not found', 404);
+  }
+
+  return NextResponse.json({ data: page });
+});
+
+export const PUT = withErrorHandler(async (
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Require authentication with content edit permission
+  const authResult = await requireAuth(request, Permission.CONTENT_EDIT);
+  if (!authResult.success) {
+    return authResult.error;
+  }
+  
+  const { session } = authResult;
+
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, PageIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
+  // Validate request body
+  const bodyResult = await validateRequestBody(request, UpdatePageSchema);
+  if (!bodyResult.success) {
+    return bodyResult.error;
+  }
+
+  const { data: pageData } = bodyResult;
+
+  // Check if page exists
+  const existingPage = await prisma.page.findUnique({
+    where: { id: idResult.data },
+  });
+
+  if (!existingPage) {
+    return apiError('Page not found', 404);
+  }
+
+  // Check for slug uniqueness (exclude current page)
+  if (pageData.slug !== existingPage.slug || pageData.locale !== existingPage.locale) {
+    const conflictingPage = await prisma.page.findUnique({
+      where: {
+        slug_locale: {
+          slug: pageData.slug,
+          locale: pageData.locale,
+        },
+      },
+    });
+
+    if (conflictingPage && conflictingPage.id !== idResult.data) {
+      return apiError('A page with this slug already exists for this locale', 409);
+    }
+  }
+
+  // Update page and blocks in a transaction
+  const updatedPage = await prisma.$transaction(async (tx) => {
+    // Delete existing blocks
+    await tx.block.deleteMany({
+      where: { pageId: idResult.data },
+    });
+
+    // Update the page
+    const page = await tx.page.update({
+      where: { id: idResult.data },
+      data: {
+        slug: pageData.slug,
+        locale: pageData.locale,
+        title: pageData.title,
+        seo: pageData.seo || null,
+        status: pageData.status,
+        scheduledAt: pageData.scheduledAt ? new Date(pageData.scheduledAt) : null,
+        updatedById: session.user.id,
+      },
+    });
+
+    // Create new blocks if provided
+    if (pageData.blocks && pageData.blocks.length > 0) {
+      await tx.block.createMany({
+        data: pageData.blocks.map((block, index) => ({
+          pageId: page.id,
+          type: block.type,
+          data: sanitizeBlockData(block),
+          order: index,
+        })),
+      });
+    }
+
+    // Return updated page with blocks
+    return await tx.page.findUnique({
+      where: { id: page.id },
       include: {
         blocks: {
-          orderBy: {
-            order: 'asc',
-          },
+          orderBy: { order: 'asc' },
         },
         updatedBy: {
           select: {
@@ -28,106 +170,65 @@ export async function GET(
         },
       },
     });
+  });
 
-    if (!page) {
-      return NextResponse.json(
-        { error: 'Page not found' },
-        { status: 404 }
-      );
-    }
+  return NextResponse.json({ data: updatedPage });
+});
 
-    return NextResponse.json(page);
-  } catch (error) {
-    console.error('Error fetching page:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch page' },
-      { status: 500 }
-    );
-  }
-}
-
-export async function PUT(
+export const DELETE = withErrorHandler(async (
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-) {
-  try {
-    const { id } = await params;
-    const body = await request.json();
-    
-    // Skip validation for now
-    const pageData = {
-      ...body,
-      blocks: body.blocks || [],
-    };
+) => {
+  // Require authentication with content delete permission
+  const authResult = await requireAuth(request, Permission.CONTENT_DELETE);
+  if (!authResult.success) {
+    return authResult.error;
+  }
 
-    // First, delete existing blocks
-    await prisma.block.deleteMany({
-      where: {
-        pageId: id,
-      },
-    });
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, PageIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
 
-    // Update the page with new data and blocks
-    const page = await prisma.page.update({
-      where: {
-        id,
-      },
-      data: {
-        slug: pageData.slug,
-        locale: pageData.locale,
-        title: pageData.title,
-        seo: pageData.seo || null,
-        status: pageData.status,
-        scheduledAt: pageData.scheduledAt ? new Date(pageData.scheduledAt) : null,
-        blocks: {
-          create: pageData.blocks.map((block, index) => ({
-            type: block.type,
-            data: block,
-            order: index,
-          })),
-        },
-      },
-      include: {
-        blocks: {
-          orderBy: {
-            order: 'asc',
-          },
-        },
-      },
-    });
+  // Check if page exists
+  const existingPage = await prisma.page.findUnique({
+    where: { id: idResult.data },
+  });
 
-    return NextResponse.json(page);
-  } catch (error) {
-    console.error('Error updating page:', error);
-    return NextResponse.json(
-      { error: 'Failed to update page' },
-      { status: 500 }
+  if (!existingPage) {
+    return apiError('Page not found', 404);
+  }
+
+  // Check if the page is linked to any services or case studies
+  const [linkedServices, linkedCaseStudies] = await Promise.all([
+    prisma.service.findMany({
+      where: { pageId: idResult.data },
+      select: { id: true, name: true },
+    }),
+    prisma.caseStudy.findMany({
+      where: { pageId: idResult.data },
+      select: { id: true, title: true },
+    }),
+  ]);
+
+  const linkedEntities = [
+    ...linkedServices.map(s => ({ type: 'service', name: s.name })),
+    ...linkedCaseStudies.map(c => ({ type: 'case study', name: c.title })),
+  ];
+
+  if (linkedEntities.length > 0) {
+    return apiError(
+      `Cannot delete page. It is linked to ${linkedEntities.length} item(s): ${linkedEntities.map(e => `${e.name} (${e.type})`).join(', ')}. Please unlink the page first.`,
+      409
     );
   }
-}
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  try {
-    const { id } = await params;
-    // Delete the page (blocks will be deleted due to cascade)
-    await prisma.page.delete({
-      where: {
-        id,
-      },
-    });
+  // Delete the page (blocks will be deleted due to cascade)
+  await prisma.page.delete({
+    where: { id: idResult.data },
+  });
 
-    return NextResponse.json(
-      { message: 'Page deleted successfully' },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Error deleting page:', error);
-    return NextResponse.json(
-      { error: 'Failed to delete page' },
-      { status: 500 }
-    );
-  }
-}
+  return NextResponse.json({ data: { message: 'Page deleted successfully' } });
+});

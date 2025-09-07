@@ -117,11 +117,11 @@ function BlockTypeItem({ blockType }: BlockTypeItemProps) {
       style={style}
       {...listeners}
       {...attributes}
-      className="bg-white border border-gray-200 rounded-lg p-4 cursor-grab hover:shadow-md transition-shadow"
+      className="group bg-white border border-gray-200 rounded-lg p-3 cursor-grab hover:shadow-lg hover:border-primary-300 hover:bg-primary-50/30 transition-all duration-200 transform hover:scale-105"
     >
-      <div className="text-2xl mb-2">{blockType.icon}</div>
-      <h3 className="font-medium text-sm mb-1">{blockType.label}</h3>
-      <p className="text-xs text-gray-600">{blockType.description}</p>
+      <div className="text-xl mb-2 group-hover:scale-110 transition-transform duration-200">{blockType.icon}</div>
+      <h3 className="font-semibold text-sm mb-1 text-gray-900 group-hover:text-primary-700">{blockType.label}</h3>
+      <p className="text-xs text-gray-600 group-hover:text-gray-700 leading-relaxed">{blockType.description}</p>
     </div>
   );
 }
@@ -134,22 +134,61 @@ export function BlockPalette() {
     forms: blockTypes.filter(b => b.category === 'forms'),
   };
 
+  const categoryIcons = {
+    content: '📝',
+    layout: '📐',
+    media: '🖼️',
+    forms: '📋',
+  };
+
+  const categoryColors = {
+    content: 'bg-blue-50 text-blue-700 border-blue-200',
+    layout: 'bg-purple-50 text-purple-700 border-purple-200',
+    media: 'bg-green-50 text-green-700 border-green-200',
+    forms: 'bg-orange-50 text-orange-700 border-orange-200',
+  };
+
   return (
-    <div className="w-64 bg-gray-50 border-r border-gray-200 p-4">
-      <h2 className="font-semibold mb-4">Block Palette</h2>
-      
-      {Object.entries(categories).map(([category, blocks]) => (
-        <div key={category} className="mb-6">
-          <h3 className="text-sm font-medium text-gray-700 uppercase tracking-wide mb-3">
-            {category}
-          </h3>
-          <div className="grid grid-cols-2 gap-2">
-            {blocks.map((blockType) => (
-              <BlockTypeItem key={blockType.type} blockType={blockType} />
-            ))}
+    <div className="w-72 bg-white border-r border-gray-200 shadow-sm">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200 p-6">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </div>
+          <div>
+            <h2 className="text-lg font-bold text-gray-900">Block Palette</h2>
+            <p className="text-sm text-gray-600">Drag to add blocks</p>
           </div>
         </div>
-      ))}
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="overflow-y-auto h-full pb-6">
+        <div className="p-6 space-y-8">
+          {Object.entries(categories).map(([category, blocks]) => (
+            <div key={category} className="">
+              {/* Category Header */}
+              <div className="flex items-center gap-2 mb-4">
+                <div className={`px-3 py-1.5 rounded-lg text-sm font-semibold border ${categoryColors[category as keyof typeof categoryColors]}`}>
+                  <span className="mr-1">{categoryIcons[category as keyof typeof categoryIcons]}</span>
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </div>
+                <div className="flex-1 h-px bg-gray-200"></div>
+              </div>
+              
+              {/* Blocks Grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {blocks.map((blockType) => (
+                  <BlockTypeItem key={blockType.type} blockType={blockType} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

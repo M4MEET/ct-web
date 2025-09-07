@@ -1,27 +1,27 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { Navigation } from '@/components/Navigation';
-import { CodexTerminalFooter } from '@/components/CodexTerminalFooter';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'], 
+  display: 'swap',
+  variable: '--font-inter' 
+});
 
-export const metadata: Metadata = {
-  title: 'CodeX Terminal',
-  description: 'Professional web development services',
-};
+const jetbrainsMono = JetBrains_Mono({ 
+  subsets: ['latin'], 
+  display: 'swap',
+  variable: '--font-jetbrains-mono' 
+});
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="bg-codex-terminal-body">
-      <body className={`${inter.className} min-h-screen bg-codex-terminal-body`}>
-        <Navigation />
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} bg-codex-terminal-body`}>
+      <body className="font-sans min-h-screen bg-codex-terminal-body antialiased">
         {children}
-        <CodexTerminalFooter />
       </body>
     </html>
   );

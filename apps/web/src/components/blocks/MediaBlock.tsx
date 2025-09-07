@@ -6,8 +6,8 @@ interface MediaBlockProps {
 
 export function MediaBlock({ data }: MediaBlockProps) {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 bg-transparent relative">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {data.heading && (
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -22,7 +22,7 @@ export function MediaBlock({ data }: MediaBlockProps) {
         )}
         
         <div className="rounded-lg overflow-hidden shadow-lg">
-          {data.type === 'image' && (
+          {data.kind === 'image' && (
             <img
               src={data.src}
               alt={data.alt || ''}
@@ -31,7 +31,7 @@ export function MediaBlock({ data }: MediaBlockProps) {
             />
           )}
           
-          {data.type === 'video' && (
+          {data.kind === 'video' && (
             <video
               src={data.src}
               poster={data.poster}
@@ -44,21 +44,6 @@ export function MediaBlock({ data }: MediaBlockProps) {
             >
               Your browser does not support the video tag.
             </video>
-          )}
-          
-          {data.type === 'embed' && (
-            <div 
-              className="w-full"
-              style={{ aspectRatio: data.aspectRatio || '16/9' }}
-            >
-              <iframe
-                src={data.src}
-                title={data.alt || 'Embedded content'}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
           )}
         </div>
         

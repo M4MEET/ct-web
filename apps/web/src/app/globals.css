@@ -16,16 +16,100 @@
 
 html {
   height: 100%;
-  background: #faf9f5; /* CodeX Terminal's body background */
+  background: #f0eee6; /* CodeX Terminal's component background */
 }
 
 body {
   min-height: 100vh;
   color: var(--foreground);
-  background: #faf9f5; /* CodeX Terminal's body background */
+  background: #f0eee6; /* CodeX Terminal's component background */
 }
 
 /* Ensure all sections have proper backgrounds */
 main {
   min-height: 100vh;
+  background: #f0eee6 !important; /* CodeX Terminal's component background */
+}
+
+/* Force CodeX Terminal background on all sections - but allow transparency for orbs */
+section {
+  background-color: transparent !important;
+}
+
+/* Override specific background classes that conflict */
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Allow CodeX Terminal specific backgrounds */
+.bg-codex-terminal-body {
+  background-color: #f0eee6 !important;
+}
+
+.bg-codex-terminal-component {
+  background-color: #f0eee6 !important;
+}
+
+/* Fix nested RichText content */
+.prose section {
+  background: transparent !important;
+  padding: 1rem 0 !important;
+  margin: 0 !important;
+}
+
+.prose .bg-gradient-to-r:not(a):not(button) {
+  background: transparent !important;
+}
+
+.prose .max-w-6xl {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Prevent nested sections from overriding layout */
+section section {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Custom floating animations for gradient orbs */
+@keyframes float-gentle {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  33% { transform: translate(10px, -15px) scale(1.05); opacity: 0.6; }
+  66% { transform: translate(-8px, 12px) scale(0.95); opacity: 0.5; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate(-12px, -20px) scale(1.1); opacity: 0.7; }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.35; }
+  25% { transform: translate(15px, -10px) scale(1.02); opacity: 0.6; }
+  75% { transform: translate(-10px, 15px) scale(0.98); opacity: 0.45; }
+}
+
+@keyframes float-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  50% { transform: translate(8px, -25px) scale(1.08); opacity: 0.65; }
+}
+
+/* Apply floating animations */
+.animate-float-gentle {
+  animation: float-gentle 8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 10s ease-in-out infinite;
+}
+
+.animate-float-drift {
+  animation: float-drift 9s ease-in-out infinite;
 }

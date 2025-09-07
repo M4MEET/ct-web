@@ -1,17 +1,60 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-import { BlogPost as BlogPostSchema } from '@codex/content';
+import { prisma } from '@codex/database';
+import { z } from 'zod';
+import { 
+  withErrorHandler, 
+  requireAuth, 
+  validateRequestBody, 
+  validatePathParam,
+  apiResponse,
+  apiError,
+  Permission,
+  sanitizeBlockData
+} from '@/lib/api-utils';
 
-const prisma = new PrismaClient();
+// Validation schemas
+const BlogPostIdSchema = z.string().min(1, 'Blog post ID is required');
 
-export async function GET(
+const UpdateBlogPostSchema = z.object({
+  slug: z.string().min(1, 'Slug is required'),
+  locale: z.enum(['en', 'de', 'fr']),
+  title: z.string().min(1, 'Title is required'),
+  excerpt: z.string().optional(),
+  seo: z.object({
+    title: z.string().optional(),
+    description: z.string().optional(),
+    noindex: z.boolean().optional(),
+    canonical: z.string().url().optional(),
+    ogImage: z.string().url().optional(),
+  }).optional(),
+  status: z.enum(['draft', 'inReview', 'scheduled', 'published']),
+  scheduledAt: z.string().datetime().optional(),
+  authorId: z.string().min(1).optional(),
+  coverId: z.string().min(1).optional(),
+  blocks: z.array(z.any()).optional().default([]),
+});
+
+export const GET = withErrorHandler(async (
   request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Require authentication with CONTENT_READ permission
+  const authResult = await requireAuth(request, Permission.CONTENT_READ);
+  if (!authResult.success) {
+    return authResult.error;
+  }
+
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, BlogPostIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
   try {
     const blogPost = await prisma.blogPost.findUnique({
       where: {
-        id: params.id,
+        id: idResult.data,
       },
       include: {
         blocks: {
@@ -19,113 +62,166 @@ export async function GET(
             order: 'asc',
           },
         },
-        author: true,
+        author: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+          },
+        },
         cover: true,
       },
     });
 
     if (!blogPost) {
-      return NextResponse.json(
-        { error: 'Blog post not found' },
-        { status: 404 }
-      );
+      return apiError('Blog post not found', 404);
     }
 
-    return NextResponse.json(blogPost);
+    return NextResponse.json({ data: blogPost });
   } catch (error) {
-    console.error('Error fetching blog post:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch blog post' },
-      { status: 500 }
-    );
+    console.error('Database error fetching blog post:', error);
+    return apiError('Failed to fetch blog post', 500);
   }
-}
+});
 
-export async function PUT(
+export const PUT = withErrorHandler(async (
   request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Require authentication with CONTENT_EDIT permission
+  const authResult = await requireAuth(request, Permission.CONTENT_EDIT);
+  if (!authResult.success) {
+    return authResult.error;
+  }
+
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, BlogPostIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
+  // Validate request body
+  const bodyResult = await validateRequestBody(request, UpdateBlogPostSchema);
+  if (!bodyResult.success) {
+    return bodyResult.error;
+  }
+
+  const { data: blogPostData } = bodyResult;
+
   try {
-    const body = await request.json();
-    
-    // Validate the blog post data
-    const blogPostData = BlogPostSchema.parse({
-      ...body,
-      blocks: body.blocks || [],
+    // Check if blog post exists
+    const existingBlogPost = await prisma.blogPost.findUnique({
+      where: { id: idResult.data },
     });
 
-    // First, delete existing blocks
-    await prisma.block.deleteMany({
-      where: {
-        postId: params.id,
-      },
-    });
+    if (!existingBlogPost) {
+      return apiError('Blog post not found', 404);
+    }
 
-    // Update the blog post with new data and blocks
-    const blogPost = await prisma.blogPost.update({
+    // Check if slug is unique for the locale (excluding current post)
+    const slugConflict = await prisma.blogPost.findFirst({
       where: {
-        id: params.id,
-      },
-      data: {
         slug: blogPostData.slug,
         locale: blogPostData.locale,
-        title: blogPostData.title,
-        excerpt: blogPostData.excerpt || null,
-        seo: blogPostData.seo || null,
-        status: blogPostData.status,
-        scheduledAt: blogPostData.scheduledAt ? new Date(blogPostData.scheduledAt) : null,
-        authorId: blogPostData.authorId || null,
-        coverId: blogPostData.coverId || null,
-        blocks: {
-          create: blogPostData.blocks.map((block, index) => ({
-            type: block.type,
-            data: block,
-            order: index,
-          })),
-        },
+        id: { not: idResult.data },
       },
-      include: {
-        blocks: {
-          orderBy: {
-            order: 'asc',
+    });
+
+    if (slugConflict) {
+      return apiError(`A blog post with slug "${blogPostData.slug}" already exists for ${blogPostData.locale}`, 409);
+    }
+
+    // Update the blog post with blocks in a transaction
+    const updatedBlogPost = await prisma.$transaction(async (tx) => {
+      // Delete existing blocks
+      await tx.block.deleteMany({
+        where: { postId: idResult.data },
+      });
+
+      // Update blog post with new blocks
+      return await tx.blogPost.update({
+        where: { id: idResult.data },
+        data: {
+          slug: blogPostData.slug,
+          locale: blogPostData.locale,
+          title: blogPostData.title,
+          excerpt: blogPostData.excerpt || null,
+          seo: blogPostData.seo || null,
+          status: blogPostData.status,
+          scheduledAt: blogPostData.scheduledAt ? new Date(blogPostData.scheduledAt) : null,
+          authorId: blogPostData.authorId || null,
+          coverId: blogPostData.coverId || null,
+          blocks: {
+            create: blogPostData.blocks.map((block, index) => ({
+              type: block.type,
+              data: sanitizeBlockData(block),
+              order: index,
+            })),
           },
         },
-        author: true,
-        cover: true,
-      },
+        include: {
+          blocks: {
+            orderBy: {
+              order: 'asc',
+            },
+          },
+          author: {
+            select: {
+              id: true,
+              name: true,
+              email: true,
+            },
+          },
+          cover: true,
+        },
+      });
     });
 
-    return NextResponse.json(blogPost);
+    return NextResponse.json({ data: updatedBlogPost });
   } catch (error) {
-    console.error('Error updating blog post:', error);
-    return NextResponse.json(
-      { error: 'Failed to update blog post' },
-      { status: 500 }
-    );
+    console.error('Database error updating blog post:', error);
+    return apiError('Failed to update blog post', 500);
   }
-}
+});
 
-export async function DELETE(
+export const DELETE = withErrorHandler(async (
   request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+  { params }: { params: Promise<{ id: string }> }
+) => {
+  // Require authentication with CONTENT_DELETE permission
+  const authResult = await requireAuth(request, Permission.CONTENT_DELETE);
+  if (!authResult.success) {
+    return authResult.error;
+  }
+
+  // Validate path parameters
+  const { id } = await params;
+  const idResult = validatePathParam('id', id, BlogPostIdSchema);
+  if (!idResult.success) {
+    return idResult.error;
+  }
+
   try {
+    // Check if blog post exists
+    const existingBlogPost = await prisma.blogPost.findUnique({
+      where: { id: idResult.data },
+    });
+
+    if (!existingBlogPost) {
+      return apiError('Blog post not found', 404);
+    }
+
     // Delete the blog post (blocks will be deleted due to cascade)
     await prisma.blogPost.delete({
-      where: {
-        id: params.id,
-      },
+      where: { id: idResult.data },
     });
 
-    return NextResponse.json(
-      { message: 'Blog post deleted successfully' },
-      { status: 200 }
-    );
+    return NextResponse.json({ 
+      data: { message: 'Blog post deleted successfully' }
+    });
   } catch (error) {
-    console.error('Error deleting blog post:', error);
-    return NextResponse.json(
-      { error: 'Failed to delete blog post' },
-      { status: 500 }
-    );
+    console.error('Database error deleting blog post:', error);
+    return apiError('Failed to delete blog post', 500);
   }
-}
+});

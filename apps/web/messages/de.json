@@ -1,0 +1,83 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "technologies": "Technologien",
+    "caseStudies": "Fallstudien",
+    "shopware": "Shopware Entwicklung",
+    "marketing": "Digital Marketing",
+    "cloud": "Cloud-Infrastruktur",
+    "allServices": "Alle Dienstleistungen"
+  },
+  "common": {
+    "contactUs": "Kontaktieren Sie uns",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr erfahren",
+    "readMore": "Weiterlesen",
+    "viewAll": "Alle anzeigen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "address": "Adresse"
+  },
+  "hero": {
+    "title": "Professionelle Softwareentwicklungsdienstleistungen",
+    "subtitle": "Expertenentwicklung, digitales Marketing und Cloud-Lösungen für Ihr Unternehmenswachstum",
+    "cta": "Projekt starten"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Lösungen für moderne Unternehmen",
+    "shopware": {
+      "title": "Shopware Entwicklung",
+      "description": "Individuelle Plugin-Entwicklung, Theme-Anpassung und Shop-Migrationen",
+      "features": [
+        "Plugin-Entwicklung",
+        "Theme-Anpassung",
+        "Shop-Migrationen",
+        "Performance-Optimierung"
+      ]
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "description": "SEO, PPC, E-Mail-Marketing und Conversion-Optimierung",
+      "features": [
+        "Suchmaschinenoptimierung",
+        "Pay-Per-Click-Werbung",
+        "E-Mail-Marketing",
+        "Analytics & Reporting"
+      ]
+    },
+    "cloud": {
+      "title": "Cloud-Infrastruktur",
+      "description": "AWS, Azure und GCP-Lösungen mit DevOps-Automatisierung",
+      "features": [
+        "Cloud-Architektur",
+        "DevOps-Automatisierung",
+        "Sicherheitsimplementierung",
+        "24/7-Überwachung"
+      ]
+    }
+  },
+  "footer": {
+    "company": "CodeX Terminal",
+    "description": "Professionelle Softwareentwicklungsdienstleistungen",
+    "services": "Dienstleistungen",
+    "support": "Support",
+    "legal": "Rechtliches",
+    "followUs": "Folgen Sie uns",
+    "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Bereit, Ihr Projekt zu starten? Lassen Sie uns Ihre Anforderungen besprechen",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "send": "Nachricht senden"
+    }
+  }
+}

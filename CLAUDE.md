@@ -10,8 +10,8 @@ This is a **clickable blueprint** you can iterate on. It includes: epics → tic
 
 ## 0) Ground Rules
 
-* **Tech baseline:** Next.js (App Router) + TS, Tailwind + shadcn/ui, Postgres (Neon), Prisma, Redis (Upstash), R2/S3, Vercel hosting, Sentry, PostHog, GA4, GrowthBook, Resend.
-* **Content strategy:** block-based, localized (EN/DE), SEO-first, draft preview, versioning, scheduled publish.
+* **Tech baseline:** Next.js (App Router) + TS, Tailwind + shadcn/ui, SQLite (dev default) + Postgres (prod), Prisma, Redis (Upstash), R2/S3, Vercel hosting, Sentry, PostHog, GA4, GrowthBook, Resend.
+* **Content strategy:** block-based, localized (EN/DE/FR), SEO-first, draft preview, versioning, scheduled publish.
 * **Security & compliance:** RBAC, 2FA (optional), strict CSP, consent-aware analytics, GDPR DSAR routes.
 
 ---
@@ -26,9 +26,10 @@ This is a **clickable blueprint** you can iterate on. It includes: epics → tic
 
 * **A-1:** Create monorepo skeleton (`pnpm` workspaces)
 
-  * [ ] `apps/web`, `apps/admin`, `apps/worker`
-  * [ ] `packages/ui`, `packages/content`, `packages/config`, `packages/utils`
+  * [x] `apps/web`, `apps/admin`
+  * [x] `packages/ui`, `packages/content`, `packages/database`
   * [ ] Shared TS config, import aliases, path mapping
+  * [ ] Later: `apps/worker`, `packages/config`, `packages/utils` (optional)
   * **Acceptance:** `pnpm -r build` succeeds; type sharing across apps.
 * **A-2:** CI pipeline (GitHub Actions)
 
@@ -46,6 +47,13 @@ This is a **clickable blueprint** you can iterate on. It includes: epics → tic
   * [ ] DSN wired (frontend/server)
   * [ ] Basic tracing (OpenTelemetry)
   * **Acceptance:** Errors visible with release tags.
+
+* **A-5:** Next config consistency (apps/web)
+
+  * [ ] Consolidate to a single `next.config.ts`
+  * [ ] Wrap with `next-intl` plugin; keep `images.remotePatterns`
+  * [ ] Preserve Turbopack SVG loader configuration
+  * **Acceptance:** Only one Next config file; dev/build succeed.
 
 ---
 
@@ -82,12 +90,16 @@ This is a **clickable blueprint** you can iterate on. It includes: epics → tic
 * **C-1:** Admin shell & auth
 
   * [ ] NextAuth (email magic + GitHub/Google), session in DB
+  * [ ] Use `@auth/prisma-adapter` for persistent sessions
   * [ ] RBAC: Owner, Admin, Editor, Author
+  * [ ] Enable middleware protection for `/admin/*`
+  * [ ] Gate API routes with RBAC checks (edit/publish/media perms)
   * [ ] Optional TOTP 2FA
   * **Acceptance:** Role gates visible in UI; protected routes.
 * **C-2:** Media library
 
-  * [ ] Uploads → R2 (signed URLs), image transformations via Cloudinary proxy (optional)
+  * [ ] Dev: local disk writes (`public/uploads`), Prod: R2/S3 via signed URLs
+  * [ ] Validate magic bytes and size; rate limit; require `media.upload` perm
   * [ ] Alt text required; focal point metadata
   * **Acceptance:** Insert media into blocks; usage references.
 * **C-3:** Block editor
@@ -116,8 +128,8 @@ This is a **clickable blueprint** you can iterate on. It includes: epics → tic
 
 * **D-1:** App shell & layout
 
-  * [ ] `/[locale]/` routing (next-intl), `hreflang`, canonical
-  * [ ] Head tags, OG image template (Vercel OG)
+  * [x] `/[locale]/` routing (next-intl), `hreflang`, canonical
+  * [x] Head tags, OG image template (Vercel OG)
   * **Acceptance:** Base pages pass Lighthouse SEO checks.
 * **D-2:** Block renderer
 
@@ -286,6 +298,8 @@ TYPESENSE_API_KEY=
 
 ## 4) Zod Schemas (blocks, content types)
 
+Note: In the repo, `packages/content/src/schemas/entities.ts` currently defines `Locales` as `['en','de']`. Either add `'fr'` there or drop FR from the web app to stay consistent.
+
 ```ts
 // packages/content/schemas/blocks.ts
 import { z } from "zod";
@@ -405,7 +419,7 @@ export const SEO = z.object({
   ogImage: z.string().url().optional(),
 });
 
-export const Locales = z.enum(["en", "de"]);
+export const Locales = z.enum(["en", "de", "fr"]);
 
 export const Page = z.object({
   id: z.string().uuid(),
@@ -424,6 +438,8 @@ export const Page = z.object({
 
 ## 5) Prisma Schema v0.1
 
+Note: The repo’s Prisma datasource is `sqlite` for local development. Switch `provider` to `postgresql` and update `DATABASE_URL` when deploying to Postgres.
+
 ```prisma
 // prisma/schema.prisma
 
@@ -438,7 +454,7 @@ datasource db {
 
 enum RoleName { OWNER ADMIN EDITOR AUTHOR }
 
-enum Locale { en de }
+enum Locale { en de fr }
 
 enum PublishStatus { draft inReview scheduled published }
 
@@ -635,13 +651,13 @@ model Version {
 
 ---
 
-## 6) GraphQL Schema (public read, admin read/write excerpts)
+## 6) GraphQL Schema [Optional/Future — not used in repo]
 
 ```graphql
 # schema.graphql (excerpt)
 scalar JSON
 
-enum Locale { en de }
+enum Locale { en de fr }
 
 enum BlockType {
   hero
@@ -790,9 +806,9 @@ export function BlockRenderer({ blocks }: { blocks: AnyBlock[] }) {
 # repo
 pnpm i
 
-# db
-pnpm prisma migrate dev
-pnpm prisma db seed
+# db (database package)
+pnpm --filter @codex/database db:migrate
+pnpm --filter @codex/database db:seed
 
 # apps
 pnpm --filter @codex/web dev
@@ -801,7 +817,93 @@ pnpm --filter @codex/admin dev
 
 ---
 
-## 14) Next Steps (recommended order)
+## 14) Internationalization Implementation (PARTIAL)
+
+**Status:** ⚠️ PARTIAL - Web app supports EN/DE/FR; content schemas allow EN/DE. Align locales.
+
+**Implementation Details:**
+
+* **next-intl** integration for Next.js 15
+* Dynamic routing with `/[locale]/` structure
+* Server-side translations via `getTranslations()`
+* Language switcher component with current language display
+* Middleware for automatic locale detection and routing
+* Translation files for EN/DE/FR with navigation and common text
+
+**Files Modified:**
+* `apps/web/next.config.js` - Added next-intl plugin
+* `apps/web/src/i18n.ts` - Core i18n configuration
+* (TODO) `apps/web/src/middleware.ts` - Locale routing middleware
+* `apps/web/src/app/layout.tsx` - Root layout cleanup
+* `apps/web/src/app/[locale]/layout.tsx` - Localized layout with proper HTML lang
+* `apps/web/src/app/[locale]/page.tsx` - Homepage with locale params
+* `apps/web/src/components/LanguageSwitcher.tsx` - Language dropdown with current selection
+* `apps/web/src/components/Navigation.tsx` - Localized navigation
+* `apps/web/messages/en.json` - English translations
+* `apps/web/messages/de.json` - German translations
+* `apps/web/messages/fr.json` - French translations (ensure `packages/content` allows `fr` or remove)
+
+**Key Features:**
+* URL-based locale detection to prevent hydration mismatches
+* Automatic language switching with proper current language display
+* SEO-friendly with proper `hreflang` and canonical URLs
+* Server-side rendering compatible
+* Fixed header spacing (pt-20) to account for fixed navigation
+
+---
+
+## 15) Admin Interface Implementation (COMPLETED)
+
+**Status:** ✅ COMPLETED - Full admin interface with authentication, user management, and proper branding
+
+**Implementation Details:**
+
+* **NextAuth v5** with JWT strategy and custom credentials provider  
+* **Complete Users Management** with role assignment (OWNER, ADMIN, EDITOR, AUTHOR)
+* **Authentication-first flow** with proper login redirects and session handling
+* **Professional branding** with CodeX Terminal logo and real user information display
+* **Responsive admin layout** with navigation sidebar and main content area
+
+**Core Features Implemented:**
+* ✅ **Admin Navigation**: Reordered menu items (Dashboard → Pages → Services → Case Studies → Blog Posts → Media → Forms → Users → Settings)
+* ✅ **User Management Page**: Complete CRUD operations for users with role assignment, statistics dashboard, and professional modal design
+* ✅ **Authentication System**: Login-first flow, session management, sign out functionality
+* ✅ **Admin Header**: CodeX Terminal color logo, real user info display (name, email, role), removed placeholder text
+* ✅ **Signin Page**: Branded signin with CodeX Terminal background, floating gradient orbs, glass-morphism design
+
+**Files Modified:**
+* `apps/admin/src/components/layout/AdminNav.tsx` - Navigation with logo and user info
+* `apps/admin/src/components/layout/AdminLayout.tsx` - Authentication wrapper and layout
+* `apps/admin/src/app/admin/users/page.tsx` - Complete Users management interface
+* `apps/admin/src/app/api/users/route.ts` - Users CRUD API endpoints
+* `apps/admin/src/app/api/users/[id]/route.ts` - Individual user operations
+* `apps/admin/src/app/auth/signin/page.tsx` - Branded signin page with CodeX Terminal styling
+* `apps/admin/src/middleware.ts` - Authentication middleware with static asset exclusion
+* `apps/admin/public/codex-logo-color.svg` - CodeX Terminal color logo
+
+**Key Features:**
+* **Role-based Access Control**: Support for OWNER, ADMIN, EDITOR, AUTHOR roles with proper permissions
+* **Real User Data**: Displays actual logged-in user information instead of demo data
+* **Professional Design**: Glass-morphism effects, gradient backgrounds matching frontend branding
+* **Responsive UI**: Mobile-friendly design with proper breakpoints
+* **Security**: Proper authentication middleware, email domain restrictions (@codexterminal.com)
+
+**User Management Features:**
+* User statistics dashboard with counts for total, active, verified, and 2FA users
+* Complete users table with avatar, role indicators, status badges, and edit actions  
+* Create/Edit user modal with email validation, role assignment, and active/inactive toggles
+* Soft delete functionality (deactivates users instead of permanent deletion)
+* Professional modal design with gradient headers and enhanced UX
+
+**Authentication Flow:**
+* Automatic redirect to signin for unauthenticated users
+* Proper callback URL handling for post-login redirection
+* Session-based user information display throughout admin interface
+* Working sign out functionality with redirect to login
+
+---
+
+## 16) Next Steps (recommended order)
 
 1. Implement **EPIC A** (A-1 → A-4)
 2. Apply **Prisma v0.1** and seed (B-1, B-2)

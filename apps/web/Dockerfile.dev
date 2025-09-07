@@ -1,0 +1,33 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install pnpm
+RUN npm install -g pnpm@9.5.0
+RUN apk add --no-cache libc6-compat
+
+# Copy package files
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY packages/ui/package.json ./packages/ui/
+COPY packages/content/package.json ./packages/content/
+COPY packages/database/package.json ./packages/database/
+COPY apps/web/package.json ./apps/web/
+
+# Install dependencies
+RUN pnpm install
+
+# Copy source code
+COPY . .
+
+# Generate Prisma client
+RUN cd packages/database && pnpm prisma generate
+
+# Expose port
+EXPOSE 3000
+
+# Set environment
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Start development server
+CMD ["sh", "-c", "cd apps/web && pnpm dev"]

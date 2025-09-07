@@ -20,37 +20,50 @@ This project is organized as a monorepo using pnpm workspaces:
 
 - Node.js 20+
 - pnpm 9+
-- PostgreSQL 16+
+- Docker & Docker Compose (recommended)
+- PostgreSQL 16+ (if not using Docker)
 - Redis (optional for caching)
 
-### Setup
+### Option 1: Docker Setup (Recommended)
 
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/your-org/codex-terminal.git
 cd codex-terminal
+
+# Initialize with Docker (automated setup)
+make init
+
+# Or manually:
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+docker compose exec admin sh -c "cd packages/database && pnpm prisma migrate deploy"
+docker compose exec admin sh -c "cd packages/database && pnpm prisma db seed"
+
+# Access applications
+# Web: http://localhost:3000
+# Admin: http://localhost:3001
+# Prisma Studio: http://localhost:5555 (run: make studio)
 ```
 
-2. Install dependencies:
+### Option 2: Local Development
+
 ```bash
+# Clone the repository
+git clone https://github.com/your-org/codex-terminal.git
+cd codex-terminal
+
+# Install dependencies
 pnpm install
-```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env
-# Edit .env with your configuration
-```
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your configuration
 
-4. Set up the database:
-```bash
-pnpm --filter @codex/database db:migrate
-pnpm --filter @codex/database db:seed
-```
+# Set up the database
+pnpm db:migrate
+pnpm db:seed
 
-5. Start development servers:
-```bash
-# Start all apps
+# Start development servers
 pnpm dev
 
 # Or start individually
@@ -92,6 +105,17 @@ ct-web/
 - `pnpm db:migrate` - Run database migrations
 - `pnpm db:seed` - Seed the database
 - `pnpm db:studio` - Open Prisma Studio
+
+### Docker Commands (via Makefile)
+- `make init` - First-time project setup with Docker
+- `make dev` - Start development environment
+- `make prod` - Start production environment
+- `make db-migrate` - Run database migrations in Docker
+- `make db-backup` - Backup database
+- `make studio` - Open Prisma Studio GUI
+- `make logs` - View container logs
+- `make health` - Check service health
+- `make clean` - Remove all containers and volumes
 
 ## 🎯 Key Features
 
@@ -135,6 +159,35 @@ ct-web/
 - Input validation with Zod
 - GDPR-compliant consent management
 - Regular dependency updates
+
+## 🐳 Docker Support
+
+This project includes complete Docker containerization for both development and production:
+
+- **PostgreSQL 15** database with automatic migrations
+- **Redis 7** for caching and sessions
+- **Multi-stage builds** for optimized production images
+- **Docker Compose** orchestration with health checks
+- **Development hot-reload** with volume mounts
+
+See [DOCKER-SETUP.md](./DOCKER-SETUP.md) for detailed Docker documentation.
+
+## 🚀 Production Deployment
+
+The project is production-ready with multiple deployment options:
+
+- **Docker on VPS** (Hetzner Cloud recommended: €5-15/month)
+- **Vercel** for serverless deployment
+- **Railway/Render** for managed container hosting
+
+See [PRODUCTION-DEPLOYMENT-GUIDE.md](./PRODUCTION-DEPLOYMENT-GUIDE.md) for complete deployment instructions.
+
+## 📚 Documentation
+
+- [CLAUDE.md](./CLAUDE.md) - AI assistant instructions and project context
+- [DOCKER-SETUP.md](./DOCKER-SETUP.md) - Complete Docker documentation
+- [PRODUCTION-DEPLOYMENT-GUIDE.md](./PRODUCTION-DEPLOYMENT-GUIDE.md) - Production deployment guide
+- [Makefile](./Makefile) - Available make commands
 
 ## 📝 License
 

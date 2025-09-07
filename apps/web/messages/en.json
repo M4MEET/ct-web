@@ -1,0 +1,83 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact Us",
+    "technologies": "Technologies",
+    "caseStudies": "Case Studies",
+    "shopware": "Shopware Development",
+    "marketing": "Digital Marketing",
+    "cloud": "Cloud Infrastructure",
+    "allServices": "All Services"
+  },
+  "common": {
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
+  },
+  "hero": {
+    "title": "Professional Software Development Services",
+    "subtitle": "Expert development, digital marketing, and cloud solutions for your business growth",
+    "cta": "Start Your Project"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for modern businesses",
+    "shopware": {
+      "title": "Shopware Development",
+      "description": "Custom plugin development, theme customization, and store migrations",
+      "features": [
+        "Plugin Development",
+        "Theme Customization",
+        "Store Migrations",
+        "Performance Optimization"
+      ]
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "description": "SEO, PPC, email marketing, and conversion optimization",
+      "features": [
+        "Search Engine Optimization",
+        "Pay-Per-Click Advertising",
+        "Email Marketing",
+        "Analytics & Reporting"
+      ]
+    },
+    "cloud": {
+      "title": "Cloud Infrastructure",
+      "description": "AWS, Azure, and GCP solutions with DevOps automation",
+      "features": [
+        "Cloud Architecture",
+        "DevOps Automation",
+        "Security Implementation",
+        "24/7 Monitoring"
+      ]
+    }
+  },
+  "footer": {
+    "company": "CodeX Terminal",
+    "description": "Professional software development services",
+    "services": "Services",
+    "support": "Support",
+    "legal": "Legal",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to start your project? Let's discuss your requirements",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  }
+}

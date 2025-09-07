@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 export function CodexTerminalCTA() {
+  const locale = useLocale();
+  
   return (
     <section className="relative py-24 bg-codex-terminal-body">
       {/* Background pattern */}
@@ -27,7 +30,7 @@ export function CodexTerminalCTA() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Link
-            href="/contact"
+            href={`/${locale}/contact`}
             className="group inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-primary-500 to-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-[1.02]"
           >
             Start your project today
@@ -43,7 +46,7 @@ export function CodexTerminalCTA() {
           </Link>
           
           <Link
-            href="/services"
+            href={`/${locale}/services`}
             className="inline-flex items-center justify-center rounded-2xl border-2 border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 hover:shadow-md"
           >
             Explore our services
@@ -53,7 +56,7 @@ export function CodexTerminalCTA() {
         {/* Contact methods */}
         <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-gray-200">
           <Link
-            href="/contact"
+            href={`/${locale}/contact`}
             className="group flex flex-col items-center p-6 rounded-2xl hover:bg-white hover:shadow-md transition-all duration-300"
           >
             <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl flex items-center justify-center text-white mb-4 group-hover:shadow-lg transition-shadow">
@@ -82,7 +85,7 @@ export function CodexTerminalCTA() {
               Email Us
             </h4>
             <p className="text-sm text-gray-600 text-center">
-              hello@codexterminal.com
+              info@codexterminal.com
             </p>
           </Link>
           

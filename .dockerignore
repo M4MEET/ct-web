@@ -1,0 +1,91 @@
+# Git
+.git
+.gitignore
+
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+.next
+**/.next
+dist
+**/dist
+build
+**/build
+out
+**/out
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*.swn
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage
+.nyc_output
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+packages/database/prisma/*.db
+packages/database/prisma/*.db-journal
+
+# Docker
+docker-compose*.yml
+Dockerfile*
+.dockerignore
+
+# Documentation
+*.md
+!README.md
+docs
+
+# Temporary files
+tmp
+temp
+.tmp
+
+# Backups
+backups
+*.backup
+*.bak
+
+# OS Files
+Thumbs.db
+
+# Next.js specific
+.next/cache
+.vercel
+
+# Turbo
+.turbo
+
+# TypeScript
+*.tsbuildinfo
+
+# PM2
+ecosystem.config.js
+
+# GitHub
+.github
+
+# Scripts that shouldn't be in container
+scripts/*.sh
+Makefile
