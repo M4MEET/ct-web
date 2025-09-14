@@ -1,0 +1,134 @@
+{
+  "slug": "conseil-technique",
+  "locale": "fr",
+  "name": "Conseil Technique",
+  "summary": "Conseil technologique stratégique pour des décisions éclairées. Architecture système, sélection technologique, transformation digitale et développement de stratégie IT.",
+  "icon": "💡",
+  "order": 6,
+  "status": "published",
+  "seo": {
+    "title": "Services de Conseil Technique | CodeX Terminal",
+    "description": "Conseil technologique expert pour conception d'architecture, transformation digitale et décisions IT stratégiques. Guidance niveau CTO pour entreprises en croissance.",
+    "keywords": ["conseil technique", "stratégie technologique", "architecture système", "transformation digitale", "conseil CTO", "stratégie IT", "sélection technologique"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Conseil Technique Stratégique",
+      "subheadline": "Prenez des décisions technologiques éclairées avec guidance experte et planification stratégique",
+      "description": "De la conception d'architecture système aux feuilles de route de transformation digitale, nous fournissons une expertise niveau CTO pour aider les entreprises à faire des investissements technologiques intelligents et construire des solutions évolutives.",
+      "cta": {
+        "text": "Planifier une Consultation",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Conception Architecture Système",
+        "description": "Concevez des architectures système évolutives et maintenables qui supportent votre croissance d'entreprise et exigences techniques.",
+        "icon": "🏗️"
+      },
+      {
+        "title": "Sélection Stack Technologique",
+        "description": "Choisissez les bonnes technologies, frameworks et outils basés sur vos besoins spécifiques, budget et objectifs à long terme.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Stratégie Transformation Digitale",
+        "description": "Développez des feuilles de route complètes de transformation digitale qui modernisent vos processus d'affaires et infrastructure technologique.",
+        "icon": "🚀"
+      },
+      {
+        "title": "Revue Code & Évaluation Qualité",
+        "description": "Évaluez les bases de code existantes, identifiez la dette technique et fournissez des recommandations actionnables d'amélioration.",
+        "icon": "🔍"
+      },
+      {
+        "title": "Optimisation Performance",
+        "description": "Identifiez les goulots d'étranglement, optimisez la performance système et implémentez des améliorations d'évolutivité pour une meilleure expérience utilisateur.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Audit Sécurité & Conformité",
+        "description": "Évaluez la posture sécurité, identifiez les vulnérabilités et assurez la conformité aux standards industriels et régulations.",
+        "icon": "🔒"
+      }
+    ],
+    "services": [
+      {
+        "name": "Évaluation Technologique",
+        "description": "Évaluation complète de votre stack technologique actuel, infrastructure et processus de développement avec recommandations d'amélioration."
+      },
+      {
+        "name": "Planification Architecture",
+        "description": "Conception architecture microservices, stratégies API, design base de données et infrastructure cloud pour applications évolutives."
+      },
+      {
+        "name": "Optimisation Équipe & Processus",
+        "description": "Améliorez les workflows de développement, implémentez les meilleures pratiques et optimisez la productivité équipe avec pratiques DevOps modernes."
+      },
+      {
+        "name": "Sélection & Intégration Fournisseurs",
+        "description": "Évaluez et sélectionnez services tiers, APIs et outils qui s'alignent avec vos exigences techniques et commerciales."
+      },
+      {
+        "name": "Conformité & Gestion Risques",
+        "description": "Assurez la conformité RGPD, HIPAA, SOC2 et implémentez les meilleures pratiques sécurité pour protéger votre entreprise et clients."
+      },
+      {
+        "name": "Services CTO Startup",
+        "description": "Services CTO fractionnels pour startups incluant leadership technique, construction d'équipe et stratégie développement produit."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Analyse État Actuel",
+        "description": "Évaluez les systèmes existants, processus et capacités d'équipe pour comprendre votre paysage technologique actuel."
+      },
+      {
+        "step": 2,
+        "title": "Collecte Exigences",
+        "description": "Définissez objectifs commerciaux, exigences techniques, contraintes et critères de succès pour l'engagement de conseil."
+      },
+      {
+        "step": 3,
+        "title": "Planification Stratégique",
+        "description": "Développez des recommandations complètes, feuilles de route et stratégies d'implémentation adaptées à vos besoins spécifiques."
+      },
+      {
+        "step": 4,
+        "title": "Support Implémentation",
+        "description": "Fournissez support pratique pendant les phases d'implémentation avec guidance, revues de code et surveillance des progrès."
+      },
+      {
+        "step": 5,
+        "title": "Transfert Connaissances",
+        "description": "Assurez que votre équipe comprend les nouveaux systèmes et processus à travers documentation, formation et support continu."
+      }
+    ],
+    "expertise": [
+      "Architecture Cloud (AWS, GCP, Azure)",
+      "Microservices & Design API",
+      "Design & Optimisation Base de Données",
+      "DevOps & Pipelines CI/CD",
+      "Sécurité & Conformité",
+      "Optimisation Performance",
+      "Leadership & Gestion Équipe",
+      "Méthodologies Agile & Scrum",
+      "JavaScript/TypeScript Moderne",
+      "Écosystèmes Python & Node.js",
+      "React, Vue.js, Angular",
+      "Stratégie Développement Mobile"
+    ],
+    "benefits": [
+      "Risque et dette technique réduits",
+      "Performance et évolutivité système améliorées",
+      "Meilleures décisions d'investissement technologique",
+      "Posture sécurité et conformité renforcée",
+      "Processus et workflows développement optimisés",
+      "Feuille de route et vision technologique stratégiques",
+      "Solutions et recommandations rentables",
+      "Accès expertise niveau senior sans embauche temps plein"
+    ]
+  }
+}

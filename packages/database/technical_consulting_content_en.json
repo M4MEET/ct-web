@@ -1,0 +1,134 @@
+{
+  "slug": "technical-consulting",
+  "locale": "en",
+  "name": "Technical Consulting",
+  "summary": "Strategic technology consulting for informed decisions. System architecture, technology selection, digital transformation, and IT strategy development.",
+  "icon": "💡",
+  "order": 6,
+  "status": "published",
+  "seo": {
+    "title": "Technical Consulting Services | CodeX Terminal",
+    "description": "Expert technology consulting for architecture design, digital transformation, and strategic IT decisions. CTO-level guidance for growing businesses.",
+    "keywords": ["technical consulting", "technology strategy", "system architecture", "digital transformation", "CTO consulting", "IT strategy", "technology selection"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Strategic Technical Consulting",
+      "subheadline": "Make informed technology decisions with expert guidance and strategic planning",
+      "description": "From system architecture design to digital transformation roadmaps, we provide CTO-level expertise to help businesses make smart technology investments and build scalable solutions.",
+      "cta": {
+        "text": "Schedule a Consultation",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "System Architecture Design",
+        "description": "Design scalable, maintainable system architectures that support your business growth and technical requirements.",
+        "icon": "🏗️"
+      },
+      {
+        "title": "Technology Stack Selection",
+        "description": "Choose the right technologies, frameworks, and tools based on your specific needs, budget, and long-term goals.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Digital Transformation Strategy",
+        "description": "Develop comprehensive digital transformation roadmaps that modernize your business processes and technology infrastructure.",
+        "icon": "🚀"
+      },
+      {
+        "title": "Code Review & Quality Assessment",
+        "description": "Evaluate existing codebases, identify technical debt, and provide actionable recommendations for improvement.",
+        "icon": "🔍"
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Identify bottlenecks, optimize system performance, and implement scalability improvements for better user experience.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Security & Compliance Audit",
+        "description": "Assess security posture, identify vulnerabilities, and ensure compliance with industry standards and regulations.",
+        "icon": "🔒"
+      }
+    ],
+    "services": [
+      {
+        "name": "Technology Assessment",
+        "description": "Comprehensive evaluation of your current technology stack, infrastructure, and development processes with improvement recommendations."
+      },
+      {
+        "name": "Architecture Planning",
+        "description": "Design microservices architecture, API strategies, database design, and cloud infrastructure for scalable applications."
+      },
+      {
+        "name": "Team & Process Optimization",
+        "description": "Improve development workflows, implement best practices, and optimize team productivity with modern DevOps practices."
+      },
+      {
+        "name": "Vendor Selection & Integration",
+        "description": "Evaluate and select third-party services, APIs, and tools that align with your technical and business requirements."
+      },
+      {
+        "name": "Compliance & Risk Management",
+        "description": "Ensure GDPR, HIPAA, SOC2 compliance and implement security best practices to protect your business and customers."
+      },
+      {
+        "name": "Startup CTO Services",
+        "description": "Fractional CTO services for startups including technical leadership, team building, and product development strategy."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Current State Analysis",
+        "description": "Evaluate existing systems, processes, and team capabilities to understand your current technology landscape."
+      },
+      {
+        "step": 2,
+        "title": "Requirements Gathering",
+        "description": "Define business objectives, technical requirements, constraints, and success criteria for the consulting engagement."
+      },
+      {
+        "step": 3,
+        "title": "Strategic Planning",
+        "description": "Develop comprehensive recommendations, roadmaps, and implementation strategies tailored to your specific needs."
+      },
+      {
+        "step": 4,
+        "title": "Implementation Support",
+        "description": "Provide hands-on support during implementation phases with guidance, code reviews, and progress monitoring."
+      },
+      {
+        "step": 5,
+        "title": "Knowledge Transfer",
+        "description": "Ensure your team understands the new systems and processes through documentation, training, and ongoing support."
+      }
+    ],
+    "expertise": [
+      "Cloud Architecture (AWS, GCP, Azure)",
+      "Microservices & API Design",
+      "Database Design & Optimization",
+      "DevOps & CI/CD Pipelines",
+      "Security & Compliance",
+      "Performance Optimization",
+      "Team Leadership & Management",
+      "Agile & Scrum Methodologies",
+      "Modern JavaScript/TypeScript",
+      "Python & Node.js Ecosystems",
+      "React, Vue.js, Angular",
+      "Mobile Development Strategy"
+    ],
+    "benefits": [
+      "Reduced technical risk and debt",
+      "Improved system performance and scalability",
+      "Better technology investment decisions",
+      "Enhanced security and compliance posture",
+      "Optimized development processes and workflows",
+      "Strategic technology roadmap and vision",
+      "Cost-effective solutions and recommendations",
+      "Access to senior-level expertise without full-time hire"
+    ]
+  }
+}

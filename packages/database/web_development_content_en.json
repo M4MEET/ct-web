@@ -1,0 +1,137 @@
+{
+  "slug": "web-development",
+  "locale": "en",
+  "name": "Web Development",
+  "summary": "Modern web applications with cutting-edge technologies. Full-stack development, responsive design, API integrations, and scalable cloud solutions.",
+  "icon": "💻",
+  "order": 1,
+  "status": "published",
+  "seo": {
+    "title": "Web Development Services | CodeX Terminal",
+    "description": "Professional web development with modern frameworks. Custom web applications, responsive design, API development, and cloud deployment.",
+    "keywords": ["web development", "full-stack development", "responsive design", "API development", "React", "Next.js", "Node.js", "cloud deployment"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Modern Web Development",
+      "subheadline": "Build fast, scalable web applications with cutting-edge technologies",
+      "description": "From responsive websites to complex web applications, we deliver modern solutions that perform excellently across all devices and scale with your business growth.",
+      "cta": {
+        "text": "Start Your Web Project",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Full-Stack Development",
+        "description": "Complete web solutions with both frontend and backend development using modern JavaScript frameworks and server technologies.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Responsive Design",
+        "description": "Mobile-first approach ensuring perfect user experience across all devices from smartphones to desktop computers.",
+        "icon": "📱"
+      },
+      {
+        "title": "API Development",
+        "description": "RESTful and GraphQL APIs with proper authentication, documentation, and integration capabilities for third-party services.",
+        "icon": "🔗"
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Fast-loading websites with optimized code, image compression, lazy loading, and CDN integration for global performance.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Cloud Deployment",
+        "description": "Scalable cloud hosting solutions with automatic scaling, monitoring, backups, and CI/CD pipeline integration.",
+        "icon": "☁️"
+      },
+      {
+        "title": "SEO & Analytics",
+        "description": "Built-in SEO optimization, structured data, analytics integration, and performance monitoring for better visibility.",
+        "icon": "📊"
+      }
+    ],
+    "technologies": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Nuxt.js",
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "Python",
+      "Django/FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "AWS/GCP/Azure",
+      "Vercel/Netlify"
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Discovery & Planning",
+        "description": "Understand your business goals, target audience, and technical requirements to create a comprehensive development strategy."
+      },
+      {
+        "step": 2,
+        "title": "Design & Architecture",
+        "description": "Create wireframes, design mockups, and plan the technical architecture for optimal performance and user experience."
+      },
+      {
+        "step": 3,
+        "title": "Development & Testing",
+        "description": "Build your web application using agile methodology with continuous testing, code reviews, and quality assurance."
+      },
+      {
+        "step": 4,
+        "title": "Deployment & Launch",
+        "description": "Deploy to production with proper configuration, security measures, performance optimization, and monitoring setup."
+      },
+      {
+        "step": 5,
+        "title": "Maintenance & Support",
+        "description": "Provide ongoing support, security updates, performance monitoring, and feature enhancements as your business grows."
+      }
+    ],
+    "specialties": [
+      {
+        "name": "Progressive Web Apps (PWA)",
+        "description": "Native app-like experiences with offline functionality, push notifications, and home screen installation."
+      },
+      {
+        "name": "Single Page Applications (SPA)",
+        "description": "Fast, interactive web applications with smooth navigation and real-time updates without page reloads."
+      },
+      {
+        "name": "Headless CMS Integration",
+        "description": "Flexible content management with headless CMS solutions like Strapi, Contentful, or Sanity."
+      },
+      {
+        "name": "Real-time Applications",
+        "description": "Live chat, collaboration tools, and real-time dashboards using WebSocket and server-sent events."
+      },
+      {
+        "name": "Microservices Architecture",
+        "description": "Scalable backend architecture with containerized services, API gateways, and independent deployments."
+      },
+      {
+        "name": "JAMstack Development",
+        "description": "Modern web architecture with JavaScript, APIs, and pre-built markup for better performance and security."
+      }
+    ],
+    "benefits": [
+      "Fast loading times and excellent performance",
+      "Mobile-responsive design for all devices",
+      "SEO-optimized structure and content",
+      "Scalable architecture for future growth",
+      "Security best practices implementation",
+      "Modern user interface and experience",
+      "Cross-browser compatibility",
+      "Ongoing maintenance and support"
+    ]
+  }
+}

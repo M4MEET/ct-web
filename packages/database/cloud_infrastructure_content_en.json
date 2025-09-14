@@ -1,0 +1,137 @@
+{
+  "slug": "cloud-infrastructure",
+  "locale": "en",
+  "name": "Cloud Infrastructure",
+  "summary": "Scalable cloud solutions on AWS, GCP, and Azure with DevOps automation, monitoring, and 24/7 support for businesses of all sizes.",
+  "icon": "☁️",
+  "order": 9,
+  "status": "published",
+  "seo": {
+    "title": "Cloud Infrastructure Services | CodeX Terminal",
+    "description": "Professional cloud infrastructure setup and management on AWS, GCP, Azure. DevOps automation, monitoring, security, and scalable architecture solutions.",
+    "keywords": ["cloud infrastructure", "AWS", "Google Cloud", "Azure", "DevOps", "cloud migration", "infrastructure automation", "cloud security"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Scalable Cloud Infrastructure",
+      "subheadline": "Build and manage robust cloud infrastructure that grows with your business",
+      "description": "From initial cloud setup to advanced DevOps automation, we provide comprehensive cloud infrastructure services that deliver reliability, security, and cost-effectiveness across AWS, Google Cloud, and Azure platforms.",
+      "cta": {
+        "text": "Build Your Cloud Infrastructure",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Multi-Cloud Architecture",
+        "description": "Design and implement scalable cloud solutions across AWS, Google Cloud Platform, and Microsoft Azure with best practices and cost optimization.",
+        "icon": "🌐"
+      },
+      {
+        "title": "DevOps Automation",
+        "description": "Implement CI/CD pipelines, infrastructure as code, automated deployments, and continuous monitoring for efficient development workflows.",
+        "icon": "🔄"
+      },
+      {
+        "title": "Container Orchestration",
+        "description": "Deploy and manage containerized applications using Docker, Kubernetes, and serverless technologies for maximum scalability and efficiency.",
+        "icon": "📦"
+      },
+      {
+        "title": "Security & Compliance",
+        "description": "Implement comprehensive security measures, access controls, encryption, and compliance frameworks to protect your cloud infrastructure.",
+        "icon": "🔒"
+      },
+      {
+        "title": "Monitoring & Alerting",
+        "description": "24/7 infrastructure monitoring with custom dashboards, automated alerting, log management, and performance optimization recommendations.",
+        "icon": "📊"
+      },
+      {
+        "title": "Cost Optimization",
+        "description": "Continuous cost monitoring, resource optimization, auto-scaling configurations, and reserved instance management to minimize cloud spending.",
+        "icon": "💰"
+      }
+    ],
+    "services": [
+      {
+        "name": "Cloud Architecture Design",
+        "description": "Custom cloud architecture planning with scalability, security, and cost-effectiveness in mind for your specific business requirements."
+      },
+      {
+        "name": "Infrastructure Automation",
+        "description": "Infrastructure as Code implementation using Terraform, CloudFormation, and other tools for consistent and repeatable deployments."
+      },
+      {
+        "name": "CI/CD Pipeline Setup",
+        "description": "Automated build, test, and deployment pipelines using Jenkins, GitLab CI, GitHub Actions, and cloud-native tools."
+      },
+      {
+        "name": "Kubernetes Management",
+        "description": "Complete Kubernetes cluster setup, management, and optimization with service mesh, ingress controllers, and monitoring."
+      },
+      {
+        "name": "Database Solutions",
+        "description": "Managed database setup and optimization including RDS, CloudSQL, CosmosDB, and NoSQL solutions with backup and scaling."
+      },
+      {
+        "name": "Disaster Recovery",
+        "description": "Comprehensive backup strategies, disaster recovery planning, and business continuity solutions for critical applications."
+      }
+    ],
+    "platforms": [
+      {
+        "name": "Amazon Web Services (AWS)",
+        "services": ["EC2", "RDS", "S3", "Lambda", "EKS", "CloudFormation", "CloudWatch", "VPC", "IAM", "Route 53"],
+        "description": "Complete AWS cloud solutions with compute, storage, database, and networking services."
+      },
+      {
+        "name": "Google Cloud Platform (GCP)",
+        "services": ["Compute Engine", "Cloud SQL", "Cloud Storage", "Cloud Functions", "GKE", "Cloud Deployment Manager", "Cloud Monitoring"],
+        "description": "GCP infrastructure with AI/ML integration and advanced analytics capabilities."
+      },
+      {
+        "name": "Microsoft Azure",
+        "services": ["Virtual Machines", "Azure SQL", "Blob Storage", "Azure Functions", "AKS", "Azure Resource Manager", "Azure Monitor"],
+        "description": "Enterprise-grade Azure solutions with hybrid cloud and Microsoft ecosystem integration."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Requirements Assessment",
+        "description": "Analyze current infrastructure, business requirements, compliance needs, and growth projections to design optimal cloud strategy."
+      },
+      {
+        "step": 2,
+        "title": "Architecture Planning",
+        "description": "Design scalable, secure cloud architecture with detailed infrastructure blueprints, security frameworks, and cost estimates."
+      },
+      {
+        "step": 3,
+        "title": "Infrastructure Deployment",
+        "description": "Implement cloud infrastructure using automation tools, configure security measures, and establish monitoring and backup systems."
+      },
+      {
+        "step": 4,
+        "title": "Migration & Testing",
+        "description": "Migrate applications and data to cloud infrastructure, perform comprehensive testing, and optimize performance and security."
+      },
+      {
+        "step": 5,
+        "title": "Ongoing Management",
+        "description": "Provide continuous monitoring, maintenance, optimization, and support with regular security updates and performance improvements."
+      }
+    ],
+    "benefits": [
+      "Reduced infrastructure costs and complexity",
+      "Improved scalability and performance",
+      "Enhanced security and compliance posture",
+      "Faster deployment and development cycles",
+      "99.9%+ uptime with disaster recovery",
+      "Global availability and content delivery",
+      "Automated backup and monitoring",
+      "Expert 24/7 support and maintenance"
+    ]
+  }
+}

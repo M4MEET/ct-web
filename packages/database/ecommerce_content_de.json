@@ -1,0 +1,108 @@
+{
+  "slug": "ecommerce-entwicklung",
+  "locale": "de",
+  "name": "E-Commerce Entwicklung",
+  "summary": "Vollständige E-Commerce-Lösungen mit modernen Technologien. Shopware, PrestaShop, Magento-Entwicklung, Payment-Integration, Bestandsverwaltung und mobile Commerce-Apps.",
+  "icon": "🛒",
+  "order": 3,
+  "status": "published",
+  "seo": {
+    "title": "E-Commerce Entwicklung Services | CodeX Terminal",
+    "description": "Professionelle E-Commerce Entwicklung mit Shopware, PrestaShop, Magento. Individuelle Online-Shops, Payment-Integration, Mobile Commerce Lösungen.",
+    "keywords": ["E-Commerce Entwicklung", "Online-Shop", "Shopware Entwicklung", "PrestaShop Entwicklung", "Magento Entwicklung", "Payment Integration", "Mobile Commerce"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Professionelle E-Commerce Entwicklung",
+      "subheadline": "Erstellen Sie leistungsstarke Online-Shops, die Verkäufe und Wachstum fördern",
+      "description": "Von individuellen E-Commerce-Plattformen bis hin zu mobilen Commerce-Apps liefern wir komplette Lösungen, die Unternehmen im digitalen Marktplatz zum Erfolg verhelfen.",
+      "cta": {
+        "text": "Starten Sie Ihr E-Commerce Projekt",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "Plattform-Entwicklung",
+        "description": "Expertenkenntnisse in führenden E-Commerce-Plattformen wie Shopware, PrestaShop und Magento mit individuellen Funktionalitäten.",
+        "icon": "🏪"
+      },
+      {
+        "title": "Payment-Integration",
+        "description": "Sichere Payment-Gateway-Integration mit Unterstützung mehrerer Zahlungsmethoden wie PayPal, Stripe und lokaler Zahlungslösungen.",
+        "icon": "💳"
+      },
+      {
+        "title": "Bestandsverwaltung",
+        "description": "Erweiterte Bestandsverfolgung, Lagerverwaltung und automatisierte Nachbestellsysteme für reibungslose Geschäftsabläufe.",
+        "icon": "📦"
+      },
+      {
+        "title": "Mobile Commerce",
+        "description": "Responsive Designs und native Mobile Apps für nahtlose Shopping-Erlebnisse auf allen Geräten.",
+        "icon": "📱"
+      },
+      {
+        "title": "Performance-Optimierung",
+        "description": "Schnell ladende Shops mit optimiertem Code, CDN-Integration und Performance-Monitoring für bessere Conversion-Raten.",
+        "icon": "⚡"
+      },
+      {
+        "title": "SEO & Marketing",
+        "description": "Integrierte SEO-Optimierung, Marketing-Tools und Analytics-Integration für mehr Traffic und höhere Verkäufe.",
+        "icon": "📈"
+      }
+    ],
+    "technologies": [
+      "Shopware 6",
+      "PrestaShop",
+      "Magento 2",
+      "WooCommerce",
+      "React/Next.js",
+      "Vue.js",
+      "Node.js",
+      "PHP",
+      "MySQL/PostgreSQL",
+      "Elasticsearch",
+      "Redis",
+      "Docker"
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Anforderungsanalyse",
+        "description": "Wir analysieren Ihre Geschäftsanforderungen, Zielgruppe und technischen Anforderungen für einen umfassenden Entwicklungsplan."
+      },
+      {
+        "step": 2,
+        "title": "Plattform-Auswahl",
+        "description": "Wählen Sie die optimale E-Commerce-Plattform basierend auf Ihren spezifischen Bedürfnissen, Budget und Skalierbarkeitsanforderungen."
+      },
+      {
+        "step": 3,
+        "title": "Design & Entwicklung",
+        "description": "Erstellen Sie individuelle Designs und entwickeln Sie Ihre E-Commerce-Lösung mit modernen Technologien und Best Practices."
+      },
+      {
+        "step": 4,
+        "title": "Integration & Testing",
+        "description": "Integrieren Sie Zahlungssysteme, Drittanbieter-Services und führen Sie gründliche Tests durch, um sicherzustellen, dass alles perfekt funktioniert."
+      },
+      {
+        "step": 5,
+        "title": "Launch & Support",
+        "description": "Stellen Sie Ihren Shop bereit und bieten Sie laufenden Support, Wartung und Optimierungsservices."
+      }
+    ],
+    "benefits": [
+      "Erhöhte Online-Verkäufe und Umsatz",
+      "Bessere Kundenerfahrung",
+      "Mobile-responsive Design",
+      "Sichere Zahlungsabwicklung",
+      "Skalierbare Architektur",
+      "SEO-optimierte Struktur",
+      "24/7 Überwachung und Support",
+      "Regelmäßige Updates und Wartung"
+    ]
+  }
+}

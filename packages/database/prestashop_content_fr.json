@@ -1,0 +1,134 @@
+{
+  "slug": "developpement-prestashop",
+  "locale": "fr",
+  "name": "Développement PrestaShop",
+  "summary": "Services experts de développement PrestaShop pour solutions e-commerce évolutives. Modules personnalisés, développement de thèmes, intégrations API et optimisation de performance.",
+  "icon": "🏬",
+  "order": 4,
+  "status": "published",
+  "seo": {
+    "title": "Services de Développement PrestaShop | CodeX Terminal",
+    "description": "Développement PrestaShop professionnel avec modules personnalisés, thèmes et intégrations. Solutions e-commerce évolutives pour entreprises en croissance.",
+    "keywords": ["développement PrestaShop", "modules PrestaShop", "thèmes PrestaShop", "développement e-commerce", "boutique en ligne", "personnalisation PrestaShop", "intégration PrestaShop"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Développement PrestaShop Expert",
+      "subheadline": "Construisez des boutiques e-commerce puissantes avec la plateforme flexible de PrestaShop",
+      "description": "Du développement de modules personnalisés aux constructions complètes de boutiques, nous livrons des solutions PrestaShop qui évoluent avec votre entreprise et stimulent les conversions.",
+      "cta": {
+        "text": "Commencez Votre Projet PrestaShop",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Développement de Modules Personnalisés",
+        "description": "Créez des fonctionnalités sur mesure avec des modules PrestaShop personnalisés adaptés à vos exigences commerciales spécifiques.",
+        "icon": "🧩"
+      },
+      {
+        "title": "Développement de Thèmes",
+        "description": "Concevez et développez des thèmes responsifs, mobile-first qui reflètent votre identité de marque et offrent une excellente expérience utilisateur.",
+        "icon": "🎨"
+      },
+      {
+        "title": "Intégrations API",
+        "description": "Connectez votre boutique PrestaShop avec des systèmes tiers, passerelles de paiement, fournisseurs de livraison et outils marketing.",
+        "icon": "🔗"
+      },
+      {
+        "title": "Optimisation de Performance",
+        "description": "Optimisez votre boutique PrestaShop pour la vitesse, le SEO et les conversions avec mise en cache avancée, optimisation d'images et améliorations de code.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Configuration Multi-boutique",
+        "description": "Configurez et gérez plusieurs boutiques depuis une seule installation PrestaShop pour différentes marques, pays ou segments de marché.",
+        "icon": "🏪"
+      },
+      {
+        "title": "Services de Migration",
+        "description": "Migrez en toute transparence depuis d'autres plateformes e-commerce vers PrestaShop en préservant les données, classements SEO et informations clients.",
+        "icon": "📦"
+      }
+    ],
+    "technologies": [
+      "PrestaShop 8.x",
+      "PrestaShop 1.7.x",
+      "PHP 8.x",
+      "MySQL",
+      "Twig Templates",
+      "Symfony Framework",
+      "JavaScript/jQuery",
+      "SASS/CSS",
+      "Smarty Templates",
+      "REST API",
+      "Composer",
+      "Docker"
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Planification de Projet",
+        "description": "Analysez vos exigences commerciales, systèmes existants et définissez la portée du projet pour votre solution PrestaShop."
+      },
+      {
+        "step": 2,
+        "title": "Design & Architecture",
+        "description": "Créez des wireframes, maquettes de design et planifiez l'architecture technique pour une performance et évolutivité optimales."
+      },
+      {
+        "step": 3,
+        "title": "Développement & Tests",
+        "description": "Développez des modules personnalisés, thèmes et intégrations tout en effectuant des tests approfondis pour assurer qualité et fiabilité."
+      },
+      {
+        "step": 4,
+        "title": "Déploiement & Lancement",
+        "description": "Déployez votre boutique PrestaShop en production avec configuration appropriée, mesures de sécurité et optimisation de performance."
+      },
+      {
+        "step": 5,
+        "title": "Support & Maintenance",
+        "description": "Fournissez support continu, mises à jour et maintenance pour garder votre boutique sécurisée, rapide et à jour."
+      }
+    ],
+    "modules": [
+      {
+        "name": "Gestion Avancée de Produits",
+        "description": "Catalogue produits amélioré avec opérations en lot, attributs avancés et fonctionnalités de gestion d'inventaire."
+      },
+      {
+        "name": "Marketplace Multi-vendeur",
+        "description": "Transformez votre boutique en marketplace avec gestion des vendeurs, suivi des commissions et tableaux de bord vendeur."
+      },
+      {
+        "name": "Outils SEO Avancés",
+        "description": "Optimisation SEO complète avec méta-tags, données structurées, génération de sitemap et gestion d'URL."
+      },
+      {
+        "name": "Programme de Fidélité Client",
+        "description": "Systèmes de récompense avec points, niveaux, programmes de parrainage et offres personnalisées pour augmenter la rétention client."
+      },
+      {
+        "name": "Analytics Avancées",
+        "description": "Rapports détaillés et analyses avec insights de ventes, analyse du comportement client et métriques de performance."
+      },
+      {
+        "name": "Extensions Passerelle de Paiement",
+        "description": "Intégrations de paiement personnalisées pour fournisseurs de paiement régionaux et spécialisés avec protection contre la fraude."
+      }
+    ],
+    "benefits": [
+      "Solution e-commerce flexible et évolutive",
+      "Plateforme rentable avec faible coût total de possession",
+      "Capacités de personnalisation étendues",
+      "Support communautaire et écosystème solide",
+      "Support multi-langue et multi-devise",
+      "Design mobile-responsive prêt à l'emploi",
+      "Structure et fonctionnalités SEO-friendly",
+      "Mises à jour régulières et correctifs de sécurité"
+    ]
+  }
+}

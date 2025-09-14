@@ -1,0 +1,142 @@
+{
+  "slug": "verwalteter-support",
+  "locale": "de",
+  "name": "Verwalteter Support",
+  "summary": "24/7 technischer Support und Wartung für reibungslose IT-Systeme. Monitoring, Updates, Backup-Management und proaktive System-Wartung.",
+  "icon": "🛡️",
+  "order": 7,
+  "status": "published",
+  "seo": {
+    "title": "Verwaltete IT-Support Services | CodeX Terminal",
+    "description": "24/7 verwalteter IT-Support mit Monitoring, Wartung, Sicherheitsupdates und proaktivem System-Management. Halten Sie Ihr Unternehmen reibungslos am Laufen.",
+    "keywords": ["verwalteter Support", "IT-Support", "24/7 Monitoring", "System-Wartung", "technischer Support", "Server-Management", "Backup-Management"]
+  },
+  "content": {
+    "hero": {
+      "headline": "24/7 Verwalteter IT-Support",
+      "subheadline": "Halten Sie Ihre Systeme mit proaktivem Monitoring und Experten-Support reibungslos am Laufen",
+      "description": "Von kontinuierlichem System-Monitoring bis hin zu Notfall-Incident-Response bieten wir umfassende verwaltete Support-Services, die sicherstellen, dass Ihre Technologie-Infrastruktur rund um die Uhr mit Höchstleistung arbeitet.",
+      "cta": {
+        "text": "Support jetzt erhalten",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "24/7 System-Monitoring",
+        "description": "Kontinuierliche Überwachung von Servern, Anwendungen und Netzwerk-Infrastruktur mit automatisierten Warnungen und sofortiger Reaktion auf Probleme.",
+        "icon": "👀"
+      },
+      {
+        "title": "Proaktive Wartung",
+        "description": "Regelmäßige System-Updates, Sicherheitspatches, Performance-Optimierung und vorbeugende Wartung zur Vermeidung von Ausfallzeiten.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Backup & Disaster Recovery",
+        "description": "Automatisierte Backup-Lösungen, Datenwiederherstellungsservices und Disaster Recovery-Planung zum Schutz Ihrer kritischen Geschäftsdaten.",
+        "icon": "💾"
+      },
+      {
+        "title": "Sicherheits-Management",
+        "description": "Kontinuierliche Sicherheitsüberwachung, Vulnerability-Assessments, Firewall-Management und Sicherheits-Incident-Response.",
+        "icon": "🔒"
+      },
+      {
+        "title": "Performance-Optimierung",
+        "description": "Regelmäßige Performance-Analyse, Ressourcen-Optimierung, Kapazitätsplanung und Skalierungs-Empfehlungen für optimale System-Performance.",
+        "icon": "📈"
+      },
+      {
+        "title": "Incident-Response",
+        "description": "Schnelle Reaktion auf kritische Probleme mit Eskalationsverfahren, Root-Cause-Analyse und umfassender Incident-Dokumentation.",
+        "icon": "🚨"
+      }
+    ],
+    "services": [
+      {
+        "name": "Server-Management",
+        "description": "Komplette Server-Administration einschließlich OS-Updates, Konfigurationsverwaltung und Performance-Monitoring für physische und virtuelle Server."
+      },
+      {
+        "name": "Cloud-Infrastruktur-Support",
+        "description": "Management und Optimierung von Cloud-Ressourcen über AWS, Google Cloud, Azure mit Kostenoptimierung und Skalierungs-Automatisierung."
+      },
+      {
+        "name": "Datenbank-Administration",
+        "description": "Datenbank-Wartung, Optimierung, Backup-Management und Performance-Tuning für MySQL, PostgreSQL, MongoDB und andere Systeme."
+      },
+      {
+        "name": "Anwendungs-Support",
+        "description": "Monitoring und Wartung von Webanwendungen, APIs und geschäftskritischer Software mit Performance-Optimierung und Problemlösung."
+      },
+      {
+        "name": "Netzwerk-Management",
+        "description": "Netzwerk-Infrastruktur-Monitoring, Firewall-Management, VPN-Setup und Konnektivitäts-Troubleshooting für zuverlässige Netzwerk-Operationen."
+      },
+      {
+        "name": "Help-Desk-Support",
+        "description": "Endbenutzer-Support für technische Probleme, Software-Troubleshooting und IT-Beratung mit Multi-Kanal-Kommunikationsoptionen."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Infrastruktur-Bewertung",
+        "description": "Umfassende Evaluierung Ihrer aktuellen IT-Infrastruktur, Identifizierung von Risiken, Schwachstellen und Optimierungsmöglichkeiten."
+      },
+      {
+        "step": 2,
+        "title": "Monitoring-Setup",
+        "description": "Bereitstellung von Monitoring-Tools, Konfiguration von Warnungen, Etablierung von Baselines und Erstellung individueller Dashboards für vollständige Sichtbarkeit."
+      },
+      {
+        "step": 3,
+        "title": "Support-Implementierung",
+        "description": "Aktivierung des 24/7-Monitoring, Implementierung von Wartungsplänen und Etablierung von Incident-Response-Verfahren und Kommunikationskanälen."
+      },
+      {
+        "step": 4,
+        "title": "Proaktives Management",
+        "description": "Kontinuierliches Monitoring, regelmäßige Wartung, Performance-Optimierung und proaktive Problem-Identifikation und -Lösung."
+      },
+      {
+        "step": 5,
+        "title": "Reporting & Verbesserung",
+        "description": "Regelmäßige Performance-Berichte, Uptime-Analytics und kontinuierliche Verbesserungsempfehlungen zur Steigerung der System-Zuverlässigkeit."
+      }
+    ],
+    "sla": [
+      {
+        "level": "Kritisch",
+        "response": "15 Minuten",
+        "description": "System ausgefallen, kompletter Service-Ausfall, Sicherheitsverletzung"
+      },
+      {
+        "level": "Hoch",
+        "response": "1 Stunde",
+        "description": "Erhebliche Performance-Verschlechterung, teilweise Service-Störung"
+      },
+      {
+        "level": "Mittel",
+        "response": "4 Stunden",
+        "description": "Kleinere Probleme, nicht-kritische Funktionalität betroffen"
+      },
+      {
+        "level": "Niedrig",
+        "response": "Nächster Geschäftstag",
+        "description": "Allgemeine Fragen, Erweiterungs-Anfragen, Dokumentation"
+      }
+    ],
+    "benefits": [
+      "99,9% Uptime-Garantie mit SLA",
+      "Reduzierte IT-Betriebskosten",
+      "Proaktive Problem-Prävention und -Lösung",
+      "Experten-technischer Support verfügbar 24/7",
+      "Erweiterte Sicherheit und Compliance",
+      "Vorhersagbare monatliche IT-Kosten",
+      "Fokus auf Unternehmenswachstum während wir IT handhaben",
+      "Regelmäßige System-Optimierung und Updates"
+    ]
+  }
+}

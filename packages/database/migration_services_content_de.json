@@ -1,0 +1,128 @@
+{
+  "slug": "migrations-services",
+  "locale": "de",
+  "name": "Migrations-Services",
+  "summary": "Nahtlose Plattform-Migration und System-Upgrades. E-Commerce-Migration, Datenbank-Migration, Cloud-Migration und Legacy-System-Modernisierung mit minimaler Ausfallzeit.",
+  "icon": "🔄",
+  "order": 8,
+  "status": "published",
+  "seo": {
+    "title": "Migrations-Services | CodeX Terminal",
+    "description": "Professionelle Migrations-Services für E-Commerce-Plattformen, Datenbanken, Cloud-Infrastruktur und Legacy-Systeme. Minimieren Sie Ausfallzeiten mit Experten-Migrationsplanung.",
+    "keywords": ["Migrations-Services", "Plattform-Migration", "Datenbank-Migration", "Cloud-Migration", "E-Commerce-Migration", "System-Upgrade", "Datenmigration"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Experten Migrations-Services",
+      "subheadline": "Migrieren Sie Ihre Systeme und Daten nahtlos mit minimaler Ausfallzeit und maximaler Zuverlässigkeit",
+      "description": "Von Legacy-System-Modernisierung bis hin zu Cloud-Plattform-Migrationen bieten wir umfassende Migrations-Services, die Datenintegrität gewährleisten, Geschäftsunterbrechungen minimieren und verbesserte Performance liefern.",
+      "cta": {
+        "text": "Planen Sie Ihre Migration",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "E-Commerce-Plattform-Migration",
+        "description": "Migration zwischen E-Commerce-Plattformen wie Magento, Shopware, PrestaShop, WooCommerce mit vollständiger Datenerhaltung und SEO-Wartung.",
+        "icon": "🛒"
+      },
+      {
+        "title": "Datenbank-Migration",
+        "description": "Nahtlose Datenbank-Migrationen zwischen verschiedenen Systemen mit Datenintegritäts-Validierung, Schema-Optimierung und Performance-Verbesserungen.",
+        "icon": "🗃️"
+      },
+      {
+        "title": "Cloud-Migration",
+        "description": "Verschiebung von Anwendungen und Infrastruktur zu Cloud-Plattformen (AWS, GCP, Azure) mit optimierter Architektur und kosteneffizienten Lösungen.",
+        "icon": "☁️"
+      },
+      {
+        "title": "Legacy-System-Modernisierung",
+        "description": "Transformation veralteter Systeme zu modernen Technologien unter Beibehaltung der Geschäftslogik und Verbesserung von Performance und Wartbarkeit.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Datenmigration & ETL",
+        "description": "Komplexe Daten-Transformationen und Migrationen mit benutzerdefinierten ETL-Prozessen, Datenbereinigung und Validierung für Genauigkeit und Vollständigkeit.",
+        "icon": "📊"
+      },
+      {
+        "title": "Minimale Ausfallzeit-Strategie",
+        "description": "Erweiterte Migrations-Strategien einschließlich Blue-Green-Deployments, gestaffelter Migrationen und Failback-Optionen zur Minimierung der Geschäftsauswirkungen.",
+        "icon": "⚡"
+      }
+    ],
+    "migration_types": [
+      {
+        "name": "E-Commerce-Plattform-Migration",
+        "description": "Vollständige Migration von Online-Shops zwischen Plattformen mit Produktdaten, Kundeninformationen, Bestellhistorie und SEO-Erhaltung.",
+        "platforms": ["Magento 2", "Shopware 6", "PrestaShop", "WooCommerce", "BigCommerce", "Shopify Plus"]
+      },
+      {
+        "name": "CMS-Migration",
+        "description": "Content-Management-System-Migrationen mit Inhaltserhaltung, URL-Mapping und SEO-Optimierung.",
+        "platforms": ["WordPress", "Drupal", "Joomla", "Contentful", "Strapi", "Custom CMS"]
+      },
+      {
+        "name": "Datenbank-Migration",
+        "description": "Datenbank-Plattform-Migrationen mit Schema-Optimierung, Daten-Transformation und Performance-Tuning.",
+        "platforms": ["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "Oracle", "Redis"]
+      },
+      {
+        "name": "Cloud-Infrastruktur-Migration",
+        "description": "Infrastruktur-Migration zu Cloud-Plattformen mit Architektur-Optimierung und Kostenoptimierung.",
+        "platforms": ["AWS", "Google Cloud", "Microsoft Azure", "DigitalOcean", "Linode"]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Bewertung & Planung",
+        "description": "Umfassende Analyse aktueller Systeme, Daten-Mapping, Risikobewertung und detaillierte Migrations-Strategieentwicklung."
+      },
+      {
+        "step": 2,
+        "title": "Umgebungs-Setup",
+        "description": "Zielumgebungen vorbereiten, Infrastruktur konfigurieren, Monitoring-Tools einrichten und Rollback-Verfahren etablieren."
+      },
+      {
+        "step": 3,
+        "title": "Datenmigration & Testing",
+        "description": "Datenmigration in Stufen ausführen, umfassende Tests durchführen, Datenintegrität validieren und Performance-Tests durchführen."
+      },
+      {
+        "step": 4,
+        "title": "Go-Live & Validierung",
+        "description": "Finale Migration ausführen, DNS/Traffic umschalten, System-Performance überwachen und alle Funktionalitäten validieren."
+      },
+      {
+        "step": 5,
+        "title": "Post-Migration-Support",
+        "description": "Laufenden Support bieten, Performance-Optimierung, Troubleshooting und Dokumentation für das neue System."
+      }
+    ],
+    "tools_technologies": [
+      "AWS Database Migration Service",
+      "Azure Database Migration Service",
+      "Google Cloud Migrate",
+      "Docker & Kubernetes",
+      "Ansible & Terraform",
+      "Benutzerdefinierte ETL-Skripte",
+      "Datenpipeline-Tools",
+      "Monitoring & Alerting-Tools",
+      "Backup & Recovery-Lösungen",
+      "Load-Testing-Tools"
+    ],
+    "benefits": [
+      "Minimale Geschäftsunterbrechung und Ausfallzeit",
+      "Vollständige Datenintegrität und -erhaltung",
+      "Verbesserte System-Performance und Skalierbarkeit",
+      "Erweiterte Sicherheit und Compliance",
+      "Kostenoptimierung durch moderne Infrastruktur",
+      "Bessere Wartbarkeit und Zukunftssicherheit",
+      "Umfassende Tests und Validierung",
+      "Experten-Projektmanagement und Kommunikation"
+    ]
+  }
+}

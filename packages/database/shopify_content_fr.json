@@ -1,0 +1,160 @@
+{
+  "slug": "developpement-shopify",
+  "locale": "fr",
+  "name": "Développement Shopify",
+  "summary": "Développement Shopify professionnel pour solutions e-commerce évolutives. Applications Shopify, personnalisation thèmes, configuration boutique et intégrations API.",
+  "icon": "🛍️",
+  "order": 5,
+  "status": "published",
+  "seo": {
+    "title": "Services Développement Shopify | CodeX Terminal",
+    "description": "Développement Shopify professionnel avec applications, thèmes et intégrations. Solutions Shopify Plus pour entreprises e-commerce en croissance.",
+    "keywords": ["développement Shopify", "applications Shopify", "thèmes Shopify", "Shopify Plus", "développement e-commerce", "boutique en ligne", "personnalisation Shopify", "intégration Shopify"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Développement Shopify Expert",
+      "subheadline": "Créez des boutiques e-commerce puissantes avec la plateforme leader de Shopify",
+      "description": "Du développement d'applications personnalisées aux solutions complètes Shopify Plus, nous livrons des services de développement Shopify qui évoluent avec votre entreprise et créent des expériences d'achat exceptionnelles.",
+      "cta": {
+        "text": "Commencez Votre Projet Shopify",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Développement Applications Shopify",
+        "description": "Développez des applications Shopify personnalisées avec fonctionnalités avancées qui s'adaptent parfaitement à vos exigences commerciales et workflows.",
+        "icon": "📱"
+      },
+      {
+        "title": "Développement & Personnalisation Thèmes",
+        "description": "Créez des thèmes Shopify responsifs et optimisés pour les conversions qui reflètent votre marque et offrent une expérience utilisateur exceptionnelle.",
+        "icon": "🎨"
+      },
+      {
+        "title": "Solutions Shopify Plus",
+        "description": "Implémentations Shopify Plus niveau entreprise avec fonctionnalités avancées, automatisation et intégrations pour grandes entreprises.",
+        "icon": "🏢"
+      },
+      {
+        "title": "Intégrations API",
+        "description": "Intégrations transparentes avec services tiers, systèmes ERP, outils CRM et plateformes marketing via les APIs Shopify.",
+        "icon": "🔗"
+      },
+      {
+        "title": "Optimisation Performance",
+        "description": "Optimisez votre boutique Shopify pour vitesse, SEO et conversions avec meilleures pratiques et techniques d'optimisation avancées.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Migration & Configuration",
+        "description": "Migration complète de boutique vers Shopify ou Shopify Plus avec préservation données, maintien SEO et temps d'arrêt minimal.",
+        "icon": "🔄"
+      }
+    ],
+    "services": [
+      {
+        "name": "Configuration Boutique Shopify",
+        "description": "Configuration complète boutique Shopify avec personnalisation thème, setup catalogue produits et intégration passerelles paiement."
+      },
+      {
+        "name": "Développement Applications Personnalisées",
+        "description": "Développement d'applications Shopify sur mesure pour fonctionnalités spéciales non couvertes par applications existantes."
+      },
+      {
+        "name": "Développement Thèmes",
+        "description": "Thèmes Shopify entièrement responsifs et optimisés SEO, adaptés à votre identité de marque et objectifs de conversion."
+      },
+      {
+        "name": "Implémentation Shopify Plus",
+        "description": "Configuration Shopify Plus niveau entreprise avec fonctionnalités avancées, automatisation et gestion multi-boutique."
+      },
+      {
+        "name": "Intégrations Tiers",
+        "description": "Intégration avec systèmes ERP, outils CRM, automatisation marketing et autres systèmes d'entreprise."
+      },
+      {
+        "name": "Performance & SEO",
+        "description": "Optimisation boutique pour vitesse, classements moteurs de recherche et amélioration taux de conversion."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Analyse & Planification Projet",
+        "description": "Comprenez vos objectifs e-commerce, analysez systèmes existants et planifiez la solution Shopify optimale."
+      },
+      {
+        "step": 2,
+        "title": "Design & Développement",
+        "description": "Créez wireframes, développez thèmes ou applications personnalisés et implémentez fonctionnalités désirées."
+      },
+      {
+        "step": 3,
+        "title": "Intégration & Tests",
+        "description": "Intégrez services tiers, effectuez tests complets et assurez que tout fonctionne parfaitement."
+      },
+      {
+        "step": 4,
+        "title": "Lancement & Optimisation",
+        "description": "Lancez votre boutique avec configuration appropriée, setup SEO et optimisation performance."
+      },
+      {
+        "step": 5,
+        "title": "Support & Maintenance",
+        "description": "Support continu, mises à jour, surveillance performance et améliorations continues."
+      }
+    ],
+    "technologies": [
+      "Shopify Liquid",
+      "Shopify CLI",
+      "Shopify App Development",
+      "GraphQL Admin API",
+      "REST Admin API",
+      "Shopify Scripts",
+      "React/Next.js",
+      "Node.js",
+      "JavaScript/TypeScript",
+      "HTML/CSS/SCSS",
+      "Shopify Partner Dashboard",
+      "Webhooks & Events"
+    ],
+    "shopify_features": [
+      {
+        "name": "Applications App Store Shopify",
+        "description": "Intégration et personnalisation d'applications existantes du Shopify App Store pour fonctionnalités étendues."
+      },
+      {
+        "name": "Shopify Scripts",
+        "description": "Scripts checkout personnalisés pour remises, logique expédition et personnalisations paiement (Shopify Plus)."
+      },
+      {
+        "name": "Automatisation Flow",
+        "description": "Automatisation processus d'affaires avec Shopify Flow pour gestion inventaire, service client et marketing."
+      },
+      {
+        "name": "Vente Multi-Canal",
+        "description": "Vente sur plusieurs canaux : boutique en ligne, médias sociaux, marketplaces et systèmes point de vente."
+      },
+      {
+        "name": "Internationalisation",
+        "description": "Configuration boutique multi-devise et multi-langue pour expansion e-commerce globale."
+      },
+      {
+        "name": "Fonctionnalités B2B",
+        "description": "Fonctionnalités B2B Shopify Plus avec prix de gros, comptes d'entreprise et catalogues personnalisés."
+      }
+    ],
+    "benefits": [
+      "Délai de mise sur le marché rapide avec plateforme éprouvée",
+      "Solution évolutive pour entreprises de toutes tailles",
+      "Solutions paiement intégrées et sécurité",
+      "Structure SEO-friendly et optimisation mobile",
+      "Écosystème d'applications étendu pour extensions",
+      "Mises à jour automatiques et correctifs sécurité",
+      "Support et infrastructure Shopify 24/7",
+      "Processus checkout optimisés pour conversion"
+    ]
+  }
+}

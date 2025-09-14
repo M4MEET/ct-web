@@ -1,0 +1,128 @@
+{
+  "slug": "migration-services",
+  "locale": "en",
+  "name": "Migration Services",
+  "summary": "Seamless platform migration and system upgrades. E-commerce migration, database migration, cloud migration, and legacy system modernization with minimal downtime.",
+  "icon": "🔄",
+  "order": 8,
+  "status": "published",
+  "seo": {
+    "title": "Migration Services | CodeX Terminal",
+    "description": "Professional migration services for e-commerce platforms, databases, cloud infrastructure, and legacy systems. Minimize downtime with expert migration planning.",
+    "keywords": ["migration services", "platform migration", "database migration", "cloud migration", "e-commerce migration", "system upgrade", "data migration"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Expert Migration Services",
+      "subheadline": "Seamlessly migrate your systems and data with minimal downtime and maximum reliability",
+      "description": "From legacy system modernization to cloud platform migrations, we provide comprehensive migration services that ensure data integrity, minimize business disruption, and deliver improved performance.",
+      "cta": {
+        "text": "Plan Your Migration",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "E-commerce Platform Migration",
+        "description": "Migrate between e-commerce platforms like Magento, Shopware, PrestaShop, WooCommerce with complete data preservation and SEO maintenance.",
+        "icon": "🛒"
+      },
+      {
+        "title": "Database Migration",
+        "description": "Seamless database migrations between different systems with data integrity validation, schema optimization, and performance improvements.",
+        "icon": "🗃️"
+      },
+      {
+        "title": "Cloud Migration",
+        "description": "Move applications and infrastructure to cloud platforms (AWS, GCP, Azure) with optimized architecture and cost-effective solutions.",
+        "icon": "☁️"
+      },
+      {
+        "title": "Legacy System Modernization",
+        "description": "Transform outdated systems to modern technologies while preserving business logic and improving performance and maintainability.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Data Migration & ETL",
+        "description": "Complex data transformations and migrations with custom ETL processes, data cleaning, and validation to ensure accuracy and completeness.",
+        "icon": "📊"
+      },
+      {
+        "title": "Minimal Downtime Strategy",
+        "description": "Advanced migration strategies including blue-green deployments, staged migrations, and failback options to minimize business impact.",
+        "icon": "⚡"
+      }
+    ],
+    "migration_types": [
+      {
+        "name": "E-commerce Platform Migration",
+        "description": "Complete migration of online stores between platforms with product data, customer information, order history, and SEO preservation.",
+        "platforms": ["Magento 2", "Shopware 6", "PrestaShop", "WooCommerce", "BigCommerce", "Shopify Plus"]
+      },
+      {
+        "name": "CMS Migration",
+        "description": "Content management system migrations with content preservation, URL mapping, and SEO optimization.",
+        "platforms": ["WordPress", "Drupal", "Joomla", "Contentful", "Strapi", "Custom CMS"]
+      },
+      {
+        "name": "Database Migration",
+        "description": "Database platform migrations with schema optimization, data transformation, and performance tuning.",
+        "platforms": ["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "Oracle", "Redis"]
+      },
+      {
+        "name": "Cloud Infrastructure Migration",
+        "description": "Infrastructure migration to cloud platforms with architecture optimization and cost optimization.",
+        "platforms": ["AWS", "Google Cloud", "Microsoft Azure", "DigitalOcean", "Linode"]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Assessment & Planning",
+        "description": "Comprehensive analysis of current systems, data mapping, risk assessment, and detailed migration strategy development."
+      },
+      {
+        "step": 2,
+        "title": "Environment Setup",
+        "description": "Prepare target environments, configure infrastructure, setup monitoring tools, and establish rollback procedures."
+      },
+      {
+        "step": 3,
+        "title": "Data Migration & Testing",
+        "description": "Execute data migration in stages, perform comprehensive testing, validate data integrity, and conduct performance testing."
+      },
+      {
+        "step": 4,
+        "title": "Go-Live & Validation",
+        "description": "Execute final migration, switch DNS/traffic, monitor system performance, and validate all functionality works correctly."
+      },
+      {
+        "step": 5,
+        "title": "Post-Migration Support",
+        "description": "Provide ongoing support, performance optimization, troubleshooting, and documentation for the new system."
+      }
+    ],
+    "tools_technologies": [
+      "AWS Database Migration Service",
+      "Azure Database Migration Service",
+      "Google Cloud Migrate",
+      "Docker & Kubernetes",
+      "Ansible & Terraform",
+      "Custom ETL Scripts",
+      "Data Pipeline Tools",
+      "Monitoring & Alerting Tools",
+      "Backup & Recovery Solutions",
+      "Load Testing Tools"
+    ],
+    "benefits": [
+      "Minimal business disruption and downtime",
+      "Complete data integrity and preservation",
+      "Improved system performance and scalability",
+      "Enhanced security and compliance",
+      "Cost optimization through modern infrastructure",
+      "Better maintainability and future-proofing",
+      "Comprehensive testing and validation",
+      "Expert project management and communication"
+    ]
+  }
+}
