@@ -4,14 +4,17 @@ import { BlockRenderer } from '@/components/BlockRenderer';
 // Database connection to fetch services
 async function getServiceBySlug(slug: string, locale: string) {
   try {
-    // Use the web app's own API (on port 3000)
-    const baseUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}` 
+    // Use the web app's own API (on port 3002)
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
       : 'http://localhost:3002';
     
-    const response = await fetch(`${baseUrl}/api/services?locale=${locale}&status=published`, {
-      cache: 'no-store' // Ensure fresh data
-    });
+    const response = await fetch(
+      `${baseUrl}/api/services?locale=${locale}&status=published&slug=${encodeURIComponent(slug)}`,
+      {
+        cache: 'no-store' // Ensure fresh data
+      }
+    );
     
     if (!response.ok) {
       return null;
@@ -19,7 +22,9 @@ async function getServiceBySlug(slug: string, locale: string) {
     
     const result = await response.json();
     const services = Array.isArray(result) ? result : (result.data || []);
-    const service = services.find((service: any) => service.slug === slug);
+    const service = Array.isArray(services) && services.length > 0
+      ? services[0]
+      : null;
     
     if (!service) {
       return null;

@@ -44,7 +44,9 @@ export default async function LocaleLayout({
       <SessionTracker />
       <div>
         <Navigation />
-        <main className="pt-16 sm:pt-20">
+        
+        
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer locale={normalizedLocale} />

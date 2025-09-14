@@ -152,7 +152,8 @@ export function CodexTerminalHero() {
   }, [hasAnimated]);
 
   return (
-    <section className="relative overflow-hidden bg-codex-terminal-component pt-16 sm:pt-20 pb-6 sm:pb-8 min-h-[50vh] sm:min-h-[60vh]">
+    <section className="relative overflow-hidden bg-codex-terminal-component pb-6 sm:pb-8 min-h-[50vh] sm:min-h-[60vh]">
+      
       {/* Background gradient orbs - optimized for mobile */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 sm:-top-40 -right-16 sm:-right-32 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-br from-primary-200/80 to-primary-300/60 rounded-full blur-3xl animate-pulse"></div>
@@ -166,23 +167,20 @@ export function CodexTerminalHero() {
           {/* Terminal glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-cyan-400/20 to-blue-400/20 rounded-lg sm:rounded-2xl blur-xl"></div>
           
+          
           {/* Main terminal */}
           <div className="relative bg-gray-900/98 backdrop-blur-xl rounded-lg sm:rounded-2xl border border-gray-700/30 shadow-2xl shadow-green-400/5 overflow-hidden">
             {/* Terminal header */}
-            <div className="flex items-center justify-between px-3 sm:px-6 py-3 sm:py-4 bg-gray-800/95 border-b border-gray-700/40 backdrop-blur-sm">
+            <div className="flex items-center px-3 sm:px-6 py-3 sm:py-4 bg-gray-800/95 border-b border-gray-700/40 backdrop-blur-sm">
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-red-500 rounded-full shadow-sm hover:bg-red-400 cursor-pointer transition-colors"></div>
                 <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-yellow-500 rounded-full shadow-sm hover:bg-yellow-400 cursor-pointer transition-colors"></div>
                 <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-green-500 rounded-full shadow-sm hover:bg-green-400 cursor-pointer transition-colors"></div>
               </div>
-              <div className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-400 font-mono">
+              <div className="flex-1 flex items-center justify-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-400 font-mono">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-400 rounded-full animate-pulse"></div>
                 <span className="hidden sm:inline">codex-terminal@production</span>
                 <span className="sm:hidden">terminal</span>
-              </div>
-              <div className="flex items-center space-x-1 sm:space-x-2 text-gray-500">
-                <div className="w-3 h-3 sm:w-4 sm:h-4 border border-gray-600 rounded cursor-pointer hover:bg-gray-600 transition-colors"></div>
-                <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-gray-600 cursor-pointer hover:bg-gray-600 transition-colors"></div>
               </div>
             </div>
             

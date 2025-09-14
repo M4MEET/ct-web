@@ -10,7 +10,7 @@ export function HeroBlock({ data }: HeroBlockProps) {
   }
 
   return (
-    <section className="relative bg-transparent pt-16 sm:pt-20 pb-6 sm:pb-8 min-h-[50vh] sm:min-h-[60vh]">
+    <section className="relative bg-transparent pb-6 sm:pb-8 min-h-[50vh] sm:min-h-[60vh]">
       <div className="relative mx-auto max-w-6xl px-3 sm:px-6">
         <div className="text-center">
           {data.eyebrow && (

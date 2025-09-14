@@ -58,11 +58,13 @@ function AuthenticatedLayout({ children }: AdminLayoutProps) {
 
   // Render full admin layout for authenticated users
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <AdminNav />
-      <main className="flex-1 p-8">
-        <div className="max-w-7xl mx-auto">
-          {children}
+      <main className="lg:ml-64 min-h-screen">
+        <div className="p-4 lg:p-8 pt-16 lg:pt-8">
+          <div className="max-w-7xl mx-auto">
+            {children}
+          </div>
         </div>
       </main>
     </div>

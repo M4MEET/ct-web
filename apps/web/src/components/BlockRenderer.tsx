@@ -27,7 +27,7 @@ interface BlockRendererProps {
 
 export function BlockRenderer({ blocks }: BlockRendererProps) {
   return (
-    <div className="bg-codex-terminal-component min-h-screen relative pt-16 sm:pt-20">
+    <div className="bg-codex-terminal-component min-h-screen relative">
       {/* Global floating gradient orbs background */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Top right orb - subtle gradient */}
@@ -49,6 +49,7 @@ export function BlockRenderer({ blocks }: BlockRendererProps) {
         {/* Top left orb - subtle */}
         <div className="absolute top-[15%] left-[15%] w-56 h-56 sm:w-[280px] sm:h-[280px] bg-gradient-to-tr from-primary-200/30 to-primary-100/20 rounded-full blur-3xl animate-pulse" 
              style={{ animationDelay: '3s' }}></div>
+
       </div>
       
       <div className="relative z-10">

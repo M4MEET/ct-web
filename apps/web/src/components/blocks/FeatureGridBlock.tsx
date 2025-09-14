@@ -29,9 +29,9 @@ export function FeatureGridBlock({ data }: FeatureGridBlockProps) {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
               {data.heading.split(' ').slice(0, -2).join(' ')}<span className="block bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">{data.heading.split(' ').slice(-2).join(' ')}</span>
             </h2>
-            {data.subtitle && (
+            {(data.subtitle || data.subheading) && (
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-                {data.subtitle}
+                {data.subtitle || data.subheading}
               </p>
             )}
           </div>
@@ -54,9 +54,44 @@ export function FeatureGridBlock({ data }: FeatureGridBlockProps) {
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow text-center sm:text-left">
-                  {item.description || item.body}
-                </p>
+                <div className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow text-center sm:text-left">
+                  {(item.description || item.body || '').split('\n').map((line: string, lineIndex: number) => {
+                    const trimmedLine = line.trim();
+                    if (!trimmedLine) return <div key={lineIndex} className="h-3"></div>;
+                    
+                    // Style contact information lines differently
+                    if (trimmedLine.includes('📞') || trimmedLine.includes('✉️') || trimmedLine.includes('🕐') || trimmedLine.includes('📍')) {
+                      const [icon, ...textParts] = trimmedLine.split(' ');
+                      const text = textParts.join(' ');
+                      return (
+                        <div key={lineIndex} className={`flex items-start gap-2 ${lineIndex > 0 ? 'mt-2' : ''}`}>
+                          <span className="text-base flex-shrink-0">{icon}</span>
+                          <span className="font-medium text-gray-700">{text}</span>
+                        </div>
+                      );
+                    }
+                    
+                    // Style country/timezone info
+                    if (trimmedLine.includes('🇪🇺') || trimmedLine.includes('🇬🇧') || trimmedLine.includes('🌏') || trimmedLine.includes('🌍')) {
+                      // Use proper emoji extraction with Array.from to handle multi-byte characters
+                      const chars = Array.from(trimmedLine);
+                      const emoji = chars[0];
+                      const text = chars.slice(1).join('').trim();
+                      return (
+                        <div key={lineIndex} className={`flex items-center gap-2 ${lineIndex > 0 ? 'mt-2' : ''}`}>
+                          <span className="text-base">{emoji}</span>
+                          <span className="text-gray-700 font-medium">{text}</span>
+                        </div>
+                      );
+                    }
+                    
+                    return (
+                      <p key={lineIndex} className={lineIndex > 0 ? 'mt-2' : ''}>
+                        {trimmedLine}
+                      </p>
+                    );
+                  })}
+                </div>
                 
                 {/* Service badges/tags if available */}
                 {item.badges && (

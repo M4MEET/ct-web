@@ -99,6 +99,42 @@ function getClientIP(request: NextRequest): string {
   return '127.0.0.1';
 }
 
+function estimateConversionValue(service?: string, budget?: string): number {
+  // Estimate conversion value based on service type and budget
+  let baseValue = 1000; // Default lead value
+  
+  // Service multipliers
+  if (service) {
+    const serviceMultipliers: { [key: string]: number } = {
+      'web-development': 1.5,
+      'mobile-app': 2.0,
+      'enterprise-software': 3.0,
+      'ai-ml': 2.5,
+      'consulting': 1.2,
+      'maintenance': 0.8
+    };
+    
+    const multiplier = serviceMultipliers[service.toLowerCase()] || 1.0;
+    baseValue *= multiplier;
+  }
+  
+  // Budget adjustments
+  if (budget) {
+    const budgetMultipliers: { [key: string]: number } = {
+      'under-10k': 0.5,
+      '10k-50k': 1.0,
+      '50k-100k': 1.8,
+      '100k-500k': 3.0,
+      'over-500k': 5.0
+    };
+    
+    const multiplier = budgetMultipliers[budget.toLowerCase()] || 1.0;
+    baseValue *= multiplier;
+  }
+  
+  return Math.round(baseValue);
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Rate limiting
@@ -235,7 +271,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Parse metadata
+    // Parse metadata and enhance with UTM tracking
     let metadata = null;
     if (validatedData.metadata) {
       try {
@@ -244,8 +280,23 @@ export async function POST(request: NextRequest) {
         metadata.ip = clientIP;
       } catch (error) {
         console.error('Error parsing metadata:', error);
+        metadata = { ip: clientIP };
       }
+    } else {
+      metadata = { ip: clientIP };
     }
+
+    // Extract UTM parameters from metadata or headers
+    const utmParams = {
+      utm_source: metadata.utm_source || request.headers.get('utm-source'),
+      utm_medium: metadata.utm_medium || request.headers.get('utm-medium'), 
+      utm_campaign: metadata.utm_campaign || request.headers.get('utm-campaign'),
+      utm_term: metadata.utm_term || request.headers.get('utm-term'),
+      utm_content: metadata.utm_content || request.headers.get('utm-content')
+    };
+
+    // Add UTM data to metadata
+    Object.assign(metadata, utmParams);
 
     // Save to database
     const submission = await prisma.formSubmission.create({
@@ -268,6 +319,59 @@ export async function POST(request: NextRequest) {
         attachments: true
       }
     });
+
+    // Handle campaign attribution
+    if (utmParams.utm_campaign && utmParams.utm_source) {
+      try {
+        // Find or create marketing campaign
+        const campaignKey = `${utmParams.utm_source}-${utmParams.utm_medium || 'unknown'}-${utmParams.utm_campaign}`;
+        
+        let campaign = await prisma.marketingCampaign.findFirst({
+          where: {
+            source: utmParams.utm_source,
+            medium: utmParams.utm_medium || 'unknown',
+            campaign: utmParams.utm_campaign
+          }
+        });
+
+        if (!campaign) {
+          // Create new campaign if it doesn't exist
+          campaign = await prisma.marketingCampaign.create({
+            data: {
+              name: `${utmParams.utm_source} - ${utmParams.utm_campaign}`,
+              source: utmParams.utm_source,
+              medium: utmParams.utm_medium || 'unknown',
+              campaign: utmParams.utm_campaign,
+              term: utmParams.utm_term,
+              content: utmParams.utm_content,
+              startDate: new Date(),
+              conversions: 1
+            }
+          });
+        } else {
+          // Update existing campaign conversion count
+          await prisma.marketingCampaign.update({
+            where: { id: campaign.id },
+            data: { 
+              conversions: { increment: 1 },
+              updatedAt: new Date()
+            }
+          });
+        }
+
+        // Link submission to campaign
+        await prisma.campaignSubmission.create({
+          data: {
+            campaignId: campaign.id,
+            submissionId: submission.id,
+            conversionValue: estimateConversionValue(validatedData.service, validatedData.budget)
+          }
+        });
+      } catch (campaignError) {
+        console.error('Campaign attribution error:', campaignError);
+        // Don't fail the submission if campaign attribution fails
+      }
+    }
 
     // Send email notifications with complete metadata
     try {

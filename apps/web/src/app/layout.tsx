@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} bg-codex-terminal-body`}>
-      <body className="font-sans min-h-screen bg-codex-terminal-body antialiased">
+      <body className="font-sans min-h-screen bg-codex-terminal-body antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>
