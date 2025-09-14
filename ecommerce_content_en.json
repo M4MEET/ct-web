@@ -1,0 +1,108 @@
+{
+  "slug": "ecommerce-development",
+  "locale": "en",
+  "name": "E-commerce Development",
+  "summary": "Complete e-commerce solutions with modern technologies. Shopware, PrestaShop, Magento development, payment integration, inventory management, and mobile commerce apps.",
+  "icon": "🛒",
+  "order": 3,
+  "status": "published",
+  "seo": {
+    "title": "E-commerce Development Services | CodeX Terminal",
+    "description": "Professional e-commerce development with Shopware, PrestaShop, Magento. Custom online stores, payment integration, mobile commerce solutions.",
+    "keywords": ["e-commerce development", "online store", "Shopware development", "PrestaShop development", "Magento development", "payment integration", "mobile commerce"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Professional E-commerce Development",
+      "subheadline": "Build powerful online stores that drive sales and growth",
+      "description": "From custom e-commerce platforms to mobile commerce apps, we deliver complete solutions that help businesses thrive in the digital marketplace.",
+      "cta": {
+        "text": "Start Your E-commerce Project",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Platform Development",
+        "description": "Expert development on leading e-commerce platforms including Shopware, PrestaShop, and Magento with custom functionality.",
+        "icon": "🏪"
+      },
+      {
+        "title": "Payment Integration",
+        "description": "Secure payment gateway integration supporting multiple payment methods including PayPal, Stripe, and local payment solutions.",
+        "icon": "💳"
+      },
+      {
+        "title": "Inventory Management",
+        "description": "Advanced inventory tracking, stock management, and automated reordering systems to keep your business running smoothly.",
+        "icon": "📦"
+      },
+      {
+        "title": "Mobile Commerce",
+        "description": "Responsive designs and native mobile apps that provide seamless shopping experiences across all devices.",
+        "icon": "📱"
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Fast-loading stores with optimized code, CDN integration, and performance monitoring for better conversion rates.",
+        "icon": "⚡"
+      },
+      {
+        "title": "SEO & Marketing",
+        "description": "Built-in SEO optimization, marketing tools, and analytics integration to drive traffic and increase sales.",
+        "icon": "📈"
+      }
+    ],
+    "technologies": [
+      "Shopware 6",
+      "PrestaShop",
+      "Magento 2",
+      "WooCommerce",
+      "React/Next.js",
+      "Vue.js",
+      "Node.js",
+      "PHP",
+      "MySQL/PostgreSQL",
+      "Elasticsearch",
+      "Redis",
+      "Docker"
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Requirements Analysis",
+        "description": "We analyze your business needs, target audience, and technical requirements to create a comprehensive development plan."
+      },
+      {
+        "step": 2,
+        "title": "Platform Selection",
+        "description": "Choose the optimal e-commerce platform based on your specific needs, budget, and scalability requirements."
+      },
+      {
+        "step": 3,
+        "title": "Design & Development",
+        "description": "Create custom designs and develop your e-commerce solution with modern technologies and best practices."
+      },
+      {
+        "step": 4,
+        "title": "Integration & Testing",
+        "description": "Integrate payment systems, third-party services, and conduct thorough testing to ensure everything works perfectly."
+      },
+      {
+        "step": 5,
+        "title": "Launch & Support",
+        "description": "Deploy your store and provide ongoing support, maintenance, and optimization services."
+      }
+    ],
+    "benefits": [
+      "Increased online sales and revenue",
+      "Better customer experience",
+      "Mobile-responsive design",
+      "Secure payment processing",
+      "Scalable architecture",
+      "SEO-optimized structure",
+      "24/7 monitoring and support",
+      "Regular updates and maintenance"
+    ]
+  }
+}

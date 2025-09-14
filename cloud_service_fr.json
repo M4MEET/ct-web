@@ -1,0 +1,9 @@
+{
+  "slug": "infrastructure-cloud",
+  "locale": "fr",
+  "name": "Infrastructure Cloud",
+  "summary": "Solutions cloud évolutives sur AWS, GCP et Azure avec automatisation DevOps, surveillance et support 24/7 pour entreprises de toutes tailles.",
+  "icon": "☁️",
+  "order": 4,
+  "status": "published"
+}

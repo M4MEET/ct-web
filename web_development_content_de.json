@@ -1,0 +1,137 @@
+{
+  "slug": "web-entwicklung",
+  "locale": "de",
+  "name": "Web-Entwicklung",
+  "summary": "Moderne Webanwendungen mit modernsten Technologien. Full-Stack-Entwicklung, responsives Design, API-Integrationen und skalierbare Cloud-Lösungen.",
+  "icon": "💻",
+  "order": 1,
+  "status": "published",
+  "seo": {
+    "title": "Web-Entwicklung Services | CodeX Terminal",
+    "description": "Professionelle Web-Entwicklung mit modernen Frameworks. Individuelle Webanwendungen, responsives Design, API-Entwicklung und Cloud-Deployment.",
+    "keywords": ["Web-Entwicklung", "Full-Stack-Entwicklung", "responsives Design", "API-Entwicklung", "React", "Next.js", "Node.js", "Cloud-Deployment"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Moderne Web-Entwicklung",
+      "subheadline": "Erstellen Sie schnelle, skalierbare Webanwendungen mit modernsten Technologien",
+      "description": "Von responsiven Websites bis zu komplexen Webanwendungen liefern wir moderne Lösungen, die auf allen Geräten hervorragend funktionieren und mit Ihrem Unternehmenswachstum skalieren.",
+      "cta": {
+        "text": "Starten Sie Ihr Web-Projekt",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "Full-Stack-Entwicklung",
+        "description": "Komplette Web-Lösungen mit Frontend- und Backend-Entwicklung unter Verwendung moderner JavaScript-Frameworks und Server-Technologien.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Responsives Design",
+        "description": "Mobile-First-Ansatz für perfekte Benutzererfahrung auf allen Geräten von Smartphones bis Desktop-Computern.",
+        "icon": "📱"
+      },
+      {
+        "title": "API-Entwicklung",
+        "description": "RESTful und GraphQL APIs mit ordnungsgemäßer Authentifizierung, Dokumentation und Integrationsmöglichkeiten für Drittanbieter-Services.",
+        "icon": "🔗"
+      },
+      {
+        "title": "Performance-Optimierung",
+        "description": "Schnell ladende Websites mit optimiertem Code, Bildkompression, Lazy Loading und CDN-Integration für globale Performance.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Cloud-Deployment",
+        "description": "Skalierbare Cloud-Hosting-Lösungen mit automatischer Skalierung, Monitoring, Backups und CI/CD-Pipeline-Integration.",
+        "icon": "☁️"
+      },
+      {
+        "title": "SEO & Analytics",
+        "description": "Integrierte SEO-Optimierung, strukturierte Daten, Analytics-Integration und Performance-Monitoring für bessere Sichtbarkeit.",
+        "icon": "📊"
+      }
+    ],
+    "technologies": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Nuxt.js",
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "Python",
+      "Django/FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "AWS/GCP/Azure",
+      "Vercel/Netlify"
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Entdeckung & Planung",
+        "description": "Verstehen Sie Ihre Geschäftsziele, Zielgruppe und technischen Anforderungen, um eine umfassende Entwicklungsstrategie zu erstellen."
+      },
+      {
+        "step": 2,
+        "title": "Design & Architektur",
+        "description": "Erstellen Sie Wireframes, Design-Mockups und planen Sie die technische Architektur für optimale Performance und Benutzererfahrung."
+      },
+      {
+        "step": 3,
+        "title": "Entwicklung & Testing",
+        "description": "Erstellen Sie Ihre Webanwendung mit agiler Methodik mit kontinuierlichem Testing, Code-Reviews und Qualitätssicherung."
+      },
+      {
+        "step": 4,
+        "title": "Deployment & Launch",
+        "description": "Bereitstellung in der Produktion mit ordnungsgemäßer Konfiguration, Sicherheitsmaßnahmen, Performance-Optimierung und Monitoring-Setup."
+      },
+      {
+        "step": 5,
+        "title": "Wartung & Support",
+        "description": "Bieten Sie laufenden Support, Sicherheitsupdates, Performance-Monitoring und Feature-Erweiterungen während Ihr Unternehmen wächst."
+      }
+    ],
+    "specialties": [
+      {
+        "name": "Progressive Web Apps (PWA)",
+        "description": "Native App-ähnliche Erfahrungen mit Offline-Funktionalität, Push-Benachrichtigungen und Homescreen-Installation."
+      },
+      {
+        "name": "Single Page Applications (SPA)",
+        "description": "Schnelle, interaktive Webanwendungen mit flüssiger Navigation und Echtzeit-Updates ohne Seitenneuladungen."
+      },
+      {
+        "name": "Headless CMS Integration",
+        "description": "Flexible Content-Verwaltung mit Headless CMS-Lösungen wie Strapi, Contentful oder Sanity."
+      },
+      {
+        "name": "Echtzeit-Anwendungen",
+        "description": "Live-Chat, Kollaborations-Tools und Echtzeit-Dashboards mit WebSocket und Server-sent Events."
+      },
+      {
+        "name": "Microservices-Architektur",
+        "description": "Skalierbare Backend-Architektur mit containerisierten Services, API-Gateways und unabhängigen Deployments."
+      },
+      {
+        "name": "JAMstack-Entwicklung",
+        "description": "Moderne Web-Architektur mit JavaScript, APIs und vorgefertigtem Markup für bessere Performance und Sicherheit."
+      }
+    ],
+    "benefits": [
+      "Schnelle Ladezeiten und ausgezeichnete Performance",
+      "Mobile-responsive Design für alle Geräte",
+      "SEO-optimierte Struktur und Inhalte",
+      "Skalierbare Architektur für zukünftiges Wachstum",
+      "Implementierung von Sicherheits-Best-Practices",
+      "Moderne Benutzeroberfläche und -erfahrung",
+      "Cross-Browser-Kompatibilität",
+      "Laufende Wartung und Support"
+    ]
+  }
+}

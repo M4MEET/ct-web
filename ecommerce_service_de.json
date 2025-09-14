@@ -1,0 +1,9 @@
+{
+  "slug": "ecommerce-entwicklung",
+  "locale": "de",
+  "name": "E-Commerce Entwicklung",
+  "summary": "Vollständige E-Commerce-Lösungen mit modernen Technologien. Shopware, PrestaShop, Magento-Entwicklung, Payment-Integration, Bestandsverwaltung und mobile Commerce-Apps.",
+  "icon": "🛒",
+  "order": 3,
+  "status": "published"
+}

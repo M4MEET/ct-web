@@ -1,0 +1,136 @@
+{
+  "slug": "digitales-marketing",
+  "locale": "de",
+  "name": "Digitales Marketing",
+  "summary": "Datengetriebene Marketing-Strategien für Online-Wachstum. SEO, Content-Marketing, Social Media Management, PPC-Kampagnen und Analytics-Optimierung.",
+  "icon": "📱",
+  "order": 2,
+  "status": "published",
+  "seo": {
+    "title": "Digitales Marketing Services | CodeX Terminal",
+    "description": "Professionelles digitales Marketing mit SEO, Content-Marketing, Social Media, PPC-Kampagnen. Steigern Sie Traffic, Engagement und Conversions mit datengetriebenen Strategien.",
+    "keywords": ["digitales Marketing", "SEO", "Content-Marketing", "Social Media Marketing", "PPC", "Google Ads", "Analytics", "Online-Marketing"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Datengetriebenes Digitales Marketing",
+      "subheadline": "Steigern Sie Ihre Online-Präsenz mit strategischen Marketing-Kampagnen, die Ergebnisse liefern",
+      "description": "Von SEO-Optimierung bis hin zu gezielten Werbekampagnen helfen wir Unternehmen dabei, ihre Zielgruppe zu erreichen, das Engagement zu steigern und nachhaltiges Wachstum durch bewährte digitale Marketing-Strategien zu erzielen.",
+      "cta": {
+        "text": "Starten Sie Ihre Marketing-Kampagne",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "Suchmaschinenoptimierung (SEO)",
+        "description": "Verbessern Sie die Sichtbarkeit Ihrer Website in Suchergebnissen mit technischem SEO, Content-Optimierung und strategischem Linkaufbau für nachhaltiges organisches Wachstum.",
+        "icon": "🔍"
+      },
+      {
+        "title": "Content-Marketing",
+        "description": "Erstellen Sie überzeugenden Content, der Ihre Zielgruppe anspricht, Markenautorität aufbaut und Conversions über alle digitalen Kanäle hinweg antreibt.",
+        "icon": "✍️"
+      },
+      {
+        "title": "Social Media Marketing",
+        "description": "Bauen Sie Ihre Community auf Social-Media-Plattformen auf und binden Sie sie mit strategischem Content, Community-Management und gezielten Werbekampagnen ein.",
+        "icon": "📱"
+      },
+      {
+        "title": "Pay-Per-Click (PPC) Werbung",
+        "description": "Maximieren Sie den ROI mit gezielten Google Ads, Social Media Ads und Display-Kampagnen, die für Conversions und Kosteneffizienz optimiert sind.",
+        "icon": "💰"
+      },
+      {
+        "title": "Analytics & Reporting",
+        "description": "Verfolgen Sie die Performance mit umfassenden Analytics, detailliertem Reporting und umsetzbaren Insights zur Optimierung Ihrer Marketing-Investitionen.",
+        "icon": "📊"
+      },
+      {
+        "title": "E-Mail-Marketing",
+        "description": "Pflegen Sie Leads und behalten Sie Kunden mit personalisierten E-Mail-Kampagnen, Automatisierungs-Workflows und Segmentierungsstrategien.",
+        "icon": "📧"
+      }
+    ],
+    "services": [
+      {
+        "name": "SEO Audit & Strategie",
+        "description": "Umfassende Website-Analyse mit technischen SEO-Fixes, Keyword-Recherche und Content-Strategie-Entwicklung."
+      },
+      {
+        "name": "Google Ads Management",
+        "description": "Professionelle Kampagnen-Einrichtung, Optimierung und Management für Such-, Display- und Shopping-Anzeigen."
+      },
+      {
+        "name": "Social Media Strategie",
+        "description": "Plattformspezifische Strategien für Facebook, Instagram, LinkedIn, Twitter und neue soziale Netzwerke."
+      },
+      {
+        "name": "Content-Erstellung",
+        "description": "Blog-Posts, Social Media Content, Video-Skripte, Infografiken und Marketing-Texte, die konvertieren."
+      },
+      {
+        "name": "Conversion Rate Optimierung",
+        "description": "Verbessern Sie die Website-Performance mit A/B-Testing, User Experience Optimierung und Conversion-Funnel-Analyse."
+      },
+      {
+        "name": "Marketing-Automatisierung",
+        "description": "Setup und Optimierung von Marketing-Automatisierungs-Workflows für Lead-Nurturing und Kundenbindung."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Marktforschung & Analyse",
+        "description": "Analysieren Sie Ihren Markt, Konkurrenten und Zielgruppe, um datengetriebene Marketing-Strategien zu entwickeln, die Ergebnisse liefern."
+      },
+      {
+        "step": 2,
+        "title": "Strategieentwicklung",
+        "description": "Erstellen Sie umfassende Marketing-Pläne mit klaren Zielen, KPIs, Budgetallokation und Zeitplan für die Umsetzung."
+      },
+      {
+        "step": 3,
+        "title": "Kampagnen-Umsetzung",
+        "description": "Führen Sie Marketing-Kampagnen über ausgewählte Kanäle mit professionellem Setup, Content-Erstellung und initialer Optimierung aus."
+      },
+      {
+        "step": 4,
+        "title": "Monitoring & Optimierung",
+        "description": "Überwachen Sie kontinuierlich die Kampagnen-Performance, passen Sie Strategien an und optimieren Sie für bessere Ergebnisse und ROI."
+      },
+      {
+        "step": 5,
+        "title": "Reporting & Skalierung",
+        "description": "Stellen Sie detaillierte Performance-Berichte bereit und skalieren Sie erfolgreiche Kampagnen während Sie unterperformende Elemente verfeinern."
+      }
+    ],
+    "platforms": [
+      "Google Ads",
+      "Facebook Ads",
+      "Instagram Ads",
+      "LinkedIn Ads",
+      "Twitter Ads",
+      "Google Analytics",
+      "Google Search Console",
+      "Mailchimp",
+      "HubSpot",
+      "Hootsuite",
+      "Buffer",
+      "SEMrush",
+      "Ahrefs",
+      "Hotjar"
+    ],
+    "benefits": [
+      "Erhöhter Website-Traffic und Sichtbarkeit",
+      "Höhere Suchmaschinen-Rankings",
+      "Bessere Engagement-Raten über alle Plattformen",
+      "Verbesserte Conversion-Raten und ROI",
+      "Datengetriebene Entscheidungsfindung",
+      "Markenbekanntheit und Autoritätsaufbau",
+      "Gezielte Zielgruppen-Reichweite",
+      "Messbare Ergebnisse und Transparenz"
+    ]
+  }
+}

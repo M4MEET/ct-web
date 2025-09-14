@@ -1,0 +1,137 @@
+{
+  "slug": "infrastructure-cloud",
+  "locale": "fr",
+  "name": "Infrastructure Cloud",
+  "summary": "Solutions cloud évolutives sur AWS, GCP et Azure avec automatisation DevOps, surveillance et support 24/7 pour entreprises de toutes tailles.",
+  "icon": "☁️",
+  "order": 9,
+  "status": "published",
+  "seo": {
+    "title": "Services Infrastructure Cloud | CodeX Terminal",
+    "description": "Configuration et gestion infrastructure cloud professionnelle sur AWS, GCP, Azure. Automatisation DevOps, surveillance, sécurité et solutions architecture évolutive.",
+    "keywords": ["infrastructure cloud", "AWS", "Google Cloud", "Azure", "DevOps", "migration cloud", "automatisation infrastructure", "sécurité cloud"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Infrastructure Cloud Évolutive",
+      "subheadline": "Construisez et gérez une infrastructure cloud robuste qui grandit avec votre entreprise",
+      "description": "De la configuration cloud initiale à l'automatisation DevOps avancée, nous fournissons des services d'infrastructure cloud complets qui livrent fiabilité, sécurité et rentabilité sur les plateformes AWS, Google Cloud et Azure.",
+      "cta": {
+        "text": "Construisez Votre Infrastructure Cloud",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Architecture Multi-Cloud",
+        "description": "Concevez et implémentez des solutions cloud évolutives sur AWS, Google Cloud Platform et Microsoft Azure avec meilleures pratiques et optimisation coûts.",
+        "icon": "🌐"
+      },
+      {
+        "title": "Automatisation DevOps",
+        "description": "Implémentez pipelines CI/CD, infrastructure as code, déploiements automatisés et surveillance continue pour workflows développement efficaces.",
+        "icon": "🔄"
+      },
+      {
+        "title": "Orchestration Conteneurs",
+        "description": "Déployez et gérez applications containerisées utilisant Docker, Kubernetes et technologies serverless pour évolutivité et efficacité maximales.",
+        "icon": "📦"
+      },
+      {
+        "title": "Sécurité & Conformité",
+        "description": "Implémentez mesures sécurité complètes, contrôles accès, chiffrement et frameworks conformité pour protéger votre infrastructure cloud.",
+        "icon": "🔒"
+      },
+      {
+        "title": "Surveillance & Alerte",
+        "description": "Surveillance infrastructure 24/7 avec tableaux bord personnalisés, alerte automatisée, gestion logs et recommandations optimisation performance.",
+        "icon": "📊"
+      },
+      {
+        "title": "Optimisation Coûts",
+        "description": "Surveillance coûts continue, optimisation ressources, configurations auto-scaling et gestion instances réservées pour minimiser dépenses cloud.",
+        "icon": "💰"
+      }
+    ],
+    "services": [
+      {
+        "name": "Conception Architecture Cloud",
+        "description": "Planification architecture cloud personnalisée avec évolutivité, sécurité et rentabilité en tête pour vos exigences commerciales spécifiques."
+      },
+      {
+        "name": "Automatisation Infrastructure",
+        "description": "Implémentation Infrastructure as Code utilisant Terraform, CloudFormation et autres outils pour déploiements cohérents et reproductibles."
+      },
+      {
+        "name": "Configuration Pipeline CI/CD",
+        "description": "Pipelines automatisés build, test et déploiement utilisant Jenkins, GitLab CI, GitHub Actions et outils natifs cloud."
+      },
+      {
+        "name": "Gestion Kubernetes",
+        "description": "Configuration, gestion et optimisation complètes cluster Kubernetes avec service mesh, contrôleurs ingress et surveillance."
+      },
+      {
+        "name": "Solutions Base de Données",
+        "description": "Configuration et optimisation base de données gérée incluant RDS, CloudSQL, CosmosDB et solutions NoSQL avec sauvegarde et mise à l'échelle."
+      },
+      {
+        "name": "Récupération Catastrophe",
+        "description": "Stratégies sauvegarde complètes, planification récupération catastrophe et solutions continuité commerciale pour applications critiques."
+      }
+    ],
+    "platforms": [
+      {
+        "name": "Amazon Web Services (AWS)",
+        "services": ["EC2", "RDS", "S3", "Lambda", "EKS", "CloudFormation", "CloudWatch", "VPC", "IAM", "Route 53"],
+        "description": "Solutions cloud AWS complètes avec services compute, stockage, base de données et réseau."
+      },
+      {
+        "name": "Google Cloud Platform (GCP)",
+        "services": ["Compute Engine", "Cloud SQL", "Cloud Storage", "Cloud Functions", "GKE", "Cloud Deployment Manager", "Cloud Monitoring"],
+        "description": "Infrastructure GCP avec intégration IA/ML et capacités analytics avancées."
+      },
+      {
+        "name": "Microsoft Azure",
+        "services": ["Virtual Machines", "Azure SQL", "Blob Storage", "Azure Functions", "AKS", "Azure Resource Manager", "Azure Monitor"],
+        "description": "Solutions Azure niveau entreprise avec cloud hybride et intégration écosystème Microsoft."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation Exigences",
+        "description": "Analysez infrastructure actuelle, exigences commerciales, besoins conformité et projections croissance pour concevoir stratégie cloud optimale."
+      },
+      {
+        "step": 2,
+        "title": "Planification Architecture",
+        "description": "Concevez architecture cloud évolutive et sécurisée avec blueprints infrastructure détaillés, frameworks sécurité et estimations coûts."
+      },
+      {
+        "step": 3,
+        "title": "Déploiement Infrastructure",
+        "description": "Implémentez infrastructure cloud utilisant outils automatisation, configurez mesures sécurité et établissez systèmes surveillance et sauvegarde."
+      },
+      {
+        "step": 4,
+        "title": "Migration & Tests",
+        "description": "Migrez applications et données vers infrastructure cloud, effectuez tests complets et optimisez performance et sécurité."
+      },
+      {
+        "step": 5,
+        "title": "Gestion Continue",
+        "description": "Fournissez surveillance continue, maintenance, optimisation et support avec mises à jour sécurité régulières et améliorations performance."
+      }
+    ],
+    "benefits": [
+      "Coûts et complexité infrastructure réduits",
+      "Évolutivité et performance améliorées",
+      "Posture sécurité et conformité renforcée",
+      "Cycles déploiement et développement plus rapides",
+      "Temps de fonctionnement 99,9%+ avec récupération catastrophe",
+      "Disponibilité globale et livraison contenu",
+      "Solutions sauvegarde et surveillance automatisées",
+      "Support et maintenance experts 24/7"
+    ]
+  }
+}

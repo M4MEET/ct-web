@@ -1,0 +1,136 @@
+{
+  "slug": "marketing-digital",
+  "locale": "fr",
+  "name": "Marketing Digital",
+  "summary": "Stratégies marketing axées sur les données pour la croissance en ligne. SEO, marketing de contenu, gestion des médias sociaux, campagnes PPC et optimisation d'analytics.",
+  "icon": "📱",
+  "order": 2,
+  "status": "published",
+  "seo": {
+    "title": "Services de Marketing Digital | CodeX Terminal",
+    "description": "Marketing digital professionnel avec SEO, marketing de contenu, médias sociaux, campagnes PPC. Augmentez le trafic, l'engagement et les conversions avec des stratégies basées sur les données.",
+    "keywords": ["marketing digital", "SEO", "marketing de contenu", "marketing des médias sociaux", "PPC", "Google Ads", "analytics", "marketing en ligne"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Marketing Digital Basé sur les Données",
+      "subheadline": "Développez votre présence en ligne avec des campagnes marketing stratégiques qui livrent des résultats",
+      "description": "De l'optimisation SEO aux campagnes publicitaires ciblées, nous aidons les entreprises à atteindre leur audience cible, augmenter l'engagement et générer une croissance durable grâce à des stratégies de marketing digital éprouvées.",
+      "cta": {
+        "text": "Commencez Votre Campagne Marketing",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Optimisation pour les Moteurs de Recherche (SEO)",
+        "description": "Améliorez la visibilité de votre site web dans les résultats de recherche avec le SEO technique, l'optimisation de contenu et la construction de liens stratégique pour une croissance organique durable.",
+        "icon": "🔍"
+      },
+      {
+        "title": "Marketing de Contenu",
+        "description": "Créez du contenu convaincant qui engage votre audience, construit l'autorité de marque et stimule les conversions sur tous les canaux digitaux.",
+        "icon": "✍️"
+      },
+      {
+        "title": "Marketing des Médias Sociaux",
+        "description": "Construisez et engagez votre communauté sur les plateformes sociales avec du contenu stratégique, gestion communautaire et campagnes publicitaires ciblées.",
+        "icon": "📱"
+      },
+      {
+        "title": "Publicité Pay-Per-Click (PPC)",
+        "description": "Maximisez le ROI avec Google Ads ciblées, publicités médias sociaux et campagnes display optimisées pour les conversions et l'efficacité des coûts.",
+        "icon": "💰"
+      },
+      {
+        "title": "Analytics & Reporting",
+        "description": "Suivez la performance avec des analytics complets, rapports détaillés et insights actionnables pour optimiser vos investissements marketing.",
+        "icon": "📊"
+      },
+      {
+        "title": "Email Marketing",
+        "description": "Entretenez les leads et fidélisez les clients avec des campagnes email personnalisées, workflows d'automatisation et stratégies de segmentation.",
+        "icon": "📧"
+      }
+    ],
+    "services": [
+      {
+        "name": "Audit & Stratégie SEO",
+        "description": "Analyse complète du site web avec corrections SEO techniques, recherche de mots-clés et développement de stratégie de contenu."
+      },
+      {
+        "name": "Gestion Google Ads",
+        "description": "Configuration professionnelle de campagnes, optimisation et gestion pour les annonces de recherche, display et shopping."
+      },
+      {
+        "name": "Stratégie Médias Sociaux",
+        "description": "Stratégies spécifiques aux plateformes pour Facebook, Instagram, LinkedIn, Twitter et réseaux sociaux émergents."
+      },
+      {
+        "name": "Création de Contenu",
+        "description": "Articles de blog, contenu médias sociaux, scripts vidéo, infographies et copy marketing qui convertit."
+      },
+      {
+        "name": "Optimisation Taux de Conversion",
+        "description": "Améliorez la performance du site web avec tests A/B, optimisation expérience utilisateur et analyse entonnoir de conversion."
+      },
+      {
+        "name": "Automatisation Marketing",
+        "description": "Configuration et optimisation de workflows d'automatisation marketing pour nurturing de leads et rétention client."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Recherche de Marché & Analyse",
+        "description": "Analysez votre marché, concurrents et audience cible pour développer des stratégies marketing basées sur les données qui livrent des résultats."
+      },
+      {
+        "step": 2,
+        "title": "Développement de Stratégie",
+        "description": "Créez des plans marketing complets avec objectifs clairs, KPIs, allocation budgétaire et calendrier pour l'implémentation."
+      },
+      {
+        "step": 3,
+        "title": "Implémentation de Campagne",
+        "description": "Exécutez des campagnes marketing sur les canaux choisis avec configuration professionnelle, création de contenu et optimisation initiale."
+      },
+      {
+        "step": 4,
+        "title": "Surveillance & Optimisation",
+        "description": "Surveillez continuellement la performance des campagnes, ajustez les stratégies et optimisez pour de meilleurs résultats et ROI."
+      },
+      {
+        "step": 5,
+        "title": "Reporting & Mise à l'Échelle",
+        "description": "Fournissez des rapports de performance détaillés et mettez à l'échelle les campagnes réussies tout en affinant les éléments sous-performants."
+      }
+    ],
+    "platforms": [
+      "Google Ads",
+      "Facebook Ads",
+      "Instagram Ads",
+      "LinkedIn Ads",
+      "Twitter Ads",
+      "Google Analytics",
+      "Google Search Console",
+      "Mailchimp",
+      "HubSpot",
+      "Hootsuite",
+      "Buffer",
+      "SEMrush",
+      "Ahrefs",
+      "Hotjar"
+    ],
+    "benefits": [
+      "Trafic et visibilité du site web augmentés",
+      "Classements moteurs de recherche plus élevés",
+      "Meilleurs taux d'engagement sur toutes plateformes",
+      "Taux de conversion et ROI améliorés",
+      "Prise de décision basée sur les données",
+      "Construction notoriété et autorité de marque",
+      "Portée d'audience ciblée",
+      "Résultats mesurables et transparence"
+    ]
+  }
+}

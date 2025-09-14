@@ -1,0 +1,9 @@
+{
+  "slug": "cloud-infrastruktur",
+  "locale": "de",
+  "name": "Cloud-Infrastruktur",
+  "summary": "Skalierbare Cloud-Lösungen auf AWS, GCP und Azure mit DevOps-Automatisierung, Überwachung und 24/7 Support für Unternehmen aller Größen.",
+  "icon": "☁️",
+  "order": 4,
+  "status": "published"
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "conseil-technique",
+  "locale": "fr",
+  "name": "Conseil Technique",
+  "summary": "Conseil technologique stratégique pour prendre des décisions éclairées. Architecture système, sélection technologique, transformation digitale et développement de stratégie IT.",
+  "icon": "💡",
+  "order": 6,
+  "status": "published"
+}

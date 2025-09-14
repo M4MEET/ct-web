@@ -1,0 +1,137 @@
+{
+  "slug": "developpement-web",
+  "locale": "fr",
+  "name": "Développement Web",
+  "summary": "Applications web modernes avec technologies de pointe. Développement full-stack, design responsive, intégrations API et solutions cloud évolutives.",
+  "icon": "💻",
+  "order": 1,
+  "status": "published",
+  "seo": {
+    "title": "Services de Développement Web | CodeX Terminal",
+    "description": "Développement web professionnel avec frameworks modernes. Applications web personnalisées, design responsive, développement API et déploiement cloud.",
+    "keywords": ["développement web", "développement full-stack", "design responsive", "développement API", "React", "Next.js", "Node.js", "déploiement cloud"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Développement Web Moderne",
+      "subheadline": "Construisez des applications web rapides et évolutives avec des technologies de pointe",
+      "description": "Des sites web responsifs aux applications web complexes, nous livrons des solutions modernes qui performent excellemment sur tous les appareils et évoluent avec la croissance de votre entreprise.",
+      "cta": {
+        "text": "Commencez Votre Projet Web",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Développement Full-Stack",
+        "description": "Solutions web complètes avec développement frontend et backend utilisant des frameworks JavaScript modernes et technologies serveur.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Design Responsive",
+        "description": "Approche mobile-first assurant une expérience utilisateur parfaite sur tous les appareils des smartphones aux ordinateurs de bureau.",
+        "icon": "📱"
+      },
+      {
+        "title": "Développement API",
+        "description": "APIs RESTful et GraphQL avec authentification appropriée, documentation et capacités d'intégration pour services tiers.",
+        "icon": "🔗"
+      },
+      {
+        "title": "Optimisation Performance",
+        "description": "Sites web à chargement rapide avec code optimisé, compression d'images, lazy loading et intégration CDN pour performance globale.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Déploiement Cloud",
+        "description": "Solutions d'hébergement cloud évolutives avec mise à l'échelle automatique, surveillance, sauvegardes et intégration pipeline CI/CD.",
+        "icon": "☁️"
+      },
+      {
+        "title": "SEO & Analytics",
+        "description": "Optimisation SEO intégrée, données structurées, intégration analytics et surveillance performance pour meilleure visibilité.",
+        "icon": "📊"
+      }
+    ],
+    "technologies": [
+      "React",
+      "Next.js",
+      "Vue.js",
+      "Nuxt.js",
+      "Node.js",
+      "Express.js",
+      "TypeScript",
+      "Python",
+      "Django/FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "AWS/GCP/Azure",
+      "Vercel/Netlify"
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Découverte & Planification",
+        "description": "Comprenez vos objectifs commerciaux, audience cible et exigences techniques pour créer une stratégie de développement complète."
+      },
+      {
+        "step": 2,
+        "title": "Design & Architecture",
+        "description": "Créez des wireframes, maquettes de design et planifiez l'architecture technique pour performance optimale et expérience utilisateur."
+      },
+      {
+        "step": 3,
+        "title": "Développement & Tests",
+        "description": "Construisez votre application web en utilisant méthodologie agile avec tests continus, revues de code et assurance qualité."
+      },
+      {
+        "step": 4,
+        "title": "Déploiement & Lancement",
+        "description": "Déployez en production avec configuration appropriée, mesures de sécurité, optimisation performance et configuration surveillance."
+      },
+      {
+        "step": 5,
+        "title": "Maintenance & Support",
+        "description": "Fournissez support continu, mises à jour sécurité, surveillance performance et améliorations fonctionnalités pendant la croissance de votre entreprise."
+      }
+    ],
+    "specialties": [
+      {
+        "name": "Applications Web Progressives (PWA)",
+        "description": "Expériences similaires aux apps natives avec fonctionnalité hors ligne, notifications push et installation écran d'accueil."
+      },
+      {
+        "name": "Applications Page Unique (SPA)",
+        "description": "Applications web rapides et interactives avec navigation fluide et mises à jour temps réel sans rechargement de page."
+      },
+      {
+        "name": "Intégration CMS Headless",
+        "description": "Gestion de contenu flexible avec solutions CMS headless comme Strapi, Contentful ou Sanity."
+      },
+      {
+        "name": "Applications Temps Réel",
+        "description": "Chat en direct, outils de collaboration et tableaux de bord temps réel utilisant WebSocket et événements envoyés par serveur."
+      },
+      {
+        "name": "Architecture Microservices",
+        "description": "Architecture backend évolutive avec services containerisés, passerelles API et déploiements indépendants."
+      },
+      {
+        "name": "Développement JAMstack",
+        "description": "Architecture web moderne avec JavaScript, APIs et balisage pré-construit pour meilleure performance et sécurité."
+      }
+    ],
+    "benefits": [
+      "Temps de chargement rapides et performance excellente",
+      "Design mobile-responsive pour tous appareils",
+      "Structure et contenu optimisés SEO",
+      "Architecture évolutive pour croissance future",
+      "Implémentation meilleures pratiques sécurité",
+      "Interface et expérience utilisateur modernes",
+      "Compatibilité cross-browser",
+      "Maintenance et support continus"
+    ]
+  }
+}

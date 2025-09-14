@@ -1,0 +1,134 @@
+{
+  "slug": "technische-beratung",
+  "locale": "de",
+  "name": "Technische Beratung",
+  "summary": "Strategische Technologie-Beratung für fundierte Entscheidungen. System-Architektur, Technologie-Auswahl, digitale Transformation und IT-Strategieentwicklung.",
+  "icon": "💡",
+  "order": 6,
+  "status": "published",
+  "seo": {
+    "title": "Technische Beratung Services | CodeX Terminal",
+    "description": "Experten-Technologie-Beratung für Architektur-Design, digitale Transformation und strategische IT-Entscheidungen. CTO-Level Beratung für wachsende Unternehmen.",
+    "keywords": ["technische Beratung", "Technologie-Strategie", "System-Architektur", "digitale Transformation", "CTO Beratung", "IT-Strategie", "Technologie-Auswahl"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Strategische Technische Beratung",
+      "subheadline": "Treffen Sie fundierte Technologie-Entscheidungen mit Expertenberatung und strategischer Planung",
+      "description": "Von System-Architektur-Design bis hin zu Roadmaps für die digitale Transformation bieten wir CTO-Level-Expertise, um Unternehmen bei intelligenten Technologie-Investitionen und dem Aufbau skalierbarer Lösungen zu helfen.",
+      "cta": {
+        "text": "Beratungstermin vereinbaren",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "System-Architektur-Design",
+        "description": "Entwerfen Sie skalierbare, wartbare System-Architekturen, die Ihr Unternehmenswachstum und technische Anforderungen unterstützen.",
+        "icon": "🏗️"
+      },
+      {
+        "title": "Technologie-Stack-Auswahl",
+        "description": "Wählen Sie die richtigen Technologien, Frameworks und Tools basierend auf Ihren spezifischen Bedürfnissen, Budget und langfristigen Zielen.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Digitale Transformations-Strategie",
+        "description": "Entwickeln Sie umfassende Roadmaps für die digitale Transformation, die Ihre Geschäftsprozesse und Technologie-Infrastruktur modernisieren.",
+        "icon": "🚀"
+      },
+      {
+        "title": "Code-Review & Qualitätsbewertung",
+        "description": "Bewerten Sie bestehende Codebasen, identifizieren Sie technische Schulden und geben Sie umsetzbare Verbesserungsempfehlungen.",
+        "icon": "🔍"
+      },
+      {
+        "title": "Performance-Optimierung",
+        "description": "Identifizieren Sie Engpässe, optimieren Sie System-Performance und implementieren Sie Skalierbarkeitsverbesserungen für bessere Benutzererfahrung.",
+        "icon": "⚡"
+      },
+      {
+        "title": "Sicherheits- & Compliance-Audit",
+        "description": "Bewerten Sie die Sicherheitslage, identifizieren Sie Schwachstellen und stellen Sie Compliance mit Industriestandards und Vorschriften sicher.",
+        "icon": "🔒"
+      }
+    ],
+    "services": [
+      {
+        "name": "Technologie-Bewertung",
+        "description": "Umfassende Evaluierung Ihres aktuellen Technologie-Stacks, Infrastruktur und Entwicklungsprozesse mit Verbesserungsempfehlungen."
+      },
+      {
+        "name": "Architektur-Planung",
+        "description": "Design von Microservices-Architektur, API-Strategien, Datenbank-Design und Cloud-Infrastruktur für skalierbare Anwendungen."
+      },
+      {
+        "name": "Team- & Prozess-Optimierung",
+        "description": "Verbessern Sie Entwicklungs-Workflows, implementieren Sie Best Practices und optimieren Sie Team-Produktivität mit modernen DevOps-Praktiken."
+      },
+      {
+        "name": "Lieferanten-Auswahl & Integration",
+        "description": "Bewerten und wählen Sie Drittanbieter-Services, APIs und Tools aus, die mit Ihren technischen und geschäftlichen Anforderungen übereinstimmen."
+      },
+      {
+        "name": "Compliance & Risikomanagement",
+        "description": "Stellen Sie DSGVO, HIPAA, SOC2-Compliance sicher und implementieren Sie Sicherheits-Best-Practices zum Schutz Ihres Unternehmens und Ihrer Kunden."
+      },
+      {
+        "name": "Startup CTO Services",
+        "description": "Fraktionale CTO-Services für Startups einschließlich technischer Führung, Team-Aufbau und Produktentwicklungsstrategie."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Ist-Zustand-Analyse",
+        "description": "Bewerten Sie bestehende Systeme, Prozesse und Team-Fähigkeiten, um Ihre aktuelle Technologie-Landschaft zu verstehen."
+      },
+      {
+        "step": 2,
+        "title": "Anforderungserfassung",
+        "description": "Definieren Sie Geschäftsziele, technische Anforderungen, Beschränkungen und Erfolgskriterien für das Beratungsengagement."
+      },
+      {
+        "step": 3,
+        "title": "Strategische Planung",
+        "description": "Entwickeln Sie umfassende Empfehlungen, Roadmaps und Implementierungsstrategien, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind."
+      },
+      {
+        "step": 4,
+        "title": "Implementierungs-Support",
+        "description": "Bieten Sie praktische Unterstützung während der Implementierungsphasen mit Anleitung, Code-Reviews und Fortschrittskontrolle."
+      },
+      {
+        "step": 5,
+        "title": "Wissenstransfer",
+        "description": "Stellen Sie sicher, dass Ihr Team die neuen Systeme und Prozesse durch Dokumentation, Schulungen und laufenden Support versteht."
+      }
+    ],
+    "expertise": [
+      "Cloud-Architektur (AWS, GCP, Azure)",
+      "Microservices & API-Design",
+      "Datenbank-Design & Optimierung",
+      "DevOps & CI/CD-Pipelines",
+      "Sicherheit & Compliance",
+      "Performance-Optimierung",
+      "Team-Führung & Management",
+      "Agile & Scrum-Methodologien",
+      "Modernes JavaScript/TypeScript",
+      "Python & Node.js-Ökosysteme",
+      "React, Vue.js, Angular",
+      "Mobile-Entwicklungsstrategie"
+    ],
+    "benefits": [
+      "Reduziertes technisches Risiko und technische Schulden",
+      "Verbesserte System-Performance und Skalierbarkeit",
+      "Bessere Technologie-Investitionsentscheidungen",
+      "Erweiterte Sicherheits- und Compliance-Haltung",
+      "Optimierte Entwicklungsprozesse und Workflows",
+      "Strategische Technologie-Roadmap und Vision",
+      "Kosteneffektive Lösungen und Empfehlungen",
+      "Zugang zu Senior-Level-Expertise ohne Vollzeit-Einstellung"
+    ]
+  }
+}

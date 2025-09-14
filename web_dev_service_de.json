@@ -1,0 +1,9 @@
+{
+  "slug": "web-entwicklung",
+  "locale": "de",
+  "name": "Web-Entwicklung",
+  "summary": "Maßgeschneiderte Webanwendungen und E-Commerce-Plattformen mit modernen Technologien. React, Next.js, Full-Stack-Entwicklung, API-Integration und responsive Design.",
+  "icon": "🌐",
+  "order": 5,
+  "status": "published"
+}

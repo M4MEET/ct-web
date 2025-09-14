@@ -1,0 +1,9 @@
+{
+  "slug": "verwalteter-support",
+  "locale": "de",
+  "name": "Verwalteter Support",
+  "summary": "24/7 technischer Support und Wartung für reibungslose IT-Systeme. Monitoring, Updates, Backup-Management und proaktive System-Wartung.",
+  "icon": "🛡️",
+  "order": 7,
+  "status": "published"
+}

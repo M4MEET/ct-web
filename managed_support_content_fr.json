@@ -1,0 +1,142 @@
+{
+  "slug": "support-gere",
+  "locale": "fr",
+  "name": "Support Géré",
+  "summary": "Support technique 24/7 et maintenance pour systèmes IT fluides. Surveillance, mises à jour, gestion de sauvegarde et maintenance système proactive.",
+  "icon": "🛡️",
+  "order": 7,
+  "status": "published",
+  "seo": {
+    "title": "Services de Support IT Géré | CodeX Terminal",
+    "description": "Support IT géré 24/7 avec surveillance, maintenance, mises à jour sécurité et gestion système proactive. Maintenez votre entreprise en marche.",
+    "keywords": ["support géré", "support IT", "surveillance 24/7", "maintenance système", "support technique", "gestion serveur", "gestion sauvegarde"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Support IT Géré 24/7",
+      "subheadline": "Maintenez vos systèmes en marche avec surveillance proactive et support technique expert",
+      "description": "De la surveillance système continue à la réponse d'incident d'urgence, nous fournissons des services de support géré complets qui assurent que votre infrastructure technologique fonctionne à performance optimale 24h/24.",
+      "cta": {
+        "text": "Obtenir Support Maintenant",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Surveillance Système 24/7",
+        "description": "Surveillance continue des serveurs, applications et infrastructure réseau avec alertes automatisées et réponse immédiate aux problèmes.",
+        "icon": "👀"
+      },
+      {
+        "title": "Maintenance Proactive",
+        "description": "Mises à jour système régulières, correctifs sécurité, optimisation performance et maintenance préventive pour éviter les temps d'arrêt.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Sauvegarde & Récupération Catastrophe",
+        "description": "Solutions sauvegarde automatisées, services récupération données et planification récupération catastrophe pour protéger vos données critiques d'entreprise.",
+        "icon": "💾"
+      },
+      {
+        "title": "Gestion Sécurité",
+        "description": "Surveillance sécurité continue, évaluations vulnérabilité, gestion firewall et réponse incident sécurité.",
+        "icon": "🔒"
+      },
+      {
+        "title": "Optimisation Performance",
+        "description": "Analyse performance régulière, optimisation ressources, planification capacité et recommandations mise à l'échelle pour performance système optimale.",
+        "icon": "📈"
+      },
+      {
+        "title": "Réponse Incident",
+        "description": "Réponse rapide aux problèmes critiques avec procédures escalade, analyse cause racine et documentation incident complète.",
+        "icon": "🚨"
+      }
+    ],
+    "services": [
+      {
+        "name": "Gestion Serveur",
+        "description": "Administration serveur complète incluant mises à jour OS, gestion configuration et surveillance performance pour serveurs physiques et virtuels."
+      },
+      {
+        "name": "Support Infrastructure Cloud",
+        "description": "Gestion et optimisation ressources cloud sur AWS, Google Cloud, Azure avec optimisation coûts et automatisation mise à l'échelle."
+      },
+      {
+        "name": "Administration Base de Données",
+        "description": "Maintenance base de données, optimisation, gestion sauvegarde et réglage performance pour MySQL, PostgreSQL, MongoDB et autres systèmes."
+      },
+      {
+        "name": "Support Application",
+        "description": "Surveillance et maintenance applications web, APIs et logiciels critiques d'entreprise avec optimisation performance et résolution problèmes."
+      },
+      {
+        "name": "Gestion Réseau",
+        "description": "Surveillance infrastructure réseau, gestion firewall, configuration VPN et dépannage connectivité pour opérations réseau fiables."
+      },
+      {
+        "name": "Support Help Desk",
+        "description": "Support utilisateur final pour problèmes techniques, dépannage logiciel et guidance IT avec options communication multi-canal."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation Infrastructure",
+        "description": "Évaluation complète de votre infrastructure IT actuelle, identification risques, vulnérabilités et opportunités optimisation."
+      },
+      {
+        "step": 2,
+        "title": "Configuration Surveillance",
+        "description": "Déploiement outils surveillance, configuration alertes, établissement baselines et création tableaux bord personnalisés pour visibilité complète."
+      },
+      {
+        "step": 3,
+        "title": "Implémentation Support",
+        "description": "Activation surveillance 24/7, implémentation plannings maintenance et établissement procédures réponse incident et canaux communication."
+      },
+      {
+        "step": 4,
+        "title": "Gestion Proactive",
+        "description": "Surveillance continue, maintenance régulière, optimisation performance et identification et résolution problème proactives."
+      },
+      {
+        "step": 5,
+        "title": "Reporting & Amélioration",
+        "description": "Rapports performance réguliers, analytics temps de fonctionnement et recommandations amélioration continue pour améliorer fiabilité système."
+      }
+    ],
+    "sla": [
+      {
+        "level": "Critique",
+        "response": "15 minutes",
+        "description": "Système en panne, panne service complète, violation sécurité"
+      },
+      {
+        "level": "Élevé",
+        "response": "1 heure",
+        "description": "Dégradation performance significative, perturbation service partielle"
+      },
+      {
+        "level": "Moyen",
+        "response": "4 heures",
+        "description": "Problèmes mineurs, fonctionnalité non-critique affectée"
+      },
+      {
+        "level": "Faible",
+        "response": "Prochain jour ouvrable",
+        "description": "Questions générales, demandes amélioration, documentation"
+      }
+    ],
+    "benefits": [
+      "Garantie temps de fonctionnement 99,9% avec SLA",
+      "Coûts opérationnels IT réduits",
+      "Prévention et résolution problème proactives",
+      "Support technique expert disponible 24/7",
+      "Sécurité et conformité améliorées",
+      "Coûts IT mensuels prévisibles",
+      "Focus croissance entreprise pendant que nous gérons IT",
+      "Optimisation et mises à jour système régulières"
+    ]
+  }
+}

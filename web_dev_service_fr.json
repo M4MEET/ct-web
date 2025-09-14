@@ -1,0 +1,9 @@
+{
+  "slug": "developpement-web",
+  "locale": "fr",
+  "name": "Développement Web",
+  "summary": "Applications web personnalisées et plateformes e-commerce avec technologies modernes. React, Next.js, développement full-stack, intégration API et design responsive.",
+  "icon": "🌐",
+  "order": 5,
+  "status": "published"
+}

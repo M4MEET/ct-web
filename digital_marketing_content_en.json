@@ -1,0 +1,136 @@
+{
+  "slug": "digital-marketing",
+  "locale": "en",
+  "name": "Digital Marketing",
+  "summary": "Data-driven marketing strategies for online growth. SEO, content marketing, social media management, PPC campaigns, and analytics optimization.",
+  "icon": "📱",
+  "order": 2,
+  "status": "published",
+  "seo": {
+    "title": "Digital Marketing Services | CodeX Terminal",
+    "description": "Professional digital marketing with SEO, content marketing, social media, PPC campaigns. Drive traffic, engagement, and conversions with data-driven strategies.",
+    "keywords": ["digital marketing", "SEO", "content marketing", "social media marketing", "PPC", "Google Ads", "analytics", "online marketing"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Data-Driven Digital Marketing",
+      "subheadline": "Grow your online presence with strategic marketing campaigns that deliver results",
+      "description": "From SEO optimization to targeted advertising campaigns, we help businesses reach their target audience, increase engagement, and drive sustainable growth through proven digital marketing strategies.",
+      "cta": {
+        "text": "Start Your Marketing Campaign",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Search Engine Optimization (SEO)",
+        "description": "Improve your website's visibility in search results with technical SEO, content optimization, and strategic link building for sustainable organic growth.",
+        "icon": "🔍"
+      },
+      {
+        "title": "Content Marketing",
+        "description": "Create compelling content that engages your audience, builds brand authority, and drives conversions across all digital channels.",
+        "icon": "✍️"
+      },
+      {
+        "title": "Social Media Marketing",
+        "description": "Build and engage your community across social platforms with strategic content, community management, and targeted advertising campaigns.",
+        "icon": "📱"
+      },
+      {
+        "title": "Pay-Per-Click (PPC) Advertising",
+        "description": "Maximize ROI with targeted Google Ads, social media ads, and display campaigns optimized for conversions and cost efficiency.",
+        "icon": "💰"
+      },
+      {
+        "title": "Analytics & Reporting",
+        "description": "Track performance with comprehensive analytics, detailed reporting, and actionable insights to optimize your marketing investments.",
+        "icon": "📊"
+      },
+      {
+        "title": "Email Marketing",
+        "description": "Nurture leads and retain customers with personalized email campaigns, automation workflows, and segmentation strategies.",
+        "icon": "📧"
+      }
+    ],
+    "services": [
+      {
+        "name": "SEO Audit & Strategy",
+        "description": "Comprehensive website analysis with technical SEO fixes, keyword research, and content strategy development."
+      },
+      {
+        "name": "Google Ads Management",
+        "description": "Professional campaign setup, optimization, and management for search, display, and shopping ads."
+      },
+      {
+        "name": "Social Media Strategy",
+        "description": "Platform-specific strategies for Facebook, Instagram, LinkedIn, Twitter, and emerging social networks."
+      },
+      {
+        "name": "Content Creation",
+        "description": "Blog posts, social media content, video scripts, infographics, and marketing copy that converts."
+      },
+      {
+        "name": "Conversion Rate Optimization",
+        "description": "Improve website performance with A/B testing, user experience optimization, and conversion funnel analysis."
+      },
+      {
+        "name": "Marketing Automation",
+        "description": "Setup and optimization of marketing automation workflows for lead nurturing and customer retention."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Market Research & Analysis",
+        "description": "Analyze your market, competitors, and target audience to develop data-driven marketing strategies that deliver results."
+      },
+      {
+        "step": 2,
+        "title": "Strategy Development",
+        "description": "Create comprehensive marketing plans with clear objectives, KPIs, budget allocation, and timeline for implementation."
+      },
+      {
+        "step": 3,
+        "title": "Campaign Implementation",
+        "description": "Execute marketing campaigns across chosen channels with professional setup, content creation, and initial optimization."
+      },
+      {
+        "step": 4,
+        "title": "Monitoring & Optimization",
+        "description": "Continuously monitor campaign performance, adjust strategies, and optimize for better results and ROI."
+      },
+      {
+        "step": 5,
+        "title": "Reporting & Scaling",
+        "description": "Provide detailed performance reports and scale successful campaigns while refining underperforming elements."
+      }
+    ],
+    "platforms": [
+      "Google Ads",
+      "Facebook Ads",
+      "Instagram Ads",
+      "LinkedIn Ads",
+      "Twitter Ads",
+      "Google Analytics",
+      "Google Search Console",
+      "Mailchimp",
+      "HubSpot",
+      "Hootsuite",
+      "Buffer",
+      "SEMrush",
+      "Ahrefs",
+      "Hotjar"
+    ],
+    "benefits": [
+      "Increased website traffic and visibility",
+      "Higher search engine rankings",
+      "Better engagement rates across platforms",
+      "Improved conversion rates and ROI",
+      "Data-driven decision making",
+      "Brand awareness and authority building",
+      "Targeted audience reach",
+      "Measurable results and transparency"
+    ]
+  }
+}

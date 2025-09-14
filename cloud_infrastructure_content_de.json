@@ -1,0 +1,137 @@
+{
+  "slug": "cloud-infrastruktur",
+  "locale": "de",
+  "name": "Cloud-Infrastruktur",
+  "summary": "Skalierbare Cloud-Lösungen auf AWS, GCP und Azure mit DevOps-Automatisierung, Überwachung und 24/7-Support für Unternehmen jeder Größe.",
+  "icon": "☁️",
+  "order": 9,
+  "status": "published",
+  "seo": {
+    "title": "Cloud-Infrastruktur Services | CodeX Terminal",
+    "description": "Professionelle Cloud-Infrastruktur-Setup und -Management auf AWS, GCP, Azure. DevOps-Automatisierung, Monitoring, Sicherheit und skalierbare Architektur-Lösungen.",
+    "keywords": ["Cloud-Infrastruktur", "AWS", "Google Cloud", "Azure", "DevOps", "Cloud-Migration", "Infrastruktur-Automatisierung", "Cloud-Sicherheit"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Skalierbare Cloud-Infrastruktur",
+      "subheadline": "Erstellen und verwalten Sie robuste Cloud-Infrastruktur, die mit Ihrem Unternehmen wächst",
+      "description": "Von der initialen Cloud-Einrichtung bis zur erweiterten DevOps-Automatisierung bieten wir umfassende Cloud-Infrastruktur-Services, die Zuverlässigkeit, Sicherheit und Kosteneffizienz auf AWS, Google Cloud und Azure-Plattformen liefern.",
+      "cta": {
+        "text": "Erstellen Sie Ihre Cloud-Infrastruktur",
+        "link": "/kontakt"
+      }
+    },
+    "features": [
+      {
+        "title": "Multi-Cloud-Architektur",
+        "description": "Entwerfen und implementieren Sie skalierbare Cloud-Lösungen über AWS, Google Cloud Platform und Microsoft Azure mit Best Practices und Kostenoptimierung.",
+        "icon": "🌐"
+      },
+      {
+        "title": "DevOps-Automatisierung",
+        "description": "Implementieren Sie CI/CD-Pipelines, Infrastructure as Code, automatisierte Deployments und kontinuierliches Monitoring für effiziente Entwicklungs-Workflows.",
+        "icon": "🔄"
+      },
+      {
+        "title": "Container-Orchestrierung",
+        "description": "Bereitstellen und verwalten Sie containerisierte Anwendungen mit Docker, Kubernetes und Serverless-Technologien für maximale Skalierbarkeit und Effizienz.",
+        "icon": "📦"
+      },
+      {
+        "title": "Sicherheit & Compliance",
+        "description": "Implementieren Sie umfassende Sicherheitsmaßnahmen, Zugriffskontrollen, Verschlüsselung und Compliance-Frameworks zum Schutz Ihrer Cloud-Infrastruktur.",
+        "icon": "🔒"
+      },
+      {
+        "title": "Monitoring & Alerting",
+        "description": "24/7-Infrastruktur-Monitoring mit benutzerdefinierten Dashboards, automatisierten Warnungen, Log-Management und Performance-Optimierungs-Empfehlungen.",
+        "icon": "📊"
+      },
+      {
+        "title": "Kostenoptimierung",
+        "description": "Kontinuierliches Kosten-Monitoring, Ressourcen-Optimierung, Auto-Scaling-Konfigurationen und Reserved-Instance-Management zur Minimierung der Cloud-Ausgaben.",
+        "icon": "💰"
+      }
+    ],
+    "services": [
+      {
+        "name": "Cloud-Architektur-Design",
+        "description": "Individuelle Cloud-Architektur-Planung mit Fokus auf Skalierbarkeit, Sicherheit und Kosteneffizienz für Ihre spezifischen Geschäftsanforderungen."
+      },
+      {
+        "name": "Infrastruktur-Automatisierung",
+        "description": "Infrastructure as Code-Implementierung mit Terraform, CloudFormation und anderen Tools für konsistente und wiederholbare Deployments."
+      },
+      {
+        "name": "CI/CD-Pipeline-Setup",
+        "description": "Automatisierte Build-, Test- und Deployment-Pipelines mit Jenkins, GitLab CI, GitHub Actions und Cloud-nativen Tools."
+      },
+      {
+        "name": "Kubernetes-Management",
+        "description": "Komplettes Kubernetes-Cluster-Setup, -Management und -Optimierung mit Service Mesh, Ingress-Controllern und Monitoring."
+      },
+      {
+        "name": "Datenbank-Lösungen",
+        "description": "Managed Database-Setup und -Optimierung einschließlich RDS, CloudSQL, CosmosDB und NoSQL-Lösungen mit Backup und Skalierung."
+      },
+      {
+        "name": "Disaster Recovery",
+        "description": "Umfassende Backup-Strategien, Disaster Recovery-Planung und Business Continuity-Lösungen für kritische Anwendungen."
+      }
+    ],
+    "platforms": [
+      {
+        "name": "Amazon Web Services (AWS)",
+        "services": ["EC2", "RDS", "S3", "Lambda", "EKS", "CloudFormation", "CloudWatch", "VPC", "IAM", "Route 53"],
+        "description": "Komplette AWS-Cloud-Lösungen mit Compute-, Storage-, Datenbank- und Netzwerk-Services."
+      },
+      {
+        "name": "Google Cloud Platform (GCP)",
+        "services": ["Compute Engine", "Cloud SQL", "Cloud Storage", "Cloud Functions", "GKE", "Cloud Deployment Manager", "Cloud Monitoring"],
+        "description": "GCP-Infrastruktur mit KI/ML-Integration und erweiterten Analytics-Funktionen."
+      },
+      {
+        "name": "Microsoft Azure",
+        "services": ["Virtual Machines", "Azure SQL", "Blob Storage", "Azure Functions", "AKS", "Azure Resource Manager", "Azure Monitor"],
+        "description": "Enterprise-grade Azure-Lösungen mit Hybrid-Cloud und Microsoft-Ökosystem-Integration."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Anforderungs-Bewertung",
+        "description": "Analysieren Sie aktuelle Infrastruktur, Geschäftsanforderungen, Compliance-Bedürfnisse und Wachstumsprognosen zur Gestaltung optimaler Cloud-Strategie."
+      },
+      {
+        "step": 2,
+        "title": "Architektur-Planung",
+        "description": "Entwerfen Sie skalierbare, sichere Cloud-Architektur mit detaillierten Infrastruktur-Blueprints, Sicherheits-Frameworks und Kostenschätzungen."
+      },
+      {
+        "step": 3,
+        "title": "Infrastruktur-Deployment",
+        "description": "Implementieren Sie Cloud-Infrastruktur mit Automatisierungs-Tools, konfigurieren Sie Sicherheitsmaßnahmen und etablieren Sie Monitoring- und Backup-Systeme."
+      },
+      {
+        "step": 4,
+        "title": "Migration & Testing",
+        "description": "Migrieren Sie Anwendungen und Daten zur Cloud-Infrastruktur, führen Sie umfassende Tests durch und optimieren Sie Performance und Sicherheit."
+      },
+      {
+        "step": 5,
+        "title": "Laufendes Management",
+        "description": "Bieten Sie kontinuierliches Monitoring, Wartung, Optimierung und Support mit regelmäßigen Sicherheitsupdates und Performance-Verbesserungen."
+      }
+    ],
+    "benefits": [
+      "Reduzierte Infrastruktur-Kosten und Komplexität",
+      "Verbesserte Skalierbarkeit und Performance",
+      "Erweiterte Sicherheits- und Compliance-Haltung",
+      "Schnellere Deployment- und Entwicklungszyklen",
+      "99,9%+ Uptime mit Disaster Recovery",
+      "Globale Verfügbarkeit und Content Delivery",
+      "Automatisierte Backup- und Monitoring-Lösungen",
+      "Experten 24/7-Support und -Wartung"
+    ]
+  }
+}

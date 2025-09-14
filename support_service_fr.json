@@ -1,0 +1,9 @@
+{
+  "slug": "support-gere",
+  "locale": "fr",
+  "name": "Support Géré",
+  "summary": "Services de support technique et maintenance 24/7 pour des systèmes IT fluides. Surveillance, mises à jour, gestion des sauvegardes et maintenance proactive des systèmes.",
+  "icon": "🛡️",
+  "order": 7,
+  "status": "published"
+}

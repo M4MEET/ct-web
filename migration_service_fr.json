@@ -1,0 +1,9 @@
+{
+  "slug": "services-migration",
+  "locale": "fr",
+  "name": "Services de Migration",
+  "summary": "Migration transparente de plateformes et mises à jour système. Migration e-commerce, migration base de données, migration cloud et modernisation systèmes legacy avec temps d'arrêt minimal.",
+  "icon": "🔄",
+  "order": 8,
+  "status": "published"
+}

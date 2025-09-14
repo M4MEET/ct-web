@@ -1,0 +1,9 @@
+{
+  "slug": "migrations-services",
+  "locale": "de",
+  "name": "Migrations-Services",
+  "summary": "Nahtlose Plattform-Migration und System-Upgrades. E-Commerce-Migration, Datenbank-Migration, Cloud-Migration und Legacy-System-Modernisierung mit minimaler Ausfallzeit.",
+  "icon": "🔄",
+  "order": 8,
+  "status": "published"
+}

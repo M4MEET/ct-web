@@ -1,0 +1,128 @@
+{
+  "slug": "services-migration",
+  "locale": "fr",
+  "name": "Services de Migration",
+  "summary": "Migration transparente de plateformes et mises à jour système. Migration e-commerce, migration base de données, migration cloud et modernisation systèmes legacy avec temps d'arrêt minimal.",
+  "icon": "🔄",
+  "order": 8,
+  "status": "published",
+  "seo": {
+    "title": "Services de Migration | CodeX Terminal",
+    "description": "Services de migration professionnels pour plateformes e-commerce, bases de données, infrastructure cloud et systèmes legacy. Minimisez les temps d'arrêt avec planification migration experte.",
+    "keywords": ["services migration", "migration plateforme", "migration base de données", "migration cloud", "migration e-commerce", "mise à jour système", "migration données"]
+  },
+  "content": {
+    "hero": {
+      "headline": "Services de Migration Experts",
+      "subheadline": "Migrez vos systèmes et données en transparence avec temps d'arrêt minimal et fiabilité maximale",
+      "description": "De la modernisation de systèmes legacy aux migrations de plateformes cloud, nous fournissons des services de migration complets qui assurent l'intégrité des données, minimisent les perturbations commerciales et livrent une performance améliorée.",
+      "cta": {
+        "text": "Planifier Votre Migration",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "Migration Plateforme E-commerce",
+        "description": "Migration entre plateformes e-commerce comme Magento, Shopware, PrestaShop, WooCommerce avec préservation complète des données et maintenance SEO.",
+        "icon": "🛒"
+      },
+      {
+        "title": "Migration Base de Données",
+        "description": "Migrations base de données transparentes entre différents systèmes avec validation intégrité données, optimisation schéma et améliorations performance.",
+        "icon": "🗃️"
+      },
+      {
+        "title": "Migration Cloud",
+        "description": "Déplacement d'applications et infrastructure vers plateformes cloud (AWS, GCP, Azure) avec architecture optimisée et solutions rentables.",
+        "icon": "☁️"
+      },
+      {
+        "title": "Modernisation Systèmes Legacy",
+        "description": "Transformation de systèmes obsolètes vers technologies modernes tout en préservant la logique métier et améliorant performance et maintenabilité.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Migration Données & ETL",
+        "description": "Transformations données complexes et migrations avec processus ETL personnalisés, nettoyage données et validation pour précision et exhaustivité.",
+        "icon": "📊"
+      },
+      {
+        "title": "Stratégie Temps d'Arrêt Minimal",
+        "description": "Stratégies migration avancées incluant déploiements blue-green, migrations échelonnées et options failback pour minimiser impact commercial.",
+        "icon": "⚡"
+      }
+    ],
+    "migration_types": [
+      {
+        "name": "Migration Plateforme E-commerce",
+        "description": "Migration complète de boutiques en ligne entre plateformes avec données produit, informations client, historique commandes et préservation SEO.",
+        "platforms": ["Magento 2", "Shopware 6", "PrestaShop", "WooCommerce", "BigCommerce", "Shopify Plus"]
+      },
+      {
+        "name": "Migration CMS",
+        "description": "Migrations système gestion contenu avec préservation contenu, mapping URL et optimisation SEO.",
+        "platforms": ["WordPress", "Drupal", "Joomla", "Contentful", "Strapi", "CMS Personnalisé"]
+      },
+      {
+        "name": "Migration Base de Données",
+        "description": "Migrations plateforme base de données avec optimisation schéma, transformation données et réglage performance.",
+        "platforms": ["MySQL", "PostgreSQL", "MongoDB", "SQL Server", "Oracle", "Redis"]
+      },
+      {
+        "name": "Migration Infrastructure Cloud",
+        "description": "Migration infrastructure vers plateformes cloud avec optimisation architecture et optimisation coûts.",
+        "platforms": ["AWS", "Google Cloud", "Microsoft Azure", "DigitalOcean", "Linode"]
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Évaluation & Planification",
+        "description": "Analyse complète des systèmes actuels, mapping données, évaluation risques et développement stratégie migration détaillée."
+      },
+      {
+        "step": 2,
+        "title": "Configuration Environnement",
+        "description": "Préparer environnements cibles, configurer infrastructure, établir outils surveillance et établir procédures rollback."
+      },
+      {
+        "step": 3,
+        "title": "Migration Données & Tests",
+        "description": "Exécuter migration données par étapes, effectuer tests complets, valider intégrité données et conduire tests performance."
+      },
+      {
+        "step": 4,
+        "title": "Mise en Production & Validation",
+        "description": "Exécuter migration finale, basculer DNS/trafic, surveiller performance système et valider que toutes fonctionnalités marchent correctement."
+      },
+      {
+        "step": 5,
+        "title": "Support Post-Migration",
+        "description": "Fournir support continu, optimisation performance, dépannage et documentation pour le nouveau système."
+      }
+    ],
+    "tools_technologies": [
+      "AWS Database Migration Service",
+      "Azure Database Migration Service",
+      "Google Cloud Migrate",
+      "Docker & Kubernetes",
+      "Ansible & Terraform",
+      "Scripts ETL Personnalisés",
+      "Outils Pipeline Données",
+      "Outils Surveillance & Alerte",
+      "Solutions Sauvegarde & Récupération",
+      "Outils Test Charge"
+    ],
+    "benefits": [
+      "Perturbation commerciale et temps d'arrêt minimaux",
+      "Intégrité et préservation complètes des données",
+      "Performance système et évolutivité améliorées",
+      "Sécurité et conformité renforcées",
+      "Optimisation coûts par infrastructure moderne",
+      "Meilleure maintenabilité et pérennité",
+      "Tests et validation complets",
+      "Gestion projet experte et communication"
+    ]
+  }
+}

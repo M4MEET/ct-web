@@ -1,0 +1,142 @@
+{
+  "slug": "managed-support",
+  "locale": "en",
+  "name": "Managed Support",
+  "summary": "24/7 technical support and maintenance for seamless IT systems. Monitoring, updates, backup management, and proactive system maintenance.",
+  "icon": "🛡️",
+  "order": 7,
+  "status": "published",
+  "seo": {
+    "title": "Managed IT Support Services | CodeX Terminal",
+    "description": "24/7 managed IT support with monitoring, maintenance, security updates, and proactive system management. Keep your business running smoothly.",
+    "keywords": ["managed support", "IT support", "24/7 monitoring", "system maintenance", "technical support", "server management", "backup management"]
+  },
+  "content": {
+    "hero": {
+      "headline": "24/7 Managed IT Support",
+      "subheadline": "Keep your systems running smoothly with proactive monitoring and expert technical support",
+      "description": "From continuous system monitoring to emergency incident response, we provide comprehensive managed support services that ensure your technology infrastructure operates at peak performance around the clock.",
+      "cta": {
+        "text": "Get Support Now",
+        "link": "/contact"
+      }
+    },
+    "features": [
+      {
+        "title": "24/7 System Monitoring",
+        "description": "Continuous monitoring of servers, applications, and network infrastructure with automated alerts and immediate response to issues.",
+        "icon": "👀"
+      },
+      {
+        "title": "Proactive Maintenance",
+        "description": "Regular system updates, security patches, performance optimization, and preventive maintenance to avoid downtime.",
+        "icon": "🔧"
+      },
+      {
+        "title": "Backup & Disaster Recovery",
+        "description": "Automated backup solutions, data recovery services, and disaster recovery planning to protect your critical business data.",
+        "icon": "💾"
+      },
+      {
+        "title": "Security Management",
+        "description": "Continuous security monitoring, vulnerability assessments, firewall management, and security incident response.",
+        "icon": "🔒"
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Regular performance analysis, resource optimization, capacity planning, and scaling recommendations for optimal system performance.",
+        "icon": "📈"
+      },
+      {
+        "title": "Incident Response",
+        "description": "Rapid response to critical issues with escalation procedures, root cause analysis, and comprehensive incident documentation.",
+        "icon": "🚨"
+      }
+    ],
+    "services": [
+      {
+        "name": "Server Management",
+        "description": "Complete server administration including OS updates, configuration management, and performance monitoring for physical and virtual servers."
+      },
+      {
+        "name": "Cloud Infrastructure Support",
+        "description": "Management and optimization of cloud resources across AWS, Google Cloud, Azure with cost optimization and scaling automation."
+      },
+      {
+        "name": "Database Administration",
+        "description": "Database maintenance, optimization, backup management, and performance tuning for MySQL, PostgreSQL, MongoDB, and other systems."
+      },
+      {
+        "name": "Application Support",
+        "description": "Monitoring and maintenance of web applications, APIs, and business-critical software with performance optimization and issue resolution."
+      },
+      {
+        "name": "Network Management",
+        "description": "Network infrastructure monitoring, firewall management, VPN setup, and connectivity troubleshooting for reliable network operations."
+      },
+      {
+        "name": "Help Desk Support",
+        "description": "End-user support for technical issues, software troubleshooting, and IT guidance with multi-channel communication options."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Infrastructure Assessment",
+        "description": "Comprehensive evaluation of your current IT infrastructure, identifying risks, vulnerabilities, and optimization opportunities."
+      },
+      {
+        "step": 2,
+        "title": "Monitoring Setup",
+        "description": "Deploy monitoring tools, configure alerts, establish baselines, and create custom dashboards for complete visibility."
+      },
+      {
+        "step": 3,
+        "title": "Support Implementation",
+        "description": "Activate 24/7 monitoring, implement maintenance schedules, and establish incident response procedures and communication channels."
+      },
+      {
+        "step": 4,
+        "title": "Proactive Management",
+        "description": "Continuous monitoring, regular maintenance, performance optimization, and proactive issue identification and resolution."
+      },
+      {
+        "step": 5,
+        "title": "Reporting & Improvement",
+        "description": "Regular performance reports, uptime analytics, and continuous improvement recommendations to enhance system reliability."
+      }
+    ],
+    "sla": [
+      {
+        "level": "Critical",
+        "response": "15 minutes",
+        "description": "System down, complete service outage, security breach"
+      },
+      {
+        "level": "High",
+        "response": "1 hour",
+        "description": "Significant performance degradation, partial service disruption"
+      },
+      {
+        "level": "Medium",
+        "response": "4 hours",
+        "description": "Minor issues, non-critical functionality affected"
+      },
+      {
+        "level": "Low",
+        "response": "Next business day",
+        "description": "General questions, enhancement requests, documentation"
+      }
+    ],
+    "benefits": [
+      "99.9% uptime guarantee with SLA",
+      "Reduced IT operational costs",
+      "Proactive issue prevention and resolution",
+      "Expert technical support available 24/7",
+      "Enhanced security and compliance",
+      "Predictable monthly IT costs",
+      "Focus on business growth while we handle IT",
+      "Regular system optimization and updates"
+    ]
+  }
+}

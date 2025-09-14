@@ -1,0 +1,9 @@
+{
+  "slug": "developpement-ecommerce",
+  "locale": "fr",
+  "name": "Développement E-commerce",
+  "summary": "Solutions e-commerce complètes avec technologies modernes. Développement Shopware, PrestaShop, Magento, intégration paiement, gestion inventaire et applications commerce mobile.",
+  "icon": "🛒",
+  "order": 3,
+  "status": "published"
+}

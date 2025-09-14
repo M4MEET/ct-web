@@ -1,0 +1,255 @@
+{
+  "slug": "shopware-development",
+  "locale": "fr",
+  "title": "Services de Développement Shopware Professionnel - Solutions E-commerce Expertes",
+  "seo": {
+    "title": "Services de Développement Shopware Expert | Plugins & Thèmes Personnalisés | CodeX Terminal",
+    "description": "Services de développement Shopware 6 professionnel incluant plugins personnalisés, développement de thèmes, migrations de boutique, optimisation des performances, intégrations API, et solutions entreprise. Partenaires Shopware certifiés avec 8+ années d'expérience."
+  },
+  "status": "published",
+  "blocks": [
+    {
+      "type": "hero",
+      "data": {
+        "id": "shopware-hero-expanded-fr",
+        "type": "hero",
+        "visible": true,
+        "eyebrow": "Partenaires Développement Shopware Certifiés",
+        "headline": "Services de Développement Shopware Professionnel Qui Dynamisent le Succès E-commerce",
+        "subcopy": "Transformez votre commerce en ligne avec nos services de développement Shopware 6 experts. Du développement de plugins personnalisés aux migrations d'entreprise complètes, nous livrons des solutions e-commerce évolutives et haute performance qui augmentent les conversions et stimulent la croissance du chiffre d'affaires pour les entreprises mondiales.",
+        "primaryCTA": {
+          "label": "Démarrer Votre Projet Shopware",
+          "href": "/contact?service=shopware"
+        },
+        "secondaryCTA": {
+          "label": "Voir Portfolio Shopware",
+          "href": "/case-studies?service=shopware"
+        }
+      }
+    },
+    {
+      "type": "featureGrid",
+      "data": {
+        "id": "shopware-services-comprehensive-fr",
+        "type": "featureGrid",
+        "visible": true,
+        "heading": "Services de Développement Shopware Complets",
+        "subheading": "Solutions Shopware de bout en bout adaptées à vos besoins métier et objectifs de croissance",
+        "columns": 3,
+        "items": [
+          {
+            "title": "Développement de Plugins Personnalisés",
+            "body": "Développez des plugins puissants et évolutifs qui étendent les fonctionnalités de base de Shopware. Nous créons une logique métier personnalisée, des intégrations de paiement, des solutions d'expédition et des fonctionnalités spécialisées qui vous donnent des avantages concurrentiels sur votre marché.",
+            "icon": "🔧"
+          },
+          {
+            "title": "Développement de Thèmes Professionnel",
+            "body": "Concevez et développez des thèmes éblouissants, optimisés pour la conversion qui reflètent votre identité de marque. Nos thèmes responsives sont construits avec des standards web modernes, conformité accessibilité et approches mobile-first pour maximiser l'expérience utilisateur.",
+            "icon": "🎨"
+          },
+          {
+            "title": "Migration & Mises à Jour de Plateforme",
+            "body": "Migrez en douceur depuis Magento, WooCommerce, PrestaShop ou systèmes legacy vers Shopware 6. Nous assurons zéro perte de données, maintien des classements SEO et minimisons les temps d'arrêt pendant le processus de transition avec des tests complets.",
+            "icon": "🚀"
+          },
+          {
+            "title": "Développement App Store Shopware",
+            "body": "Créez et publiez des applications sur l'App Store officiel Shopware pour atteindre des milliers de marchands mondialement. Nous gérons l'ensemble du processus du concept à la publication, incluant la certification d'app et maintenance continue.",
+            "icon": "📱"
+          },
+          {
+            "title": "Optimisation des Performances",
+            "body": "Boostez la vitesse et performance de votre boutique avec des techniques d'optimisation avancées. Nous implémentons des stratégies de cache, optimisation base de données, intégration CDN et améliorations de code pour atteindre les scores Core Web Vitals et temps de chargement plus rapides.",
+            "icon": "⚡"
+          },
+          {
+            "title": "Développement API & Intégrations",
+            "body": "Construisez des APIs REST robustes, endpoints GraphQL et intégrations webhook. Connectez votre boutique Shopware avec systèmes ERP, plateformes CRM, outils marketing, gestion d'inventaire et services tiers pour des opérations rationalisées.",
+            "icon": "🔌"
+          },
+          {
+            "title": "Solutions Multi-boutique & B2B",
+            "body": "Implémentez des configurations multi-boutiques complexes avec gestion d'inventaire centralisée, portails clients B2B, structures de prix personnalisées, systèmes de devis et workflows d'approbation adaptés aux entreprises de gros et d'entreprise.",
+            "icon": "🏢"
+          },
+          {
+            "title": "Architecture Commerce Headless",
+            "body": "Exploitez l'architecture API-first de Shopware pour créer des solutions de commerce headless. Construisez des frontends personnalisés avec React, Vue.js ou Next.js tout en maintenant des fonctionnalités backend puissantes pour flexibilité et performance maximales.",
+            "icon": "🔀"
+          },
+          {
+            "title": "Maintenance & Support 24/7",
+            "body": "Support continu complet incluant mises à jour sécurité, corrections de bugs, surveillance des performances, gestion des sauvegardes et améliorations de fonctionnalités. Nos développeurs certifiés assurent que votre boutique fonctionne en douceur avec temps d'arrêt minimal.",
+            "icon": "🛡️"
+          }
+        ]
+      }
+    },
+    {
+      "type": "richText",
+      "data": {
+        "id": "shopware-expertise-section-fr",
+        "type": "richText",
+        "visible": true,
+        "content": "<section class=\"py-16 bg-gradient-to-br from-gray-50 to-blue-50\"><div class=\"max-w-7xl mx-auto px-6\"><div class=\"text-center mb-16\"><h2 class=\"text-4xl font-bold mb-6 text-gray-900\">Pourquoi Choisir CodeX Terminal pour le Développement Shopware ?</h2><p class=\"text-xl text-gray-600 max-w-3xl mx-auto\">En tant que partenaires Shopware certifiés avec plus de 8 années d'expérience, nous avons livré avec succès 150+ projets dans 25+ pays, aidant les entreprises à atteindre leurs objectifs e-commerce.</p></div><div class=\"grid md:grid-cols-3 gap-8 mb-16\"><div class=\"bg-white rounded-xl p-8 shadow-lg border border-gray-200\"><div class=\"flex items-center mb-6\"><div class=\"bg-blue-100 p-3 rounded-lg mr-4\"></div><h3 class=\"text-2xl font-bold text-gray-900\">Expertise Certifiée</h3></div><ul class=\"space-y-4 text-gray-700\"><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Partenaires Shopware Officiels</strong> avec niveaux de certification avancés</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>150+ Projets Réussis</strong> livrés dans diverses industries</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Équipe Experte</strong> de développeurs Shopware 6 certifiés</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>8+ Années d'Expérience</strong> en développement e-commerce</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Portée Mondiale</strong> servant des clients dans 25+ pays</span></li></ul></div><div class=\"bg-white rounded-xl p-8 shadow-lg border border-gray-200\"><div class=\"flex items-center mb-6\"><div class=\"bg-purple-100 p-3 rounded-lg mr-4\"></div><h3 class=\"text-2xl font-bold text-gray-900\">Excellence Technique</h3></div><ul class=\"space-y-4 text-gray-700\"><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Technologies Récentes :</strong> Shopware 6.5+, PHP 8.2+, Symfony 6.4</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Frontend Moderne :</strong> Vue.js 3, TypeScript, Webpack 5</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Optimisation Base de Données :</strong> MySQL 8.0+, cache Redis</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Intégration Recherche :</strong> Elasticsearch, compatibilité Algolia</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Infrastructure Cloud :</strong> AWS, Google Cloud, Azure</span></li></ul></div><div class=\"bg-white rounded-xl p-8 shadow-lg border border-gray-200\"><div class=\"flex items-center mb-6\"><div class=\"bg-green-100 p-3 rounded-lg mr-4\"></div><h3 class=\"text-2xl font-bold text-gray-900\">Résultats Prouvés</h3></div><ul class=\"space-y-4 text-gray-700\"><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>65% d'Amélioration Moyenne des Performances</strong> en temps de chargement</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>40% d'Augmentation des Taux de Conversion</strong> via optimisation UX</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>200+ Plugins Personnalisés</strong> développés et maintenus</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>99,9% de Temps de Fonctionnement</strong> atteint pour nos boutiques gérées</span></li><li class=\"flex items-start\"><span class=\"text-green-500 mr-3 mt-1\">✓</span><span><strong>Réponse Support 24/7</strong> en moins de 2 heures garantie</span></li></ul></div></div></div></section>"
+      }
+    },
+    {
+      "type": "featureGrid",
+      "data": {
+        "id": "shopware-industries-solutions-fr",
+        "type": "featureGrid",
+        "visible": true,
+        "heading": "Solutions Shopware Spécialisées par Secteur",
+        "subheading": "Solutions e-commerce sur mesure conçues pour les exigences spécifiques de votre secteur et modèle économique",
+        "columns": 3,
+        "items": [
+          {
+            "title": "Mode & Habillement",
+            "body": "Configurateurs produits, guides de tailles, collections saisonnières, filtres spécifiques mode, intégration lookbook et moteurs de recommandation de style adaptés aux détaillants de mode.",
+            "icon": "👗"
+          },
+          {
+            "title": "Électronique & Technologie",
+            "body": "Gestion spécifications techniques, outils comparaison produits, suivi garanties, tarification bulk B2B, intégration avec flux fournisseurs et options de configuration complexes.",
+            "icon": "💻"
+          },
+          {
+            "title": "Pièces Automobiles",
+            "body": "Filtres compatibilité véhicules, outils recherche pièces, intégration documentation technique, gestion catalogues OEM et structures tarifaires B2B spécialisées pour revendeurs pièces auto.",
+            "icon": "🚗"
+          },
+          {
+            "title": "Santé & Beauté",
+            "body": "Transparence ingrédients, conformité réglementaire, modèles d'abonnement, recommandations produits personnalisées et intégration avec outils consultation beauté.",
+            "icon": "💄"
+          },
+          {
+            "title": "Alimentation & Boissons",
+            "body": "Gestion dates d'expiration, affichage informations nutritionnelles, filtres alimentaires, intégration livraison locale et conformité avec réglementations sécurité alimentaire.",
+            "icon": "🍎"
+          },
+          {
+            "title": "Fabrication B2B",
+            "body": "Niveaux de prix personnalisés, systèmes gestion devis, commandes bulk, catalogues spécifiques clients et intégration avec systèmes ERP pour entreprises manufacturières.",
+            "icon": "🏭"
+          }
+        ]
+      }
+    },
+    {
+      "type": "richText",
+      "data": {
+        "id": "shopware-development-process-fr",
+        "type": "richText",
+        "visible": true,
+        "content": "<section class=\"py-16 bg-white\"><div class=\"max-w-7xl mx-auto px-6\"><div class=\"text-center mb-16\"><h2 class=\"text-4xl font-bold mb-6 text-gray-900\">Notre Processus de Développement Shopware Éprouvé</h2><p class=\"text-xl text-gray-600 max-w-3xl mx-auto\">Nous suivons une approche agile structurée qui garantit que votre projet soit livré à temps, dans le budget et dépasse vos attentes.</p></div><div class=\"grid md:grid-cols-2 lg:grid-cols-3 gap-8\"><div class=\"relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200\"><div class=\"absolute -top-4 left-8 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold\">1</div><h3 class=\"text-2xl font-bold mb-4 text-gray-900 mt-4\">Découverte &amp; Analyse</h3><p class=\"text-gray-700 mb-4\">Nous menons une analyse métier approfondie, recherche concurrentielle et collecte d'exigences techniques pour comprendre vos besoins uniques.</p><ul class=\"text-sm text-gray-600 space-y-2\"><li>• Analyse des exigences métier</li><li>• Planification architecture technique</li><li>• Analyse concurrentielle et benchmarking</li><li>• Développement personas utilisateurs</li><li>• Définition chronologie et jalons projet</li></ul></div><div class=\"relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border border-purple-200\"><div class=\"absolute -top-4 left-8 bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold\">2</div><h3 class=\"text-2xl font-bold mb-4 text-gray-900 mt-4\">Conception &amp; Planification</h3><p class=\"text-gray-700 mb-4\">Notre équipe design crée wireframes, maquettes et cartes parcours utilisateur optimisées pour les conversions et l'expérience utilisateur.</p><ul class=\"text-sm text-gray-600 space-y-2\"><li>• Conception UX/UI et wireframing</li><li>• Design responsive mobile-first</li><li>• Planification optimisation conversion</li><li>• Documentation architecture technique</li><li>• Création feuille de route développement</li></ul></div><div class=\"relative bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border border-green-200\"><div class=\"absolute -top-4 left-8 bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold\">3</div><h3 class=\"text-2xl font-bold mb-4 text-gray-900 mt-4\">Développement &amp; Intégration</h3><p class=\"text-gray-700 mb-4\">Nos développeurs certifiés construisent votre boutique Shopware en utilisant technologies modernes et meilleures pratiques avec revues de code régulières.</p><ul class=\"text-sm text-gray-600 space-y-2\"><li>• Méthodologie développement agile</li><li>• Développement plugins et thèmes personnalisés</li><li>• Intégrations systèmes tiers</li><li>• Implémentation optimisation performances</li><li>• Mises à jour et démos régulières</li></ul></div><div class=\"relative bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8 border border-orange-200\"><div class=\"absolute -top-4 left-8 bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold\">4</div><h3 class=\"text-2xl font-bold mb-4 text-gray-900 mt-4\">Tests &amp; Assurance Qualité</h3><p class=\"text-gray-700 mb-4\">Tests complets sur appareils, navigateurs et scénarios utilisateurs pour assurer performance parfaite avant lancement.</p><ul class=\"text-sm text-gray-600 space-y-2\"><li>• Tests automatisés et manuels</li><li>• Tests cross-browser et multi-appareils</li><li>• Audits performance et sécurité</li><li>• Tests d'acceptation utilisateur (UAT)</li><li>• Tests de charge et optimisation</li></ul></div><div class=\"relative bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-8 border border-teal-200\"><div class=\"absolute -top-4 left-8 bg-teal-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold\">5</div><h3 class=\"text-2xl font-bold mb-4 text-gray-900 mt-4\">Lancement &amp; Déploiement</h3><p class=\"text-gray-700 mb-4\">Processus de déploiement fluide avec temps d'arrêt minimal, incluant configuration DNS, setup SSL et surveillance post-lancement.</p><ul class=\"text-sm text-gray-600 space-y-2\"><li>• Configuration environnement production</li><li>• Migration et validation données</li><li>• Configuration DNS et SSL</li><li>• Coordination et surveillance lancement</li><li>• Optimisation performance post-lancement</li></ul></div><div class=\"relative bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl p-8 border border-indigo-200\"><div class=\"absolute -top-4 left-8 bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold\">6</div><h3 class=\"text-2xl font-bold mb-4 text-gray-900 mt-4\">Support Continu &amp; Croissance</h3><p class=\"text-gray-700 mb-4\">Support continu, maintenance et améliorations de fonctionnalités pour aider votre entreprise à croître et s'adapter aux changements du marché.</p><ul class=\"text-sm text-gray-600 space-y-2\"><li>• Support technique 24/7 et surveillance</li><li>• Mises à jour sécurité et correctifs réguliers</li><li>• Surveillance et optimisation performances</li><li>• Développement et améliorations fonctionnalités</li><li>• Formation et documentation</li></ul></div></div></div></section>"
+      }
+    },
+    {
+      "type": "featureGrid",
+      "data": {
+        "id": "shopware-integrations-fr",
+        "type": "featureGrid",
+        "visible": true,
+        "heading": "Intégrations d'Entreprise & Partenariats",
+        "subheading": "Connectez seamlessly votre boutique Shopware avec votre écosystème métier existant et services tiers",
+        "columns": 4,
+        "items": [
+          {
+            "title": "Systèmes ERP",
+            "body": "SAP, Microsoft Dynamics 365, Oracle NetSuite, Odoo et solutions ERP personnalisées avec synchronisation de données temps réel.",
+            "icon": "🏢"
+          },
+          {
+            "title": "Passerelles de Paiement",
+            "body": "Stripe, PayPal, Klarna, Adyen, Square et fournisseurs paiement régionaux avec tokenisation sécurisée et conformité.",
+            "icon": "💳"
+          },
+          {
+            "title": "Expédition & Logistique",
+            "body": "DHL, UPS, FedEx, Amazon FBA, ShipStation et fournisseurs livraison locale avec intégration suivi temps réel.",
+            "icon": "📦"
+          },
+          {
+            "title": "CRM & Marketing",
+            "body": "Salesforce, HubSpot, Mailchimp, Klaviyo, Google Analytics et plateformes automatisation marketing pour insights clients.",
+            "icon": "📊"
+          },
+          {
+            "title": "Gestion d'Inventaire",
+            "body": "TradeGecko, Cin7, Unleashed et systèmes gestion entrepôt avec synchronisation automatisée des niveaux de stock.",
+            "icon": "📋"
+          },
+          {
+            "title": "Logiciels Comptabilité",
+            "body": "QuickBooks, Xero, Sage et systèmes gestion financière avec enregistrement automatisé des transactions et rapports.",
+            "icon": "💰"
+          },
+          {
+            "title": "Systèmes PIM & DAM",
+            "body": "Akeneo PIM, Pimcore, Salsify et gestion d'actifs numériques pour gestion centralisée informations produits.",
+            "icon": "🗃️"
+          },
+          {
+            "title": "Support Client",
+            "body": "Zendesk, Freshdesk, Intercom et solutions helpdesk avec intégration historique commandes et ticketing automatisé.",
+            "icon": "🎧"
+          }
+        ]
+      }
+    },
+    {
+      "type": "faq",
+      "data": {
+        "id": "shopware-comprehensive-faq-fr",
+        "type": "faq",
+        "visible": true,
+        "heading": "FAQ Développement Shopware Complet",
+        "items": [
+          {
+            "q": "Quelles versions Shopware supportez-vous et quels sont les chemins de migration ?",
+            "a": "Nous nous spécialisons dans le développement Shopware 6 (versions 6.4+) et fournissons des services de migration de Shopware 5 vers Shopware 6. Notre équipe est certifiée sur les derniers Shopware 6.5+ avec expertise en Symfony 6.4, PHP 8.2+ et technologies frontend modernes comme Vue.js 3 et TypeScript. Nous gérons aussi les migrations depuis d'autres plateformes comme Magento, WooCommerce et PrestaShop vers Shopware 6."
+          },
+          {
+            "q": "Comment gérez-vous les exigences B2B complexes et intégrations d'entreprise ?",
+            "a": "Nous avons une expérience étendue avec l'e-commerce B2B, incluant niveaux de prix spécifiques clients, systèmes gestion de devis, workflows d'approbation, capacités de commandes en bulk et gestion de catalogue personnalisée. Nos intégrations d'entreprise incluent systèmes ERP (SAP, Microsoft Dynamics), plateformes CRM (Salesforce, HubSpot), systèmes gestion d'inventaire et développement API personnalisé pour flux de données seamless entre systèmes."
+          },
+          {
+            "q": "Quelle est votre approche pour l'optimisation des performances et l'évolutivité ?",
+            "a": "Nous implémentons une optimisation des performances complète incluant couches de cache Redis, Elasticsearch pour fonctionnalité de recherche avancée, intégration CDN (Cloudflare, AWS CloudFront), optimisation de requêtes de base de données, techniques de chargement lazy et optimisation Core Web Vitals. Nos solutions sont construites pour gérer des volumes de trafic élevés avec capacités de mise à l'échelle horizontale utilisant infrastructure cloud comme AWS, Google Cloud ou Azure."
+          },
+          {
+            "q": "Fournissez-vous des solutions de commerce headless et API-first ?",
+            "a": "Oui, nous développons des solutions Shopware headless exploitant la Store API et Admin API. Nous créons des frontends personnalisés utilisant React, Next.js, Vue.js ou Nuxt.js tout en maintenant le backend Shopware puissant. Cela inclut développement d'applications mobiles, applications web progressives (PWA) et expériences omnicanales à travers multiples points de contact incluant commerce social et appareils IoT."
+          },
+          {
+            "q": "Comment assurez-vous la sécurité, conformité et protection des données ?",
+            "a": "Nous implémentons des mesures de sécurité complètes incluant chiffrement SSL/TLS, conformité PCI DSS pour traitement des paiements, conformité GDPR avec fonctionnalités de protection des données, audits de sécurité réguliers, tests de pénétration et directives de sécurité OWASP. Toutes nos solutions incluent systèmes de sauvegarde automatisés, plans de récupération d'urgence et surveillance de sécurité 24/7 avec protocoles de réponse aux menaces immédiats."
+          },
+          {
+            "q": "Quels services de support continu et maintenance fournissez-vous ?",
+            "a": "Nos services de support incluent surveillance et support technique 24/7, mises à jour et correctifs de sécurité proactifs, optimisation des performances, contrôles de santé réguliers, gestion des sauvegardes et développement de fonctionnalités. Nous offrons différents niveaux de support de la maintenance de base aux services gérés complets avec gestionnaires de compte dédiés, temps de réponse garantis et accords SLA personnalisés basés sur vos besoins métier."
+          },
+          {
+            "q": "Comment gérez-vous les exigences multi-boutique, multi-langue et internationales ?",
+            "a": "Nous implémentons des architectures multi-boutiques complexes avec gestion d'inventaire centralisée, comptes clients partagés, interfaces admin unifiées et synchronisation automatisée. Nos solutions internationales incluent support multi-devises, méthodes de paiement localisées, tarification spécifique région, calcul de taxes pour différentes juridictions et conformité avec réglementations locales. Nous fournissons aussi des services avancés de gestion de traduction et localisation de contenu."
+          },
+          {
+            "q": "Quelle est votre méthodologie de test et processus d'assurance qualité ?",
+            "a": "Nous suivons des processus QA complets incluant tests automatisés avec PHPUnit et Jest, pipelines d'intégration/déploiement continu (CI/CD), tests cross-browser et multi-appareils, tests de performance avec simulation de charge, tests de sécurité et tests d'acceptation utilisateur (UAT). Tout le code passe par revue par pairs, analyse statique et nous maintenons une couverture de tests au-dessus de 80% pour la logique métier critique."
+          }
+        ]
+      }
+    },
+    {
+      "type": "richText",
+      "data": {
+        "id": "shopware-cta-section-fr",
+        "type": "richText",
+        "visible": true,
+        "content": "<section class=\"py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700\"><div class=\"max-w-4xl mx-auto px-6 text-center text-white\"><h2 class=\"text-4xl md:text-5xl font-bold mb-6\">Prêt à Transformer Votre Commerce E-commerce ?</h2><p class=\"text-xl mb-8 opacity-90\">Rejoignez 150+ entreprises prospères qui nous font confiance pour leur développement Shopware. Des startups aux entreprises d'envergure, nous livrons des résultats qui comptent.</p><div class=\"grid md:grid-cols-3 gap-8 mb-12\"><div class=\"bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 border border-white border-opacity-20\"><div class=\"text-3xl font-bold mb-2\">150+</div><div class=\"text-sm opacity-80\">Projets Livrés</div></div><div class=\"bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 border border-white border-opacity-20\"><div class=\"text-3xl font-bold mb-2\">8+</div><div class=\"text-sm opacity-80\">Années d'Expérience</div></div><div class=\"bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 border border-white border-opacity-20\"><div class=\"text-3xl font-bold mb-2\">24/7</div><div class=\"text-sm opacity-80\">Support Disponible</div></div></div><div class=\"flex flex-col sm:flex-row gap-4 justify-center items-center\"><a href=\"/contact?service=shopware\" class=\"bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg\">Démarrer Votre Projet Shopware</a><a href=\"/case-studies?service=shopware\" class=\"border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors\">Voir Histoires de Succès</a></div><p class=\"text-sm opacity-75 mt-8\">Consultation gratuite • Aucun engagement requis • Réponse en 24 heures</p></div></section>"
+      }
+    }
+  ]
+}
