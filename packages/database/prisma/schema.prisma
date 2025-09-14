@@ -28,6 +28,9 @@ model User {
   assignedSubmissions FormSubmission[]
   pages               Page[]           @relation("PageUpdatedBy")
   sessions            Session[]
+  pageViews           PageView[]
+  events              Event[]
+  apiKeys             ApiKey[]
 }
 
 model Account {
@@ -246,6 +249,7 @@ model FormSubmission {
   updatedAt    DateTime         @updatedAt
   attachments  FormAttachment[]
   assignedUser User?            @relation(fields: [assignedTo], references: [id])
+  campaigns    CampaignSubmission[]
 
   @@index([status])
   @@index([email])
@@ -263,6 +267,99 @@ model FormAttachment {
   createdAt    DateTime       @default(now())
   submission   FormSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
 
+  @@index([submissionId])
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  url       String
+  path      String
+  title     String?
+  referrer  String?
+  userAgent String?
+  ipAddress String?
+  sessionId String?
+  userId    String?
+  country   String?
+  city      String?
+  device    String?
+  browser   String?
+  os        String?
+  duration  Int?     // Time spent on page in seconds
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+
+  @@index([url])
+  @@index([path])
+  @@index([sessionId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Event {
+  id         String   @id @default(cuid())
+  type       String   // click, form_submit, download, etc.
+  category   String?  // marketing, user_interaction, conversion
+  action     String?  // submit, click, view, download
+  label      String?  // specific element or description
+  value      Int?     // numeric value (e.g., form completion time)
+  properties Json?    // additional event properties
+  url        String?
+  sessionId  String?
+  userId     String?
+  ipAddress  String?
+  userAgent  String?
+  referrer   String?
+  createdAt  DateTime @default(now())
+  user       User?    @relation(fields: [userId], references: [id])
+
+  @@index([type])
+  @@index([category])
+  @@index([sessionId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model MarketingCampaign {
+  id          String   @id @default(cuid())
+  name        String
+  source      String   // google, facebook, email, direct
+  medium      String   // cpc, social, email, organic
+  campaign    String   // campaign name
+  term        String?  // paid keywords
+  content     String?  // ad content
+  startDate   DateTime
+  endDate     DateTime?
+  budget      Float?
+  spent       Float?   @default(0)
+  clicks      Int      @default(0)
+  impressions Int      @default(0)
+  conversions Int      @default(0)
+  revenue     Float?   @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Track submissions from this campaign
+  submissions CampaignSubmission[]
+
+  @@index([source])
+  @@index([campaign])
+  @@index([isActive])
+  @@index([startDate])
+}
+
+model CampaignSubmission {
+  id           String            @id @default(cuid())
+  campaignId   String
+  submissionId String
+  conversionValue Float?        // estimated value of this conversion
+  createdAt    DateTime          @default(now())
+  campaign     MarketingCampaign @relation(fields: [campaignId], references: [id])
+  submission   FormSubmission    @relation(fields: [submissionId], references: [id])
+
+  @@unique([campaignId, submissionId])
+  @@index([campaignId])
   @@index([submissionId])
 }
 
@@ -311,4 +408,20 @@ enum SubmissionStatus {
 enum CaseStudyCategory {
   caseStudy
   technology
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  name        String
+  key         String    @unique
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  permissions String?   // JSON string of permissions
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([key])
+  @@index([userId])
 }
