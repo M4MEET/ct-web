@@ -21,7 +21,7 @@ const UpdateServiceSchema = z.object({
   summary: z.string().optional(),
   icon: z.string().optional(),
   order: z.number().int().optional(),
-  pageId: z.string().min(1).optional(),
+  pageId: z.string().optional().transform(val => val === '' ? undefined : val),
   status: z.enum(['draft', 'inReview', 'scheduled', 'published']),
 });
 

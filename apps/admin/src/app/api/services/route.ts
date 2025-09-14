@@ -86,7 +86,7 @@ const CreateServiceSchema = z.object({
   summary: z.string().max(300).optional(),
   icon: z.string().optional(),
   order: z.number().int().min(0).optional(),
-  pageId: z.string().uuid().optional(),
+  pageId: z.string().optional().transform(val => val === '' ? undefined : val),
   status: z.enum(['draft', 'inReview', 'scheduled', 'published']).default('draft'),
 });
 
