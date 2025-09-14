@@ -2,10 +2,12 @@
   "navigation": {
     "home": "Startseite",
     "services": "Dienstleistungen",
+    "resources": "Ressourcen",
     "about": "Über uns",
     "contact": "Kontakt",
     "technologies": "Technologien",
     "caseStudies": "Fallstudien",
+    "blogPosts": "Blog-Beiträge",
     "shopware": "Shopware Entwicklung",
     "marketing": "Digital Marketing",
     "cloud": "Cloud-Infrastruktur",
@@ -53,6 +55,20 @@
         "viewAll": {
           "title": "Alle Technologien anzeigen",
           "description": "Sehen Sie unseren kompletten Technologie-Stack"
+        }
+      },
+      "resources": {
+        "technologies": {
+          "title": "Technologien",
+          "description": "Erkunden Sie unseren Technologie-Stack und unsere Expertise"
+        },
+        "caseStudies": {
+          "title": "Fallstudien",
+          "description": "Erfolgsgeschichten und Ergebnisse aus der Praxis"
+        },
+        "blogPosts": {
+          "title": "Blog-Beiträge",
+          "description": "Einblicke, Tipps und Branchenwissen"
         }
       }
     }

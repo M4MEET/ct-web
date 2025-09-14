@@ -5,7 +5,7 @@ import {SUPPORTED_LOCALES, DEFAULT_LOCALE} from '@codex/content/constants';
 export const routing = defineRouting({
   locales: SUPPORTED_LOCALES,
   defaultLocale: DEFAULT_LOCALE,
-  localePrefix: 'always'
+  localePrefix: 'as-needed'
 });
 
 export const {Link, redirect, usePathname, useRouter, getPathname} =
