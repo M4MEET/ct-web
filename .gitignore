@@ -61,3 +61,15 @@ AGENTS.md
 *.ai.md
 *_ai.md
 *agent*.md
+.claude/
+
+# Temporary data/scripts
+*.sql
+*.json
+!package.json
+!tsconfig.json
+!*/package.json
+!*/tsconfig.json
+!messages/*.json
+link-service-pages.ts
+API_DOCUMENTATION.md
