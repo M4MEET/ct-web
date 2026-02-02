@@ -1,29 +1,28 @@
 import { RichTextBlock as RichTextBlockType } from '@codex/content';
-import DOMPurify from 'isomorphic-dompurify';
 
 interface RichTextBlockProps {
   data: RichTextBlockType;
 }
 
-// Secure HTML sanitization with isomorphic DOMPurify (works on both server and client)
+// Simple server-safe HTML sanitization using regex
+// Removes script tags, event handlers, and dangerous elements
 function sanitizeHTML(html: string): string {
-  const config = {
-    ALLOWED_TAGS: [
-      'div', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-      'a', 'img', 'ul', 'ol', 'li', 'strong', 'em', 'br',
-      'blockquote', 'code', 'pre', 'hr', 'section', 'article',
-      'header', 'footer', 'nav', 'aside', 'main', 'figure', 'figcaption'
-    ],
-    ALLOWED_ATTR: [
-      'href', 'src', 'alt', 'title', 'class', 'id', 'target', 'rel',
-      'width', 'height', 'loading', 'decoding', 'fetchpriority'
-    ],
-    ALLOWED_URI_REGEXP: /^(?:(?:(?:f|ht)tps?|mailto|tel):|\/|#)/i,
-    FORBID_TAGS: ['script', 'object', 'embed', 'iframe', 'form', 'input', 'textarea', 'select'],
-    FORBID_ATTR: ['onload', 'onerror', 'onclick', 'onmouseover', 'onfocus', 'onblur', 'onchange', 'onsubmit'],
-  };
+  if (!html) return '';
 
-  return DOMPurify.sanitize(html, config);
+  return html
+    // Remove script tags and their content
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    // Remove iframe, object, embed tags
+    .replace(/<(iframe|object|embed|form|input|textarea|select)[^>]*>.*?<\/\1>/gis, '')
+    .replace(/<(iframe|object|embed|form|input|textarea|select)[^>]*\/?>/gi, '')
+    // Remove event handlers (onclick, onload, onerror, etc.)
+    .replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '')
+    .replace(/\s*on\w+\s*=\s*[^\s>]+/gi, '')
+    // Remove javascript: and data: URLs in href/src
+    .replace(/href\s*=\s*["']?\s*javascript:[^"'\s>]*/gi, 'href="#"')
+    .replace(/src\s*=\s*["']?\s*javascript:[^"'\s>]*/gi, 'src=""')
+    .replace(/href\s*=\s*["']?\s*data:[^"'\s>]*/gi, 'href="#"')
+    .replace(/src\s*=\s*["']?\s*data:(?!image)[^"'\s>]*/gi, 'src=""');
 }
 
 export function RichTextBlock({ data }: RichTextBlockProps) {
