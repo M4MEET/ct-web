@@ -114,9 +114,8 @@ services:
   migrate:
     build:
       context: .
-      dockerfile: Dockerfile.web
+      dockerfile: Dockerfile.migrate
     container_name: codex-migrate
-    command: npx prisma migrate deploy
     environment:
       - DATABASE_URL=postgresql://${POSTGRES_USER:-codex}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-codex_terminal}
     depends_on:
