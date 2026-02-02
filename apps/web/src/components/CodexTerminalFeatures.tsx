@@ -12,7 +12,7 @@ export function CodexTerminalFeatures() {
       title: t('services.shopware.title'),
       description: t('services.shopware.description'),
       icon: '🛍️',
-      href: '/services/shopware',
+      href: '/services/shopware-development',
       command: './deploy-shopware.sh',
       status: 'ACTIVE',
       glowColor: 'blue-400'
@@ -21,7 +21,7 @@ export function CodexTerminalFeatures() {
       title: t('services.marketing.title'),
       description: t('services.marketing.description'),
       icon: '📈',
-      href: '/services/marketing',
+      href: '/services/digital-marketing',
       command: './optimize-campaigns.sh',
       status: 'RUNNING',
       glowColor: 'green-400'
@@ -30,7 +30,7 @@ export function CodexTerminalFeatures() {
       title: t('services.cloud.title'),
       description: t('services.cloud.description'),
       icon: '☁️',
-      href: '/services/cloud',
+      href: '/services/cloud-infrastructure',
       command: './scale-infrastructure.sh',
       status: 'READY',
       glowColor: 'purple-400'

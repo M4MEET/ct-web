@@ -147,19 +147,19 @@ export function Navigation() {
   const fallbackServices = dynamicServicesDropdown.length === 0 ? [
     {
       name: t('dropdowns.services.shopware.title'),
-      href: '/services/shopware',
+      href: '/services/shopware-development',
       description: t('dropdowns.services.shopware.description'),
       icon: '🛒'
     },
     {
       name: t('dropdowns.services.marketing.title'),
-      href: '/services/marketing',
+      href: '/services/digital-marketing',
       description: t('dropdowns.services.marketing.description'),
       icon: '📈'
     },
     {
       name: t('dropdowns.services.cloudInfra.title'),
-      href: '/services/cloud',
+      href: '/services/cloud-infrastructure',
       description: t('dropdowns.services.cloudInfra.description'),
       icon: '☁️'
     }

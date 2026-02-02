@@ -82,9 +82,9 @@ export function Footer({ locale }: FooterProps) {
       { name: t('navigation.main.pricing'), href: '/pricing' },
     ],
     services: [
-      { name: t('navigation.services.shopware'), href: '/services/shopware' },
-      { name: t('navigation.services.marketing'), href: '/services/marketing' },
-      { name: t('navigation.services.cloud'), href: '/services/cloud' },
+      { name: t('navigation.services.shopware'), href: '/services/shopware-development' },
+      { name: t('navigation.services.marketing'), href: '/services/digital-marketing' },
+      { name: t('navigation.services.cloud'), href: '/services/cloud-infrastructure' },
     ],
     legal: [
       { name: t('navigation.legal.privacy'), href: '/privacy' },
