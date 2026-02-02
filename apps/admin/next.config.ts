@@ -3,6 +3,14 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
+  eslint: {
+    // Disable ESLint during production builds (lint separately in CI)
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Disable type checking during builds (check separately in CI)
+    ignoreBuildErrors: true,
+  },
   images: {
     remotePatterns: [
       {
