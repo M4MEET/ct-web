@@ -21,5 +21,6 @@ RUN cd packages/database && npx prisma generate
 
 WORKDIR /app/packages/database
 
-# Run migrations
-CMD ["npx", "prisma", "migrate", "deploy"]
+# Push schema to database (creates tables if they don't exist)
+# Using db push for initial setup, switch to migrate deploy for production migrations
+CMD ["npx", "prisma", "db", "push", "--skip-generate"]
