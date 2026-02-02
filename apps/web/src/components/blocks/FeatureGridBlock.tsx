@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FeatureGridBlock as FeatureGridBlockType } from '@codex/content';
 
 interface FeatureGridBlockProps {
@@ -8,7 +9,7 @@ export function FeatureGridBlock({ data }: FeatureGridBlockProps) {
   if (!data) {
     return null;
   }
-  
+
   // Handle both 'features' and 'items' properties for backward compatibility
   const items = data.features || data.items || [];
   const columns = data.columns || 3;
@@ -20,6 +21,25 @@ export function FeatureGridBlock({ data }: FeatureGridBlockProps) {
     3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
     4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
   }[columns] || 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3';
+
+  // Card component that wraps content in Link if href is provided
+  const CardWrapper = ({ item, children }: { item: any; children: React.ReactNode }) => {
+    if (item.link || item.href) {
+      return (
+        <Link
+          href={item.link || item.href}
+          className="group relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary-300 hover:-translate-y-1 p-4 sm:p-6 lg:p-8 h-full flex flex-col"
+        >
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <div className="group relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary-300 hover:-translate-y-1 p-4 sm:p-6 lg:p-8 h-full flex flex-col">
+        {children}
+      </div>
+    );
+  };
 
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-transparent relative">
@@ -36,13 +56,10 @@ export function FeatureGridBlock({ data }: FeatureGridBlockProps) {
             )}
           </div>
         )}
-        
+
         <div className={`grid ${gridClasses} gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-16`}>
           {items.map((item: any, index: number) => (
-            <div 
-              key={index} 
-              className="group relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary-300 hover:-translate-y-1 p-4 sm:p-6 lg:p-8 h-full flex flex-col"
-            >
+            <CardWrapper key={index} item={item}>
               <div className="flex flex-col h-full space-y-4 sm:space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center">
                   {item.icon && (
@@ -107,14 +124,16 @@ export function FeatureGridBlock({ data }: FeatureGridBlockProps) {
                   </div>
                 )}
                 
-                <div className="flex items-center justify-center sm:justify-start text-primary-600 font-medium group-hover:text-primary-700 transition-colors mt-auto pt-3 sm:pt-4">
-                  <span className="text-sm sm:text-base">Learn more</span>
-                  <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
+                {(item.link || item.href) && (
+                  <div className="flex items-center justify-center sm:justify-start text-primary-600 font-medium group-hover:text-primary-700 transition-colors mt-auto pt-3 sm:pt-4">
+                    <span className="text-sm sm:text-base">Learn more</span>
+                    <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                )}
               </div>
-            </div>
+            </CardWrapper>
           ))}
         </div>
       </div>
