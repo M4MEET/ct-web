@@ -41,12 +41,20 @@ services:
       dockerfile: Dockerfile.web
     container_name: codex-web
     restart: unless-stopped
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    dns_opt:
+      - ndots:1
+      - timeout:1
+      - attempts:2
     environment:
       - NODE_ENV=production
       - DATABASE_URL=postgresql://${POSTGRES_USER:-codex}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-codex_terminal}
       - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
       - NEXTAUTH_URL=${WEB_URL:-https://codexterminal.com}
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET:?NEXTAUTH_SECRET is required}
+      - NODE_OPTIONS=--dns-result-order=ipv4first
     depends_on:
       postgres:
         condition: service_healthy
@@ -64,6 +72,13 @@ services:
       dockerfile: Dockerfile.admin
     container_name: codex-admin
     restart: unless-stopped
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    dns_opt:
+      - ndots:1
+      - timeout:1
+      - attempts:2
     environment:
       - NODE_ENV=production
       - DATABASE_URL=postgresql://${POSTGRES_USER:-codex}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-codex_terminal}
@@ -71,6 +86,7 @@ services:
       - NEXTAUTH_URL=${ADMIN_URL:-https://admin.codexterminal.com}
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
       - AUTH_TRUST_HOST=true
+      - NODE_OPTIONS=--dns-result-order=ipv4first
     depends_on:
       postgres:
         condition: service_healthy

@@ -1,4 +1,10 @@
 import { PrismaClient } from '@prisma/client';
+import { configureDNSCache } from './dns-cache';
+
+// Enable DNS caching to prevent excessive DNS lookups
+if (process.env.NODE_ENV === 'production') {
+  configureDNSCache();
+}
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
@@ -8,6 +14,12 @@ export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({
     log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+    // Connection pooling to reduce DNS lookups
+    datasources: {
+      db: {
+        url: process.env.DATABASE_URL,
+      },
+    },
   });
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
